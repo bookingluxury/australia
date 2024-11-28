@@ -95,56 +95,53 @@
 </html>
 
 
-
-
-
-
-
 <div id="accessCodeModal" class="modal" style="display: flex;">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
 <!-- Logo lớn -->
 <div class="logo-container">
-        <img src="https://i.ibb.co/q0cnWqD/photo-2024-10-15-22-09-13.jpg" alt="Logo" style="width: 90px; height: auto; margin-bottom: -30px;">
-        <img src="https://i.ibb.co/7WW4LrB/photo-2024-08-19-18-39-28-2.jpg" alt="Logo" style="width: 90px; height: auto; margin-bottom: -30px;">
-    </div>
+      <img src="https://i.ibb.co/q0cnWqD/photo-2024-10-15-22-09-13.jpg" alt="Logo" style="width: 90px; height: auto; margin-bottom: -30px;">
+      <img src="https://i.ibb.co/7WW4LrB/photo-2024-08-19-18-39-28-2.jpg" alt="Logo" style="width: 90px; height: auto; margin-bottom: -30px;">
+  </div>
 
-        <h4>Nhập mã vùng khu vực do LUXURY GIRL BOOKING  cấp vì lí do bảo mật và lợi ích của khách hàng </h4>
-        <div style="position: relative; width: 100%;">
-            <input type="password" id="accessCodeInput" placeholder="Nhập mã tại đây" style="width: calc(100% - 40px); padding: 10px; margin-bottom: 10px;  border-radius: 10px; /* Viền vàng kim */">
-           <span id="togglePassword" onclick="togglePasswordVisibility()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-                👁️
-              
-            </span>
-        </div>
-        <button onclick="checkAccessCode()" style=" box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng đổ bóng */ transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; background-color: #000000; /* Nền đen */ Viền vàng */ padding: 10px 20px;  border-radius: 5px;    
-         cursor: pointer;">
-            Xác nhận
-        </button>
+      <h4>Nhập mã vùng khu vực do LUXURY GIRL BOOKING  cấp vì lí do bảo mật và lợi ích của khách hàng </h4>
+      <div style="position: relative; width: 100%;">
+          <input type="password" id="accessCodeInput" placeholder="Nhập mã tại đây" style="width: calc(100% - 40px); padding: 10px; margin-bottom: 10px;  border-radius: 10px; /* Viền vàng kim */">
+         <span id="togglePassword" onclick="togglePasswordVisibility()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+              👁️
+            
+          </span>
+      </div>
+      <button onclick="checkAccessCode()" style=" box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng đổ bóng */ transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; background-color: #000000; /* Nền đen */ Viền vàng */ padding: 10px 20px;  border-radius: 5px;    
+       cursor: pointer;">
+          Xác nhận
+      </button>
 
-        <!-- Spinner khi đang kiểm tra mã -->
-        <div class="spinner-container" id="spinnerContainer" style="display: none;">
-            <div class="spinner"></div>
-            <p class="spinner-text">Vui lòng đợi, hệ thống đang kiểm tra và tìm kiếm các bé gần nhất cho bạn...</p>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
+      <!-- Spinner khi đang kiểm tra mã -->
+      <div class="spinner-container" id="spinnerContainer" style="display: none;">
+          <div class="spinner"></div>
+          <p class="spinner-text">Vui lòng đợi, hệ thống đang kiểm tra và tìm kiếm các bé gần nhất cho bạn...</p>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+      </div>
 
-        <!-- Dấu tích xanh hiển thị khi mã được xác nhận -->
-        <div class="success-message" id="successMessage" style="display: none; margin-top: 10px;">
-            <span style="color: green; font-size: 24px;">&#10004;</span> Mã đã được xác nhận thành công!
-        </div>
+      <!-- Dấu tích xanh hiển thị khi mã được xác nhận -->
+      <div class="success-message" id="successMessage" style="display: none; margin-top: 10px;">
+          <span style="color: green; font-size: 24px;">&#10004;</span> Mã đã được xác nhận thành công!
+      </div>
 
-        <div class="info-message">
-            <img src="https://i.ibb.co/R38vw3M/pngegg.png" alt="Custom Logo" style="height: 20px; width: 20px; vertical-align: middle; margin-right: 5px;">
-  Bật vị trí để hệ thống có thể giúp bạn tìm kiếm và cung cấp chính xác vị trí các bé gần nhất nhé
+      <div class="info-message">
+          <img src="https://i.ibb.co/R38vw3M/pngegg.png" alt="Custom Logo" style="height: 20px; width: 20px; vertical-align: middle; margin-right: 5px;">
+Bật vị trí để hệ thống có thể giúp bạn tìm kiếm và cung cấp chính xác vị trí các bé gần nhất nhé
 
-        </div>
-    </div>
+      </div>
+  </div>
 </div>
 
 <div id="accessCodeDisplay"></div>
+
+
 
 
 
@@ -310,7 +307,7 @@ body {
 
 }
 
-}
+
 
         .info-message {
             color: #000000; /* Màu chữ đen */
@@ -997,8 +994,9 @@ h1 {
     right: 20px;
     width: 350px;
     height: 650px;
-    border: 1px solid #e65100;
+
     display: flex;
+    border: 2px solid #ffffff;
     flex-direction: column;
     background: linear-gradient(135deg, #ff7043, #e65100);
     border-radius: 15px;
@@ -1111,7 +1109,8 @@ h1 {
     padding: 8px;
     border-radius: 20px;
     border: 1px solid #ccc;
-    margin-right: 8px;
+    margin-left: 5px;
+     margin-bottom: -13px;
     transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -1166,6 +1165,7 @@ button:hover {
 /* Tắt thu phóng cho input trên thiết bị di động */
 input[type="text"] {
     font-size: 16px;
+    margin-left: 5px;
     touch-action: manipulation;
 }
 
@@ -1253,20 +1253,19 @@ const maxNoRepeat = 400;
 const characters = [
         {
             name: "Ạhhh",
-                avatar: "https://i.ibb.co/Wcfz0GB/343515938-244275581449331-9003722689350715063-n.jpg",
+                avatar: "https://i.ibb.co/cCbC4Hs/photo-2024-11-28-23-07-49.jpg",
                 messages: [
-                "Tôi đánh giá cao e này",
-"E nào lộ clip xinh thế nhỉ",
-"Xinh như tiên nữ cũng bị đụ như người phàm cả",
-"Nay rôm rả quá mai nghỉ làm hả các bác",
-"https://i.ibb.co/Vv485HL/photo-20-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/6YsFD2S/photo-20-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/Y2H2hjc/photo-21-2024-10-23-11-22-02.jpg",
-"Làm gì nữa bác làm cả tuần rồi cho nghỉ 1 ngày còn xả tres chứ troi",
-"Mai tôi vẫn làm đây mấy og sướng quá",
-"Làm j nhiều vậy bác ơi kiếm tiền nuôi bác sĩ à",
-"Có hàng ngon không chia sẻ với ông",
-"Hàng ai nấy dùng chia sẻ chi gặp ông cũng thế",
+                "I appreciate this girl",
+"Who is this pretty when the clip is leaked",
+"Pretty as a fairy but also fucked like a mortal",
+"Today is so lively, tomorrow is the day off, guys",
+"https://i.ibb.co/1ZTBM8F/photo-2024-07-07-11-38-49.jpg",
+"https://i.ibb.co/HPgZR2d/photo-2024-07-07-12-01-11.jpg",
+"What are you doing, you worked all week and then gave me a day off to relieve stress, oh my god",
+"I'm still working tomorrow, guys, it's so great",
+"Why are you doing so much, are you making money to support the doctor",
+"Do you have any good products to share with me",
+"Everyone uses their own products, why do you share them with me?"
                 ],
             },
             {
@@ -1276,21 +1275,22 @@ const characters = [
                 "Dit nhau suot k nghi ngoi ha may cha",
 "Tầm này chỉ có địt chứ lm gì nữa ông",
 "Hẹn ẻm giờ mới tới mấy ông ơi vào việc luôn chứ nóng lắm rồi",
-"https://i.ibb.co/nwRxCpD/photo-18-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/K07JMK8/photo-18-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/34bdKZQ/photo-19-2024-10-23-11-22-02.jpg",
+"https://i.ibb.co/5njjhyG/photo-2024-07-05-13-28-08.jpg",
+"https://i.ibb.co/7NRpDVd/photo-2024-07-05-16-55-20.jpg",
+"https://i.ibb.co/mB164Vf/photo-2024-07-05-17-12-19.jpg",
 "Ngon lành vậy dáng đẹp đó",
 "Da trắng vú to lồn chắc đẹp nốt",
                 ],
             },
             {
                 name: "Chi Duong",
-                avatar: "https://i.ibb.co/CmcCtzt/433005087-1177556326740003-4441578403532921158-n.jpg",
+                avatar: "https://i.ibb.co/MCjppLp/467973998-615684634115030-6812221606554598097-n.jpg",
                 messages: [
                 "Ông thử có ny thì biết nói mồm hay lam",
 "Ngày nào cung đit xem có chán ko",
-"https://i.ibb.co/h8tGGt9/photo-17-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/BwTPBQ1/photo-18-2024-10-23-11-51-38.jpg",
+"https://i.ibb.co/C7sfzRk/photo-2024-07-04-13-51-05.jpg",
+"https://i.ibb.co/C6J8wVS/photo-2024-07-04-14-48-16.jpg",
+"https://i.ibb.co/d7qthYp/photo-2024-07-05-12-27-17.jpg",
 "Đào cứ để tôi mấy bác khéo lo",
 "Tò mò thì lên lịch cho ah ah cho em biết nhé hấp dẫn lắm",
 "Cứ thế này mấy ông vơ hết hàng ngon còn đâu",
@@ -1304,8 +1304,9 @@ const characters = [
 "Đã cái con cặc thật",
 "Mới tới đây chờ bé tới đụ thôi",
 "Chắc phải lên lịch gấp thôi chứ chiu ko được rồi",
-"https://i.ibb.co/Hrc6qgX/photo-21-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/mz6Rm3Y/photo-21-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/zQYnCtj/photo-2024-06-29-13-54-47.jpg",
+"https://i.ibb.co/8DZLjJX/photo-2024-07-02-15-30-31.jpg",
+"https://i.ibb.co/Dz2xDRf/photo-2024-07-04-13-51-05-2.jpg",
 "Nay ny bắt đi xem phim k đi đâu đc mấy ông ạ 😕",
 "Cái gì ăn nhiều chẳng ngán",
 "Ông nào có ny mới hiểu đc nhỉ 😂",
@@ -1318,8 +1319,9 @@ const characters = [
                 "Suóng như vua bác nhỉ",
 "Má quần rách này mà vừa chơi vừa xé thì quá là đã",
 "Bú kiểu này chịu k nổi là phọt thôi",
-"https://i.ibb.co/XtT4qfm/photo-16-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/dp5Nr6k/photo-17-2024-10-23-11-22-02.jpg",
+"https://i.ibb.co/ZKmpBkT/photo-2024-06-25-22-18-12.jpg",
+"https://i.ibb.co/ZNCgGHb/photo-2024-06-26-19-55-40.jpg",
+"https://i.ibb.co/CsvFRcJ/photo-2024-06-28-13-28-29.jpg",
 "Con em nhiệt tình quá còn gì",
 "Nhìn mấy bác sướng nhỉ tôi còn đang bận chưa đi được",
 "Tôi thì đi rồi giờ ngủ giấc thôi",
@@ -1332,8 +1334,9 @@ const characters = [
                 "Mới về gửi luôn feedback cho bé nó 😘 Tiền nào của nấy thôi mấy bác",
 "Con cac dài vậy ông chắc tới lỗ rún e nó",
 "Cu vậy đụ mấy nhỏ mới la làng",
-"https://i.ibb.co/PQW9xhQ/photo-16-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/ZSQCLwx/photo-16-2024-10-23-11-52-15.jpg",
+"https://i.ibb.co/CVVxbH3/photo-2024-06-22-13-57-05-2.jpg",
+"https://i.ibb.co/MBZp8sW/photo-2024-06-22-13-57-05-3.jpg",
+"https://i.ibb.co/RNjLzr3/photo-2024-06-22-13-57-05.jpg",
 "Đi có tiếng về rồi ak ông",
 "Làm xong 2 cái về thôi ông ạ cũng tiếng rưỡi",
 "À gói 90 phút à cũng ngon phết",
@@ -1347,8 +1350,10 @@ const characters = [
                 "Qua đêm luôn sáng về ngủ nghỉ cho khỏe",
 "Có tiền muốn gì cũng đc 😁",
 "Tưởng mình tôi đi chơi sớm",
-"https://i.ibb.co/Pt99432/photo-15-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/DrGSf3Y/photo-15-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/nbMJLbM/photo-2024-06-22-22-20-20.jpg",
+"https://i.ibb.co/Y79xf14/photo-2024-06-23-13-15-09.jpg",
+"https://i.ibb.co/XSy4PDb/photo-2024-06-23-13-17-10.jpg",
+"https://i.ibb.co/TqK8YJV/photo-2024-06-23-13-20-40-2.jpg",
 "Mấy cụ này nứng sớm thế nhỉ",
 "Giờ đéo nào cũng có ông đang đụ",
 "Cái lồn nhìn hồng hào thế húp thôi ông",
@@ -1361,8 +1366,9 @@ const characters = [
                 "Quan trọng gần ôg ko thôi 😂",
 "Mai nghỉ k phải lo bác ạ",
 "Nay được nghỉ sớm tranh thủ đặt phòng đợi ẻm tới",
-"https://i.ibb.co/44ZDr8r/photo-14-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/Jskcg6f/photo-14-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/4g4sPdw/photo-2024-06-23-13-20-40.jpg",
+"https://i.ibb.co/LNJThWG/photo-2024-06-24-20-29-44.jpg",
+"https://i.ibb.co/8X4vKpm/photo-2024-06-25-22-18-12-2.jpg",
 "Đã lên lịch rồi hả bác bọn tôi còn chưa về mà bác đã đc địt r",
 "Bác đi gói nào mà đi sớm v",
                 ],
@@ -1375,8 +1381,8 @@ const characters = [
 "Em bú cho ah đc k em ơi",
 "Mẹ mới đi hôm qua nay admin mới thông báo cay vl",
 "Anh nào chưa đc em bú thì thử đi nè",
-"https://i.ibb.co/qFmGMc1/photo-12-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/rZmGvC3/photo-14-2024-10-23-11-51-38.jpg",
+"https://i.ibb.co/Wzm1Kn1/photo-2024-07-09-19-26-44.jpg",
+"https://i.ibb.co/sRPmjz3/photo-2024-07-09-20-09-22.jpg",
 "Giờ này ông nào ông nấy chắc đi làm về hết roi nhỉ",
 "Tầm này an uong r book đào đi chơi thôi",
                 ],
@@ -1388,8 +1394,8 @@ const characters = [
                 "Nuôt nhỉ thích mấy e mình dây thế nà",
 "Ông nói điều ai cũng biết cả",
 "Càng nuột thì càng bị địt nhiều thôi ong",
-"https://i.ibb.co/wN1BqR3/photo-12-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/5986MWf/photo-12-2024-10-23-11-52-15.jpg",
+"https://i.ibb.co/cCxxfKn/photo-2024-07-10-17-20-55.jpg",
+"https://i.ibb.co/mbNXFVy/photo-2024-07-18-19-38-36.jpg",
 "Tôi thì thích mấy bé vừa vừa ít ai rớ tới 😂",
 "Tranh thủ đi chịch lấy feedback về lấy lại 30% thôi",
 "Đi chung chứ địt chung là ko đc đâu nha",
@@ -1401,24 +1407,25 @@ const characters = [
                 messages: [
                 "Địt chung nâng tình cảm anh em lên chứ bác",
 "Tôi đi chiến trc nhé ae. Lên lịch rồi 😁",
-"https://i.ibb.co/7z8qP2r/photo-11-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/fHH0mMJ/photo-11-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/nDF4Fbz/photo-2024-07-19-17-05-23.jpg",
+"https://i.ibb.co/h2GqByW/photo-2024-07-20-12-10-01.jpg",
+"https://i.ibb.co/XfnR3ZB/photo-2024-07-20-15-01-55.jpg",
 "Mấy ông ít nói mới hay đi nhất đấy còn mấy ông rãnh chat chắc tháng đi đc 1 lần",
 "Thì rãnh mới ở đây xàm xàm chứ có tiền đã đi rồi kk",
 "Sn bao nhiêu nhìn bé vậy ông",
                 ],
             },
             {
-                name: "Lee San ",
+                name: "LeeSan ",
                 avatar: "https://i.ibb.co/T13PkKz/463780581-527298090157663-601024373815710168-n.jpg",
                 messages: [
-                "Sao chịch yếu ớt thế sao e nó sướng đc",
-"Tôi ở nhà hóng video mấy ông thôi",
-"Tôi đang địt mà mấy ông nt hỏi lắm the nhỉ",
-"https://i.ibb.co/Gxt99Mr/photo-10-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/m6m7z4Y/photo-11-2024-10-23-11-22-02.jpg",
-"K đi chịch thì ở nhà coi phim sex thôi",
-"Xem phim đâu có sướng bác",
+                "Why is it so weak that it makes me happy?",
+"I'm just at home waiting for your videos",
+"I'm fucking but you guys are texting me with so many questions",
+"https://i.ibb.co/nz7LZFg/photo-2024-07-31-23-21-22.jpg",
+"https://i.ibb.co/zb55QtG/photo-2024-08-01-21-23-45.jpg",
+"If you don't fuck, just stay home and watch sex movies",
+"Watching movies isn't fun, bro",
                 ],
             },
             {
@@ -1430,8 +1437,8 @@ const characters = [
 "Mấy bữa nay đi chịch nhiều quá giờ hơi đau lưng",
 "Canh muộn muộn đi rồi về ngủ chứ đi sớm về lại mò vào nhóm xem lại thèm",
 "Thèm thì đi tiếp thôi",
-"https://i.ibb.co/7JcNcDN/photo-7-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/r3yhQ8Z/photo-8-2024-10-23-11-52-15.jpg",
+"https://i.ibb.co/FYKDS0k/photo-2024-07-29-18-46-37.jpg",
+"https://i.ibb.co/rygHbZ2/photo-2024-07-31-13-27-12.jpg",
 "Sợ k có tiền chứ sợ gì thèm",
 "Nay tranh thủ thế bác",
 "Trải nghiệm xem ưu đãi mới thế nào ấy mà",
@@ -1444,8 +1451,8 @@ const characters = [
                 "Tôi còn đang chọn đào mấy bác đã đi về cả rồi",
 "Kết bé kia mà nay ẻm bận k đi đc chán quá",
 "Og sợ thiếu gái hay gi mà k kiếm bé khác",
-"https://i.ibb.co/pJcSpDp/photo-7-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/Q8D8dCG/photo-7-2024-10-23-11-52-15.jpg",
+"https://i.ibb.co/vhwbWX9/photo-2024-07-29-17-40-10.jpg",
+"https://i.ibb.co/DbQGFXk/photo-2024-07-29-18-32-22.jpg",
 "Giờ này mấy ông chắc ấp ủ bên mấy e đào cả rồi",
 "K địt trc ngkh địt mất xót lắm",
 "Xinh vỗn cả lài",
@@ -1459,8 +1466,8 @@ const characters = [
 "Ai có info e này k xin với",
 "Tôi có tôi cũng giấu chứ cho làm gì kk",
 "Tên đẹp người cũng đẹp xuất sắc quá",
-"https://i.ibb.co/Lhwhq9W/photo-6-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/ZLjP2X8/photo-6-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/h29k03k/photo-2024-07-28-22-51-37.jpg",
+"https://i.ibb.co/CHBBsp4/photo-2024-07-29-12-11-49.jpg",
 "Xinh thế này k chịch phí cả cuộc đời",
 "Làm nốt ngày mai rồi đi chưa muộn đâu 😂",
 "Giờ này book về 1 bé còn gì bằng nữa",
@@ -1472,11 +1479,11 @@ const characters = [
                 messages: [
                 "Lại ko được ngủ yên rồi",
 "Giờ này book về 1 bé còn gì bằng nữa",
-"https://i.ibb.co/8d7HBkN/photo-80-2024-10-23-11-52-15.jpg",
+
 "Hôm nay k book mai chắc k còn đào để book luon quá",
 "Đặt lịch trc cho chắc khéo mai hết thật 😂",
-"https://i.ibb.co/9sKrvrr/photo-5-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/jyL34kM/photo-5-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/RP5PpWM/photo-2024-07-28-19-43-35.jpg",
+"https://i.ibb.co/HgRyfxj/photo-2024-07-28-20-24-44.jpg",
 "Lại lên lịch đi chịch thôi chứ sao",
 "Chốt kèo với con e rồi tối tiển thôi",
 "Hẹn mà toàn ông đi trước đi sau ko à",
@@ -1486,16 +1493,15 @@ const characters = [
                 name: "KK",
                 avatar: "https://i.ibb.co/DWpmDXw/287503735-2569447153190823-6330025235431122917-n.jpg",
                 messages: [
-                "Thằng dưới ăn còn thằng trên nuôi hả bác",
-"Toàn thằng nhỏ đc ăn thằng lớn phải cày cắm đầu",
-"Ông nào rãnh k vào giao lưu với tôi vài game",
-"Đồng môn đây rồi",
-"https://i.ibb.co/yPfqdyy/photo-5-2024-09-28-20-48-55.jpg",
-"https://i.ibb.co/8YftK71/photo-5-2024-10-23-11-22-02.jpg",
-"Rủ nhau chơi game hôm nào rãnh kéo nhau đi địt chung cho vui",
-"Bác nói hợp lý quá nhỉ",
-"Ở bên này chơi game toàn quen mấy e  ở Vn đéo làm ăn gì đc",
-"Chúng nó toàn thánh bào mà bảo 😂",
+                "The lower one eats and the upper one feeds, right?",
+"All the younger ones get to eat and the older ones have to work hard",
+"Whoever has free time, come and play some games with me",
+"My fellow students are here",
+"https://i.ibb.co/3z6GVTL/photo-2024-07-27-17-09-54.jpg",
+"https://i.ibb.co/zSm91Pj/photo-2024-07-28-12-41-36.jpg",
+"What you said is so reasonable",
+"Over here, I only know girls in Vietnam who can't do anything when they play games",
+"They're all saints but they say 😂",
                 ],
             },
             {
@@ -1504,13 +1510,12 @@ const characters = [
                 messages: [
                 "Để tiền đi địt gái  sướng hơn",
 "Nay có bé nào mới k nhỉ",
-"https://i.ibb.co/fH5wrK3/photo-81-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/w76YbQ0/photo-82-2024-10-23-11-51-38.jpg",
+
 "Ông đi đc hết gái ở đây chưa mà đòi mới",
 "Tôi mới đi đc 3 em còn chưa dám than",
 "Con hàng ngon ko mấy ôg",
-"https://i.ibb.co/G353KZZ/photo-3-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/0Vz9NX4/photo-4-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/0yqQXZy/photo-2024-07-27-14-27-51.jpg",
+"https://i.ibb.co/z6zGHqm/photo-2024-07-27-15-24-53.jpg",
 "Vú này chắc vú thật bóp nhìn đã thế mà",
 "Để tôi bóp thử mới biết thật hay giả",
                 ],
@@ -1523,8 +1528,8 @@ const characters = [
 "Tại bác k biết thôi chứ trong này nhiều k thiếu",
 "Này gu tôi này",
 "Tôi cũng thích nhỏ nhắn như này",
-"https://i.ibb.co/r7MTbCV/photo-2-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/3B3B02w/photo-3-2024-10-23-11-22-02.jpg",
+"https://i.ibb.co/5shzYm1/photo-2024-07-26-18-16-36.jpg",
+"https://i.ibb.co/0FYvf0Y/photo-2024-07-26-20-22-04.jpg",
 "Húp đê ae review tôi xem",
 "Tôi thích bé này ae để tôi đi trước nhe",
                 ],
@@ -1535,8 +1540,8 @@ const characters = [
                 messages: [
                 "Có người làm hướng dẫn cho roi ngại gì nua kk",
 "Đỡ tốn 1 khúc rồi mấy bác 😂😂",
-"https://i.ibb.co/pZ4JDPs/photo-1-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/C7LH58G/photo-1-2024-10-23-11-52-15.jpg",
+"https://i.ibb.co/bXY00Pt/photo-2024-07-26-17-41-00.jpg",
+"https://i.ibb.co/DYPprwB/photo-2024-07-26-17-46-59.jpg",
 "Ông nào cũng bú đc mấy bé vú ngon thế nhỉ",
 "Hay mối quen giấu ăn mình vậy",
                 ],
@@ -1549,9 +1554,8 @@ const characters = [
                 "Đi địt luôn cho máu chả phải hóng của ông nào",
 "Vậy mới là chất chơi làm luôn cho nóng",
 "Nhìn đã quá mà vẫn phải kiềm chế",
-"https://i.ibb.co/GTJKm14/photo-1-2024-09-28-20-48-55.jpg",
-"https://i.ibb.co/G03zXPt/photo-22-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/HhygWWL/photo-22-2024-10-23-11-52-30.jpg",
+"https://i.ibb.co/CWQRWNb/photo-2024-07-26-12-04-04.jpg",
+"https://i.ibb.co/8g7x8hb/photo-2024-07-26-15-24-49.jpg",
 "Có con cu để sung sướng sao phải kiềm chế hả bác",
 "Thủ tục sẵn sàng chờ nàng tới nắc",
                 ],
@@ -1564,10 +1568,8 @@ const characters = [
                 messages: [
                 "Vậy mới là chất chơi làm luôn cho nóng",
         "Nhìn đã quá mà vẫn phải kiềm chế",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
-
+        "https://i.ibb.co/8r1YjT3/photo-2024-07-23-17-19-51.jpg",
+"https://i.ibb.co/P1nYZ1z/photo-2024-07-25-18-19-31.jpg",
         "Đi địt luôn cho máu chả phải hóng của ông nào",
         "Thủ tục sẵn sàng chờ nàng tới nắc",
         "Giờ này vẫn đc đi địt là sướng nhất rồi",
@@ -1575,14 +1577,13 @@ const characters = [
                 ],
             },
             {
-                name: "Cho 1 nắc",
+                name: "Peter Đông",
                 avatar: "https://i.ibb.co/wsVWCV4/Gallery-of-ready-made-prints-from-the-My-Stamp-Ready-online-stamp-maker.jpg",
                 messages: [
                 "Trông ngọt nước nhỉ,phải chi đc ké miếng thì",
         "Kéo nhau đi hết đi cho đỡ ồn ào",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
+        "https://i.ibb.co/tbM78N2/photo-2024-07-22-18-02-11.jpg",
+"https://i.ibb.co/jz6jwFh/photo-2024-07-22-20-25-47.jpg",
 
         "Mấy ông đi đéo đi suốt ngày hỏi hỏi",
         "Nhìn dáng mấy e này ngon hết chỗ chê",
@@ -1591,14 +1592,13 @@ const characters = [
                 ],
             },
             {
-                name: "Con cặc",
+                name: "David Ngô",
                 avatar: "https://i.ibb.co/55zr4Jm/kisspng-computer-icons-information-image-logo-symbol-association-michel-voix-l39association-des-ar-5.jpg",
                 messages: [
                 "Giờ này k onl thì chắc chỉ có đi ngủ hoặc đi địt thôi",
         "Đoán hay quá bác 😂",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
+        "https://i.ibb.co/7NJqLpr/photo-2024-07-22-13-05-59.jpg",
+"https://i.ibb.co/ygPxSk9/photo-2024-07-22-14-37-08.jpg",
 
        
         "Các dân chơi hôm nay thế nào rồi",
@@ -1612,10 +1612,9 @@ const characters = [
                 messages: [
                 "Phải nói là mấy ẻm khẩu dâm đụ hứng vcc",
         "Sợ gặp mấy em nằm như cục đá đéo có cảm hứng gì đúng k bác",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
 
+        "https://i.ibb.co/YXzGCct/photo-2024-07-21-18-24-16.jpg",
+"https://i.ibb.co/YjgjhmX/photo-2024-07-21-21-25-48.jpg",
         "Là sao vậy mấy ông ai chỉ tôi với",
         "Chữ to thế k biết đọc à bác",
         "Hiểu rồi quả này mấy bố lại đi nhiều hơn cho xem",
@@ -1624,13 +1623,12 @@ const characters = [
             },
             {
                 name: "Dũng",
-                avatar: "",
+                avatar: "https://i.ibb.co/XsHj8rD/455248314-8792650817445800-7170367642940879024-n.jpg",
                 messages: [
                 "Phải nói là mấy ẻm khẩu dâm đụ hứng vcc",
         "Sợ gặp mấy em nằm như cục đá đéo có cảm hứng gì đúng k bác",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
+        "https://i.ibb.co/LdLDTr0/photo-2024-07-20-17-52-23.jpg",
+"https://i.ibb.co/ZYGzBCw/photo-2024-07-21-11-39-51.jpg",
 
         "Để tôi đi về cho mấy ông làm theo 😂",
         "Mới đi tối qua giờ được tính ko nhỉ hay tính từ sau thông báo ta",
@@ -1644,9 +1642,8 @@ const characters = [
                 messages: [
                 "Đấy lâu lâu phải thế này cho ae khô máu có tinh thần",
         "Chào các bác nha bua gio hóng giờ mới có thể vô chat 😝",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
+        "https://i.ibb.co/RQr9WBb/photo-2024-07-20-15-04-44.jpg",
+"https://i.ibb.co/jT7jVWd/photo-2024-07-20-17-31-38.jpg",
         "Chúc mừng tham gia hội đồng râm",
         "Haha thank bác nhiều nhé",
         "À thì ra mấy nay ông nt hỏi tôi suốt đó à",
@@ -1657,8 +1654,8 @@ const characters = [
             name: "Vũ anh",
             avatar: "https://i.ibb.co/0XFC6pq/avatar-trang-4.jpg",
             messages: [
-              "https://i.ibb.co/R24khgC/photo-2024-11-08-17-50-12.jpg",
-              "https://i.ibb.co/FsmffJ1/review-of-duy-anh-for-hot-girl-thu-thuy-lan-dau-tien-co-mat-gaito-3166745-original.jpg",
+            "https://i.ibb.co/HqwTrZJ/photo-2024-08-02-19-23-28.jpg",
+"https://i.ibb.co/HdHkNv5/photo-2024-08-02-21-46-05.jpg",
               
         "Nay buồn quá nhỉ nay có gì vui k anh em",
         "Tới phòng a đc ko a lười đi ks quá",
@@ -1666,7 +1663,7 @@ const characters = [
             ],
           },
           {
-            name: "Bebe",
+            name: "Peter Hoàng",
             avatar:
               "https://i.ibb.co/x3jTBpZ/109351219-2969029043216925-2295414862108758346-n.jpg",
             messages: [
@@ -1675,23 +1672,25 @@ const characters = [
               "Đụ má chơi kiểu này hay này",
               "Đi chơi cho biết chứ cũng mất tiền chơi gái phải thử cái mới các cụ à",
               "Nào mấy bố đi quay video cho thẩm cái nhé",
+              "https://i.ibb.co/VWK0bPH/photo-2024-08-02-21-46-06.jpg",
+"https://i.ibb.co/zQKXjkf/photo-2024-08-03-15-15-35.jpg",
               "Tranh thủ đụ đi mai phải đi làm r",
               "Nhìn cũng thèm lắm mà mới đi hôm qua k lẽ đi nữa",
               "Tôi nhập cuộc trước đây mấy cụ hưởng thụ sau nhé đang hứng 😝",
             ],
           },
           {
-            name: "1 TIẾNG MỚI RA",
+            name: "Daniel Lê",
             avatar:
               "https://i.ibb.co/tKwGxxV/98450420-915018178938574-441821537687830528-n.jpg",
             messages: [
               "Mấy ông né né em ghệ của tôi ra nhé k tôi xót lắm",
               "Em nào đụ hết",
-              "https://i.ibb.co/WW6G5zc/photo-25-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/ZX9kF2P/photo-26-2024-10-23-11-51-38.jpg",
+    
               "Vkl bác thật nói thế mất tinh cam qua",
               "Đụ bừa đi quan tâm gì ghệ này ghệ nọ 😆",
-              "https://i.ibb.co/RQ8gD5Y/review-of-jollibee-for-hot-girl-thu-thuy-lan-dau-tien-co-mat-gaito-3222277-original.jpg",
+              "https://i.ibb.co/QPSjqPQ/photo-2024-08-03-17-11-05.jpg",
+"https://i.ibb.co/Df5Z1cM/photo-2024-08-04-11-28-40.jpg",
               "Chơi gái nhiều quá giờ phải ăn cơm vs trứng này",
               "Còn trứng để ăn là hp đấy",
               ],
@@ -1702,8 +1701,8 @@ const characters = [
                 messages: [
                 "Nét đấy các ôg mặtt dễ thương phết",
         "Quan trọng là ai húp trc thôi b 😌",
-        "https://i.ibb.co/8cbkkB6/photo-23-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/KmjBP7Y/photo-23-2024-10-23-11-52-15.jpg",
+        "https://i.ibb.co/pnxwnqv/photo-2024-08-04-17-39-11.jpg",
+"https://i.ibb.co/dm6Q6YC/photo-2024-08-05-11-37-13.jpg",
     
           "Trc hay sau cũng địt dc cả mà lo chi hầy",
         "Anh e thấy khó quá thì cứ để tôi tôi xơi tuốt",
@@ -1711,16 +1710,17 @@ const characters = [
                 ],
             },
             {
-                name: "DUMA",
+                name: "Ryan",
                 avatar: "https://i.ibb.co/0XFC6pq/avatar-trang-4.jpg",
                 messages: [
-                "Tức dái lắm đúng k b kk",
-        "Chả thế còn j đang thèm lại còn",
-        "https://i.ibb.co/7nxq2Fn/review-of-nguyen-for-hot-girl-thu-thuy-lan-dau-tien-co-mat-gaito-3265174-original.jpg",
-       
-        "Không ngon đâu để lại tôi xử lý giúp cho",
-        "Bữa giờ bận quá nay có tgian là húp luôn",
-        "Chủ yếu là để khoe thẻ có đúng k 😆",
+                "So annoying right b kk",
+"Why is it still craving",
+"https://i.ibb.co/vkzyzKg/photo-2024-08-05-17-59-23.jpg",
+"https://i.ibb.co/ChLybrw/photo-2024-08-06-11-50-36.jpg",
+
+"It's not delicious, let me handle it for you",
+"I've been so busy lately, now I have time to eat it",
+"Mainly to show off my card right 😆",
                 ],
             },
             {
@@ -1728,8 +1728,8 @@ const characters = [
                 avatar: "https://i.ibb.co/kmY3L7V/352382077-3179841912161446-5627824095159964225-n.jpg",
                 messages: [
         "Để vào việc xem thế nào nóng ruột quá bác ạ",
-        "https://i.ibb.co/RCzDHJT/photo-23-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/VSDdwBn/photo-24-2024-10-23-11-51-38.jpg",
+        "https://i.ibb.co/ynzSb2q/photo-2024-08-06-13-03-39.jpg",
+"https://i.ibb.co/TRdS297/photo-2024-08-07-15-05-28.jpg",
         "Ko chén ngay thì lại hết phần đấy chứ đùa 😂",
         "Bú chưa anh e 😜",
       
@@ -1744,16 +1744,16 @@ const characters = [
                 "Làm mấy phát về nghỉ ngơi là khỏe",
         "Tôi thik mấy em nhiệt tình thế này đây chơi mới cảm giác",
         "Thế thì phải bo thêm cho mấy em thôi",
-        "https://i.ibb.co/3vtg5wN/caption-6.jpg",
+
         "Đơn giản cứ sướng là được 😆",
-        "https://i.ibb.co/PrByBhq/hot-girl-linh-dan-nang-tho-xinh-dep-dang-chuan-nhu-model-3209378-original.png",
+        "https://i.ibb.co/b1MZ3DB/photo-2024-08-07-17-40-19.jpg",
+"https://i.ibb.co/pJWDm5G/photo-2024-08-07-20-06-01.jpg",
         "Ae cầm 100k qua mình x10 x20 x30 tk rồi đi hát có cả lan can luôn nha 🤣",
         "Oke xếp cho mình 1 vé đi b kk",
-        "https://i.ibb.co/pr2xt5J/photo-82-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/8DqD10f/photo-83-2024-10-23-11-22-02.jpg",
+    
         "X10 hay mất x10 thì chưa biết dc gian nan lắm",
         "B mất tôi cho tiền xe b về k phải lo",
-        "https://i.ibb.co/Qdp0KPg/caption-7.jpg",
+
         "Lam giau khong kho nhi,ma giau cho cac bac ay 😂",
         "Lợi nhuận cao thế cũng hơi lo nha hhh",
                 ],
@@ -1764,13 +1764,13 @@ const characters = [
                 messages: [
                 "Làm đâu đấy bác cho xin chân nào",
         "Xa quá xa quá kk",
-        "https://i.ibb.co/PcBrZqH/Untitled-design-33.png",
+
         "Mấy em gái đâu thấy cảnh này,địt dc mấy cái nói này nói kia 😂",
         "Có chak mấy cái ko chứ nge đồn b địt như cái máy đấy",
-        "https://i.ibb.co/tcht2V3/photo-25-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/D9znnts/photo-25-2024-10-23-11-52-15.jpg",
+        "https://i.ibb.co/BcNsG6t/photo-2024-08-08-11-42-40.jpg",
+"https://i.ibb.co/ZY5KzZ3/photo-2024-08-08-15-00-11.jpg",
         "Lời đồn thường không có thật 😑😑",
-        "https://i.ibb.co/gTryjyf/caption-8.jpg",
+      
         "Thỏa mãn rồi đó các bác thấy sao",
         "Dm nhất ôg rồi địt vậy mới chân thật dc",
                 ],
@@ -1781,10 +1781,11 @@ const characters = [
                 messages: [
                     "Mấy em này biết chơi hết rồi đấy",
                     "Đúng mốt chơi gái như thế này",
-                    "https://i.ibb.co/7znT3v5/han-baby-nang-dam-nu-dang-dep-mong-to-mat-xinh-3271485-original.jpg",
+                    "https://i.ibb.co/vcgbTsJ/photo-2024-08-08-18-53-39.jpg",
+"https://i.ibb.co/PD7199x/photo-2024-08-09-12-05-14.jpg",
                     "Tôi ngủ trc đây ae đi chơi vui vẻ nhé",
         "Nay có đi làm ko các bác êy",
-        "https://i.ibb.co/dpnmNpg/caption-9.jpg",
+        
         "Có thất nghiệp đâu mà k cày bố",
         "Com nc chi chưa onl sớm ri mấy cha",
                 ],
@@ -1793,21 +1794,21 @@ const characters = [
                 name: "Phanada",
                 avatar: "https://i.ibb.co/0XFC6pq/avatar-trang-4.jpg",
                 messages: [
-                    "Bỏ qua mấy em nó đi, chơi cái khác thôi",
-                    "Chơi gái không phải chuyện dễ",
-                    "Lồn ngon nhỉ vừa khít con cu luôn 😁",
-        "Nhấp gì yếu ớt thế chưa ăn cơm hả ôg 😂",
-        "https://i.ibb.co/WW6G5zc/photo-25-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/ZX9kF2P/photo-26-2024-10-23-11-51-38.jpg",
-        "Chắc đag cảm nhận hơi ấm kk",
-        "https://i.ibb.co/nLWHX8g/caption.jpg",
-        "Coi full móc vkl thật 😁",
-        "Vú nó bơm nhưng mà đẹp thật nhỉ",
-        "Coi mấy em show hàng còn nứng hơn mấy bố đụ ấy 🤣",
-        "https://i.ibb.co/4f9ZXQ2/photo-83-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/wg4gy1q/photo-84-2024-10-23-11-51-38.jpg",
-        "Làm ko lo làm xem sex suốt ngày rồi than nghèo 😌😌😌😌",
-        "Tôi làm chắc b biết nhỉ 😒😒",
+                "https://i.ibb.co/z8vLXqL/photo-2024-08-09-14-35-33.jpg",
+"https://i.ibb.co/gTLYdyB/photo-2024-08-09-17-25-26.jpg",
+"Ignore them, play something else",
+"Playing with girls is not easy",
+"Such a delicious pussy, fits my dick perfectly 😁",
+"Why are you so weak, haven't you eaten yet, bro 😂",
+
+"You must be feeling the warmth kk",
+
+"Watching full fucking is really fucking 😁",
+"Her breasts are pumped but they're really beautiful",
+"Watching girls show off is even more exciting than dads fucking 🤣",
+
+"Don't worry about your work, you watch sex all day and then complain about being poor 😌😌😌😌",
+"I'm sure you know what I'm doing 😒😒",
 
             ],
         },
@@ -1831,10 +1832,11 @@ const characters = [
                 messages: [
                     "Mấy em này đúng chuẩn chơi hết rồi",
                     "Đừng so sánh nữa chơi thôi",
-                    "https://i.ibb.co/HBthCXD/photo-27-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/8jsvgp8/photo-27-2024-10-23-11-52-15.jpg",
+
                     "Nhịn lâu lắm rồi hay sao khổ thế",
-                    "https://i.ibb.co/gMKQs1Q/review-of-kath-nguyen-for-reup-hottu-anh-hot-model-cuc-ky-loi-cuon-va-khong-the-choi-tu-2741787-orig.jpg",
+                    "https://i.ibb.co/D5HzHXF/photo-2024-08-10-12-18-39.jpg",
+"https://i.ibb.co/5LsH1mJ/photo-2024-08-10-12-28-34.jpg",
+"https://i.ibb.co/vcDMYp1/photo-2024-08-10-14-22-14.jpg",
         "Vã lắm r hả b còn k lo địt đi",
         "Mông ni doggy đúng cmn bài nhỉ",
         "Đụ lút cán luôn ấy bác hầy 🤣",
@@ -1846,10 +1848,11 @@ const characters = [
                 messages: [
                     "Chơi là phải đúng đỉnh, mấy em này thích hợp",
                     "Tôi thích mấy em này hơn",
-                    "https://i.ibb.co/yXpRfRY/photo-28-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/W0rJLvD/photo-28-2024-10-23-11-52-30.jpg",
+  
         "Ước dc nhảy vào phang e này luôn",
-        "https://i.ibb.co/Lt9hmH7/review-of-kath-nguyen-for-reup-hottu-anh-hot-model-cuc-ky-loi-cuon-va-khong-the-choi-tu-2741788-orig.jpg",
+        "https://i.ibb.co/n3cQ416/photo-2024-08-10-18-30-56.jpg",
+"https://i.ibb.co/1mhtZ8Z/photo-2024-08-10-20-04-25.jpg",
+"https://i.ibb.co/k3jRTts/photo-2024-08-10-20-05-20.jpg",
 
         "Xoắn quần lên mà đi chờ đợi j 🥱🥱",
         "Làm 2 bìu bò này ngủ đến sáng",
@@ -1861,32 +1864,33 @@ const characters = [
                 messages: [
                     "Đây là lựa chọn tốt nhất rồi",
                     "Chơi thử chắc sẽ ok",
-                    "https://i.ibb.co/BPsM4j7/review-of-long-dep-trai-1990-for-reup-hottu-anh-hot-model-cuc-ky-loi-cuon-va-khong-the-choi-tu-28614.jpg",
+                  
                     "Học than theo mấy bác mới có tiền dc kk",
-                    "https://i.ibb.co/BtQVmfs/photo-30-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/cYjPG1x/photo-30-2024-10-23-11-52-15.jpg",
+                    "https://i.ibb.co/G9XG6dt/photo-2024-08-11-12-02-20.jpg",
+"https://i.ibb.co/nPVfv9c/photo-2024-08-11-13-05-35.jpg",
+"https://i.ibb.co/xLRtHWq/photo-2024-08-11-17-31-48.jpg",
         "Giờ này chỉ có đi nhậu về nằm hưởng thụ đúng bài",
         "Để dành qua tháng đi hoài mì tôm k có mà ăn 😆😆",
         "Ăn vậy lúc nào cũng than khổ vl",
                 ],
             },
             {
-                name: "anh muốn địt em",
-                avatar: "https://i.ibb.co/DKSYyrc/48360783-729235107453398-7758860129620983808-n.jpg",
+                name: "Phong 1967",
+                avatar: "https://i.ibb.co/PsLTdCn/photo-2024-11-28-23-06-04.jpg",
                 messages: [
                 "Book đi đụ phát là biết thật hay bơm chứ đoán già đoán non làm gì",
-                "https://i.ibb.co/yNr8tZj/photo-79-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/N6NKT3c/photo-79-2024-10-23-11-52-15.jpg",
+
         "Ngày mô cũng nhậu thế ni hỏng hết",
         "Đụ dc 5 phút vác dái đi về",
-        "https://i.ibb.co/JFYSB1c/review-of-haotroc-for-re-up-angela-phuong-trinh-nu-hoang-cosplay-massage-fuck-3009171-original.jpg",
+        "https://i.ibb.co/qFk06Ff/photo-2024-08-11-17-57-00.jpg",
+"https://i.ibb.co/pRDMrKx/photo-2024-08-12-12-08-22.jpg",
+"https://i.ibb.co/H49vtLc/photo-2024-08-12-19-58-59.jpg",
         "Ăn sau lại còn mời vkl",
         "Ông nào lên lịch tối nay chưa thế",
-        "https://i.ibb.co/2sXtdq0/photo-77-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/GVDRKfG/photo-78-2024-10-23-11-52-15.jpg",
+  
         "Tôi còn đang cắm đầu làm bác đã đi chơi gái rồi à",
         "Bác ko đi à sao còn ở đây thế",
-        "https://i.ibb.co/KrGY6n3/review-of-h-saoke-for-re-up-angela-phuong-trinh-nu-hoang-cosplay-massage-fuck-3159348-original.jpg",
+
         "Đụ lút cán luôn phê lòi nhỉ 🤣",
         ],
         },
@@ -1909,11 +1913,13 @@ const characters = [
                 avatar: "https://i.ibb.co/PYd3Gf3/65965425-484218999000145-7695834040057724928-n.jpg",
                 messages: [
                     "Chắc phải chọn lựa kĩ mới chơi được",
-                    "https://i.ibb.co/5WwmC9V/photo-30-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/SfFcNJ9/photo-31-2024-10-23-11-52-15.jpg",
+    
+
                     "Mấy ôg nhanh thế vừa vào đã húp mất rồi",
         "Nắc cho vậy mak bảo k sướng nữa thì...",
-        "https://i.ibb.co/k1mfzzG/review-of-vu-nguyen-anh-quan-for-reup-tieu-vy-xinh-dam-ngoan-2711519-original.jpg",
+        "https://i.ibb.co/dQmPnbQ/photo-2024-08-13-11-43-14.jpg",
+"https://i.ibb.co/SBwQgc9/photo-2024-08-13-19-20-43.jpg",
+"https://i.ibb.co/9rYh308/photo-2024-08-14-11-34-17.jpg",
         "Nhìn nứng cac thế nhỉ tôi mà đc như bác chắc tôi đụ cho bê lồn chạy",
         "Chịu khó đi nhiều nhiều là biết e nào ngon thôi",
         "Ngon nên mới phải thử trc chứ",
@@ -1925,11 +1931,12 @@ const characters = [
                 messages: [
                     "Chơi thử rồi cảm giác chơi cũng ok",
                     "Chơi kiểu này vẫn chưa đủ",
-                    "https://i.ibb.co/tZLZbCN/review-of-vung-trom-for-reup-tieu-vy-xinh-dam-ngoan-2831885-original.jpg",
+                   
                     "Lò mò đi đụ sớm vậy tới lắm r à 🤣",
         "Cu bác vừa dài vừa to bảo sao e ấy k rên cho được",
-        "https://i.ibb.co/dQ5D2GM/photo-31-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/bJ7btzF/photo-32-2024-10-23-11-51-38.jpg",
+        "https://i.ibb.co/jMrXBDF/photo-2024-08-14-17-09-37.jpg",
+"https://i.ibb.co/F7CVq6j/photo-2024-08-15-11-38-36.jpg",
+"https://i.ibb.co/27P0WN2/photo-2024-08-15-17-53-21.jpg",
         "Ai đầu tư tiền để tôi đi check cho",
         "Tranh thủ book lẹ đi k hết đào đấy bạn nhé kk",
                 ],
@@ -1940,27 +1947,28 @@ const characters = [
                 messages: [
         "anh em ngồi tâm sự",
         "Mỗi lần tụ tập ăn uống đều có thêm đồ ăn ngon",
-        "https://i.ibb.co/yXxbpVc/photo-32-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/syw8M2x/photo-33-2024-10-23-11-52-15.jpg",
+        "https://i.ibb.co/YNmML1b/photo-2024-08-16-17-25-14.jpg",
+"https://i.ibb.co/Xzj6KYT/photo-2024-08-20-12-15-40.jpg",
+"https://i.ibb.co/8xxBdcd/photo-2024-08-20-17-20-57.jpg",
         "Có thêm bạn hiền, chỗ ngồi nhậu nhẹt càng vui",
         "Cảm giác không thoải mái khi ở cùng bạn có người yêu kk",
         "Nhìn người đẹp cảm giác như diễn viên nước ngoài",
-        "https://i.ibb.co/C987LV2/photo-84-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/cYF3WLM/photo-85-2024-10-23-11-22-02.jpg",
+
         "Nét quá bác ơi mặt này chắc xinh lắm",
                 ],
             },
             {
                 name: "ĐôngQuang",
-                avatar: "https://i.ibb.co/2vwZvf5/82220736-1079023835772513-6462290643480739840-n.jpg",
+                avatar: "https://i.ibb.co/FsNFpSL/324188524-824327061970840-5098096353644933396-n.jpg",
                 messages: [
                 "Đang lên lịch tối nay book 1 e xinh tươi vú hồng",
         "Lồn hồng mới khó chứ vú hồng bt mà",
-        "https://i.ibb.co/DRd6F1P/photo-34-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/8zV2FzQ/photo-35-2024-10-23-11-52-15.jpg",
+        "https://i.ibb.co/mNfCFK0/photo-2024-08-20-19-13-00.jpg",
+"https://i.ibb.co/fNJnFKr/photo-2024-08-20-20-30-16.jpg",
+"https://i.ibb.co/7tnx2hD/photo-2024-08-21-11-44-36.jpg",
         "Mấy bác đụ nhiệt tình quá khách sạn họ thích lắm",
         "Nhậu đê các ông say vào mới hứng chơi gái đuoc",
-        "https://i.ibb.co/d5XkbGc/review-of-dai-gia-phuong-nam-for-reup-tieu-vy-xinh-dam-ngoan-2629009-original.jpg",
+
         "Tôi thích kiểu chơi này hơn",
                 ],
             },
@@ -1971,13 +1979,13 @@ const characters = [
                     "Chơi kiểu này chắc cũng ổn",
                     "Mấy em này có vẻ vừa phải",
                     "Chơi kiểu này chưa thử bao giờ",
-                    "https://i.ibb.co/xDfnDcm/review-of-tran-le-cong-for-reup-tieu-vy-xinh-dam-ngoan-2856816-original.jpg",
+                    "https://i.ibb.co/br3R7Wj/photo-2024-08-21-12-06-20.jpg",
+"https://i.ibb.co/7v7VQRb/photo-2024-08-21-12-20-11.jpg",
+"https://i.ibb.co/HgXWwRY/photo-2024-08-21-18-28-05.jpg",
         "Chơi trong bồn tắm, cảm giác tung tóe nước thú vị",
         "Đổi không khí ra ban công cũng có cảm giác lạ",
         "Có người nhắn tin bảo đặt hẹn, hơi nổi da gà",
-        "https://i.ibb.co/x1ccJNy/photo-75-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/Xt1rVM5/photo-75-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/ZcQKwg2/photo-76-2024-10-23-11-51-38.jpg",
+
         "Đồng ý tham gia cho vui",
         ],
         },
@@ -2004,9 +2012,11 @@ const characters = [
                     "Các em nó chơi có vẻ khéo léo",
                     "Đang ngồi hóng mấy ông khoe gái đít bự ăn cơm cho dễ nuốt 😁",
         "Cũng chỉ đụ thôi chứ gì mà màu mè hhh",
-        "https://i.ibb.co/Sy32Kv0/review-of-ga-dau-troc-for-reup-tieu-vy-xinh-dam-ngoan-2717315-original.jpg",
+        "https://i.ibb.co/JqqvtbK/photo-2024-08-21-20-20-48.jpg",
+"https://i.ibb.co/QrfFGkz/photo-2024-08-22-12-04-09.jpg",
+"https://i.ibb.co/Kz93Hf9/photo-2024-08-22-13-04-12.jpg",
         "Giờ này dc húp hàu rồi sướng thế",
-        "https://i.ibb.co/qCfxVyM/review-of-sa-de-for-reup-eimi-fukada-body-goi-cam-service-chu-dao-3081515-original.jpg",
+
         "đc nắc em này sướng gì bằng nữa",
         "Hàng ngon thế vú đẹp vl thật",
                 ],
@@ -2017,11 +2027,13 @@ const characters = [
                 messages: [
                 "Bú luôn chúc bác vui vẻ nhé",
         "Tôi giờ vẫn chưa lựa đuọc e nào thấy e nào cũng ngon",
-        "https://i.ibb.co/bgh2gck/photo-35-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/m4PYmxp/photo-36-2024-10-23-11-52-15.jpg",
+
+        "https://i.ibb.co/L01b0x6/photo-2024-08-22-17-18-55.jpg",
+"https://i.ibb.co/JdFhQLS/photo-2024-08-23-11-46-30.jpg",
+"https://i.ibb.co/0KzdjP0/photo-2024-08-23-12-14-12.jpg",
         "Mấy ông có thể đi suốt ngày suốt đêm k hết tiền ak",
         "Chỉ sợ k có sức mà đi thôi chứ tháng 5 6 lần vẫn dư sức",
-        "https://i.ibb.co/SV88J2T/review-of-dau-si-la-ma-for-reup-tieu-vy-xinh-dam-ngoan-3258117-original.jpg",
+
         "Có ông nào đi chơi nhiều quá giờ hết ngổng nổi ko",
         "Vkl bác dùng thuốc tăng cường sinh lý đi",
                 ],
@@ -2033,11 +2045,13 @@ const characters = [
                 messages: [
                     "Bên này ok không các bác",
                     "Ai đã book mấy bé bên này chưa",
-                    "https://i.ibb.co/rMh7PKc/review-of-jo-pang-for-reup-eimi-fukada-body-goi-cam-service-chu-dao-3152556-original.jpg",
+
                     "Tôi đang tìm phòng thoải mái ai biết chỗ nào không",
                     "Chỗ mình có phòng đẹp lắm các bác có muốn thử không",
-                    "https://i.ibb.co/PYGCZ0C/photo-36-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/HDrJ7wf/photo-37-2024-10-23-11-52-30.jpg",
+                    "https://i.ibb.co/y6Qq4LS/photo-2024-08-23-17-22-12.jpg",
+"https://i.ibb.co/H2QGGKZ/photo-2024-08-23-20-09-52.jpg",
+"https://i.ibb.co/yB1SK9q/photo-2024-08-24-11-43-40.jpg",
+
                     "Liên hệ ngay nếu cần phòng gấp mình sẽ giúp",
                 ],
             },
@@ -2047,11 +2061,13 @@ const characters = [
                 messages: [
                     "Có em nào rảnh không bên này còn phòng không các bác",
                     "Tôi đang muốn book phòng ai biết chỗ nào tốt không",
-                    "https://i.ibb.co/d40CFMJ/review-of-jo-pang-for-reup-eimi-fukada-body-goi-cam-service-chu-dao-3152555-original.jpg",
+                   
                     "Ai đã trải nghiệm bên này rồi cho tôi xin lời khuyên",
                     "Bên này có mấy bé xinh ai thử chưa",
-                    "https://i.ibb.co/GR2ZWSM/photo-38-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/R0wDbK2/photo-38-2024-10-23-11-52-15.jpg",
+                    "https://i.ibb.co/fHQg4kL/photo-2024-08-24-12-50-36.jpg",
+"https://i.ibb.co/2tRwbrw/photo-2024-08-24-17-16-19.jpg",
+"https://i.ibb.co/brygkRX/photo-2024-08-24-17-16-20.jpg",
+
                     "Chỗ này đúng chuẩn bác nào cần đặt thì báo mình",
                 ],
             },
@@ -2062,14 +2078,13 @@ const characters = [
                 "Có cụ nào từng gọi 2 em 1 lúc đi chơi chưa",
         "Hôm nào setup kèo 2 thằng gọi 2 con đi chơi đổi ca nhỉ. hay gọi vào 1 phòng chơi chung",
         "Đụ má chơi kiểu này hay này",
-        "https://i.ibb.co/pQdcnZJ/rau-sach-be-bong-face-xinh-hang-ngon-nguc-dep-mong-to-3082477-original.jpg",
-"https://i.ibb.co/YPHBH9p/review-of-phich-thu-for-reup-thuy-cherry-nhan-sac-diem-le-than-hinh-sexy-me-hoac-2938628-original.jpg",
-"https://i.ibb.co/mNm6fH7/review-of-long-dep-trai-1990-for-reup-thuy-cherry-nhan-sac-diem-le-than-hinh-sexy-me-hoac-2914807-or.jpg",
+        "https://i.ibb.co/wcByz6q/photo-2024-08-24-17-16-23.jpg",
+"https://i.ibb.co/kgXYK3d/photo-2024-08-24-18-38-15.jpg",
+"https://i.ibb.co/WysswQM/photo-2024-08-25-17-53-01.jpg",
         "Đi chơi cho biết chứ cũng mất tiền chơi gái phải thử cái mới các cụ à",
         "Nào mấy bố đi quay video cho thẩm cái nhé",
         "Tranh thủ đụ đi mai phải đi làm r",
-        "https://i.ibb.co/WGs8pVb/photo-85-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/j8vfvgZ/photo-86-2024-10-23-11-22-02.jpg",
+
         "Nhìn cũng thèm lắm mà mới đi hôm qua k lẽ đi nữa",
         "Tôi nhập cuộc trước đây mấy cụ hưởng thụ sau nhé đang hứng 😝",
                 ],
@@ -2081,7 +2096,9 @@ const characters = [
                 "Mấy ông né né em ghệ của tôi ra nhé k tôi xót lắm",
         "Em nào đụ hết",
         "Vkl bác thật nói thế mất tinh cam qua",
-"https://i.ibb.co/5vJdDBW/review-of-thanh-bui-tien-for-reup-tieu-linh-2k4-xinh-tuoi-dang-nuot-na-vu-dep-bym-non-to-3203402-ori.jpg",
+        "https://i.ibb.co/9wjgvTs/photo-2024-08-25-18-17-42.jpg",
+"https://i.ibb.co/gVSydqc/photo-2024-08-26-14-41-50.jpg",
+"https://i.ibb.co/kgXYK3d/photo-2024-08-24-18-38-15.jpg",
         "Đụ bừa đi quan tâm gì ghệ này ghệ nọ 😆",
         "Chơi gái nhiều quá giờ phải ăn cơm vs trứng này",
         "Còn trứng để ăn là hp đấy",
@@ -2093,13 +2110,12 @@ const characters = [
                 messages: [
                 "Phải nói là mấy ẻm khẩu dâm đụ hứng vcc",
         "Sợ gặp mấy em nằm như cục đá đéo có cảm hứng gì đúng k bác",
-        "https://i.ibb.co/s1kWhJ9/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321646.jpg",
-"https://i.ibb.co/xYWkm7Q/review-of-lan-tan-chon-buoi-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-321645.jpg",
-"https://i.ibb.co/GcQtzym/review-of-cu17cm-for-be-hani-2k-cute-xinh-xan-vu-dep-body-nong-bong-lan-dau-di-lam-3263673-original.jpg",
+        "https://i.ibb.co/bgzP2rk/photo-2024-08-26-17-50-44.jpg",
+"https://i.ibb.co/dWLrqr8/photo-2024-08-27-19-24-51.jpg",
+"https://i.ibb.co/9gzccXd/photo-2024-08-28-12-44-38.jpg",
         "Tôi là tôi khoái mấy bé rên rên kiểu vậy đó",
         "Tui thì chỉ cần là con gái là được 😂",
-        "https://i.ibb.co/XxG4yxw/photo-86-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/QKQCMwh/photo-87-2024-10-23-11-52-15.jpg",
+
         "Nay mấy bác rãnh lắm hay sao book mấy e xinh xinh kín lịch hết vậy nhỉ",
 
                 ],
@@ -2162,11 +2178,12 @@ const characters = [
                 messages: [
                 "Đúng nhờ địt che hết cả lồn hhh",
         "Gặp tôi phải 3 cái chơi mới thấm dc",
-        "https://i.ibb.co/vDrbVH0/review-of-dam-dam-cong-tu-for-reup-huyen-my-nhe-nhang-tinh-cam-yeu-chieu-nhu-nguoi-yeu-3272192-origi.jpg",
+        
         "3 cái mỗi cái 5 phút ai chả chơi được 🤣🤣",
         "Làm gì tệ thế dc ít cũng 10p chứ kk",
-        "https://i.ibb.co/5RZs9QW/review-of-dark-for-reup-huyen-my-nhe-nhang-tinh-cam-yeu-chieu-nhu-nguoi-yeu-3220611-original.jpg",
-"https://i.ibb.co/KFFGQjT/review-of-cuong-hoang-dang-vinh-for-reup-huyen-my-nhe-nhang-tinh-cam-yeu-chieu-nhu-nguoi-yeu-3228232.jpg",
+        "https://i.ibb.co/SfNhnJp/photo-2024-08-30-14-59-50.jpg",
+"https://i.ibb.co/0hPVfn2/photo-2024-08-30-18-31-10.jpg",
+"https://i.ibb.co/x3pkf1T/photo-2024-08-30-19-58-46.jpg",
         "Các bác ăn uống hết chưa ?",
         "Cả ngày bận bịu giờ mới vào đc",
         "Book e mô đi chơi chưa các ôg",
@@ -2178,12 +2195,13 @@ const characters = [
                 messages: [
                 "Say vào đừng book gái nữa nha b 😁",
         "Uống dc mấy lắm mà say",
-        "https://i.ibb.co/WBF1cmv/review-of-map-for-rau-sach-be-thao-nhi-non-to-de-thuong-mon-mon-tuoi-moi-lon-3242824-original.jpg",
-"https://i.ibb.co/Bzb4vWd/review-of-map-for-rau-sach-be-thao-nhi-non-to-de-thuong-mon-mon-tuoi-moi-lon-3242822-original.jpg",
+
         "Mấy e nhân viên đag chờ sẵn đấy đừng để mấy e thất vọng",
         "Ns thế ngta đánh giá tôi thì lm s",
-        "https://i.ibb.co/mS9Th4H/photo-66-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/drpJkD2/photo-66-2024-10-23-11-52-15.jpg",
+
+        "https://i.ibb.co/y62ZfVD/photo-2024-08-31-12-05-08.jpg",
+"https://i.ibb.co/5T5B0H7/photo-2024-08-31-12-51-46.jpg",
+"https://i.ibb.co/zHghLhL/photo-2024-08-31-14-08-28.jpg",
         "K địt thì thôi đã địt phải ngon mới vừa lòng",
         "Cho mình hài lòng chút với nào 😁",
         ]
@@ -2193,9 +2211,11 @@ const characters = [
                 avatar: "https://i.ibb.co/VpRxPtz/84800118-700943840309899-8909380622955315200-n.jpg",
                 messages: [
                 "Đc 3-4 lần ko được sờ cái là xong hả b",
-                "https://i.ibb.co/xjPDHDw/photo-40-2024-10-23-11-52-15.jpg",
+   
         "Nhanh lắm chắc định địt hết luôn giờ chắc còn đi",
-"https://i.ibb.co/S0jkb2t/review-of-lang-tu-for-rau-sach-be-lucie-hotteen-mau-anh-non-to-xinh-xan-3152565-original.jpg",
+        "https://i.ibb.co/jMtmyhN/photo-2024-08-31-19-07-27.jpg",
+"https://i.ibb.co/Bspg1wg/photo-2024-09-01-12-47-45.jpg",
+"https://i.ibb.co/q7cH2Fs/photo-2024-09-01-17-14-25.jpg",
         "Trc ngày nào đi là đi hết k cơm nước chi đg hả b",
         "Lần trước đi bị bỏ quên lâu wé kẹo ăn mà chứ",
                 ]
@@ -2206,8 +2226,12 @@ const characters = [
                 messages: [
                 "Diễn tả nghe nứng cặc thật đấy mấy ông ơi",
         "Anh e giờ này lâm trận hết cả rồi nhỉ 😆",
-        "https://i.ibb.co/60SbS0p/review-of-the-la-het-for-reup-minh-anh-mat-xinh-da-trang-body-boc-lua-3228179-original.jpg",
-"https://i.ibb.co/hc6ZZ9n/review-of-hao-for-reup-minh-anh-mat-xinh-da-trang-body-boc-lua-3235021-original.jpg",
+        "Quá đã ng ae ơi",
+"Đúng làm tình chuyên nghiệp",
+"https://i.ibb.co/Y7S79fv/photo-2024-09-02-15-10-08.jpg",
+"https://i.ibb.co/cgnyVPV/photo-2024-09-02-17-38-02.jpg",
+"https://i.ibb.co/hBDnfcQ/photo-2024-09-02-18-41-58.jpg",
+"Đi chơi mấy chỗ toàn nằm ngửa ra địt xong xách quần về chán vcl",
         "Còn tôi vs bác đây thây kk",
         "Mai đi làm rồi chơi bời chi giờ ni",
         "Sáng đi lm là chuyện của buổi sáng lo gì 🤣🤣",
@@ -2219,9 +2243,16 @@ const characters = [
                 messages: [
                 "Tiền bạc đâu mà ăn vs uống kk",
         "Hít lắm thế mà vẫn nuốt dc cơ à",
-        "https://i.ibb.co/QcbFmCm/photo-41-2024-10-23-11-51-38.jpg",
+
         "Chắc đồ ngon quá đó b 😆",
-        "https://i.ibb.co/dBFppLm/review-of-bungbu12-for-reup-hot-be-thao-vy-baby-nong-bong-xinh-dep-diu-dang-3235218-original.jpg",
+        "Mẹ đúng đàn bà nhìn nó còn mê chứ đùng nói đàn ông",
+"Đc bú như này thì ae cảm thấy sao",
+"https://i.ibb.co/BwsFbtx/photo-2024-09-03-19-19-07.jpg",
+"https://i.ibb.co/dQmPnbQ/photo-2024-08-13-11-43-14.jpg",
+"https://i.ibb.co/HChY5hH/photo-2024-09-04-13-09-27.jpg",
+"Lưỡi e nó chuyên nghiệp thế",
+"Liếm từ đầu đến chân luôn thế này mới sướg",
+"Mẹ đi chơi gái nó phải thế này mới đáng",
         "Nay húp dc em nào chưa vậy ae",
         "Nướng khoai sớm thế b",
                 ]
@@ -2232,22 +2263,106 @@ const characters = [
                 messages: [
                     "Nhiều ae chắc mê body e này lắm nhỉ em này bú quá chuyên nghiệp luôn",
                     "Đừng gạ gẫm nữa mấy em call mà mấy e cứ móc bướm cho xem sao chịu nổi",
-                    "https://i.ibb.co/sFgN3ff/photo-40-2024-10-23-11-52-30.jpg",
+                    "Má cho bú cặp này chắc bú cả ngày quá",
+"Đúng mê cặp đào này quá",
+"Má nó chứ đang làm thấy có hàng đẹp cũng phải lên ngóng cái",
+"Mẹ cha nó đẹp quá",
+"https://i.ibb.co/DKX8TWR/photo-2024-09-04-18-41-53.jpg",
+"https://i.ibb.co/nbdZ83g/photo-2024-09-05-18-36-53.jpg",
+"https://i.ibb.co/NnD5qKH/photo-2024-09-06-11-37-13.jpg",
+"Cặp đào mê hồn người luôn",
+"Đéo hiểu sao bé này bú đẹp thế k biết ăn cái j mà ngon đòn thế",
+"Bú đẹp thế này k biết lồn có đẹp k nhỉ",
                     "Mà bé này ở teku đấy ae nào gần thì nhanh test thử",
-                    "https://i.ibb.co/7Kqsbz8/20200403-205530-largejpg.jpg",
+                   
                     "Nhăn tin đặt bảo đặt bé an nhiên nhé bé này nc nôi ae khỏi phải chê đi",
                 ]
             },
             {
-                name: "Lehoangbaonam",
-                avatar: "https://i.ibb.co/q0tfwvZ/226491311-3103868136598014-9122348726549110625-n.jpg",
+              name: "Tony",
+                avatar: "https://i.ibb.co/Dgyz73Z/463897381-519135004377579-3402592342761139703-n.jpg",
                 messages: [
-                "Nhìn đã vãi loz vú múp thế",
-                    "Kiếm bé nào đi chat sex mấy ông ơi",
-                    "https://i.ibb.co/Gv4XS42/photo-43-2024-10-23-11-22-02.jpg",
-                    "Book mak đụ chat làm j cho nứng",
-                    "https://i.ibb.co/FhpMt3S/dh-naissance-friendly.jpg",
-                    "K phải móc đâu để a đến a đụ cho sướng em ơi",
+                "Looking at her, her tits are so big",
+"Find a girl to chat sex with, guys",
+"With a pussy this pink, many guys will die with her",
+"Delicious until the last bite",
+"Damn, how can there be such a beautiful girl",
+"The more I look, the more I love her",
+"https://i.ibb.co/0Jfwz9Z/photo-2024-09-06-11-57-25.jpg",
+"https://i.ibb.co/TWQ1VhJ/photo-2024-09-06-18-25-15.jpg",
+"https://i.ibb.co/2hLzNT0/photo-2024-09-08-12-51-27.jpg",
+"Guys, looking at this product, you must be drooling",
+"If you don't drool looking at this product, you're not a man",
+"Book me, why fuck and chat horny",
+
+"No need to hook, let me come and fuck you for fun, baby",
+                    ]
+            },
+            {
+              name: "Chiến 001",
+                avatar: "https://i.ibb.co/BGZTX1v/323433450-465609555779290-836575881702675525-n.jpg",
+                messages: [
+                "Dáng người đẹp hàng cũng ngon nữa😆",
+        "E này mà bú cu thì đúng sướng lắm đây",
+        "Mấy em gầy gầy này bú cặc giỏi mà đụ cũng sướng nữa",
+        "https://i.ibb.co/MSHYgN1/photo-2024-09-08-19-47-21.jpg",
+"https://i.ibb.co/87HFTwh/photo-2024-09-09-20-28-28.jpg",
+        "Em này mới đi hôm nọ thấy cũng ok nên rivew cho ae ấy mà",
+        "Call mấy e nó phải call ngay k nhiều ae call liên tục",
+                    ]
+            },
+            {
+              name: "David Toàn",
+                avatar: "https://i.ibb.co/18t7573/323332449-698698258301170-857975752184086386-n.jpg",
+                messages: [
+          
+                "Mẹ các bố kiếm gái đi chơi hay j thì nt cho nó đúng ng bố khỉ tự dung có thằng nt đến bảo book e đi chơi nổi da gà",
+                    "Bế e nó ra ban công chơi cho cảm giác lạ",
+                    "Đc đấy nhỉ chơi kiểu này tung tóe nc",
+                    "Chơi e nó trong bồn tắm cảm giác nó phê thì hết chỗ nói",
+                    "Má nó chứ gọi call mấy e tý mà các e nó bận quá",
+                    "https://i.ibb.co/PZNCxN3/photo-2024-09-14-15-02-36.jpg",
+"https://i.ibb.co/r3pfQKw/photo-2024-09-14-19-29-52.jpg",
+                    "Bác kết em ngon thế này đúng quá ok",
+                    ]
+            },
+            {
+              name: "Ok bây bê",
+                avatar: "https://i.ibb.co/sQsjqGS/440161127-7302557863186524-1534126207256352625-n.jpg",
+                messages: [
+                "T đi trước ae có tranh thủ nhanh đi k lại nứng cặc",
+"Sao bắt e nó nằm thế kia tội e nó ra",
+"Chuẩn bị lên thuyền chiến đấu nên anh để em nó nằm thư giãn",
+"Bú cho ké cái",
+"https://i.ibb.co/hVscfqW/photo-2024-09-15-13-36-14.jpg",
+"https://i.ibb.co/HxjFYVm/photo-2024-09-15-16-58-32.jpg",
+"Mấy em này nhìn dáng đã thật nhỉ",
+"Kiếm mấy e ng yêu như này mới đã",
+                    ]
+            },
+            {
+              name: "Cs ở Úc",
+                avatar: "https://i.ibb.co/FsNFpSL/324188524-824327061970840-5098096353644933396-n.jpg",
+                messages: [
+                "Giờ này ae đang nướng khoai hết r nhỉ",
+        "Dáng người đẹp hàng cũng ngon nữa😆",
+        "E này mà bú cu thì đúng sướng lắm đây",
+        "Mấy em gầy gầy này bú cặc giỏi mà đụ cũng sướng nữa",
+        "https://i.ibb.co/SBRhFVF/photo-2024-09-17-17-31-19.jpg",
+        "Em này mới đi hôm nọ thấy cũng ok nên rivew cho ae ấy mà",
+        "Call mấy e nó phải call ngay k nhiều ae call liên tục",
+                    ]
+            },
+            {
+                name: "Le toan",
+                avatar: "https://i.ibb.co/ScjCnwz/photo-2024-11-28-23-09-37.jpg",
+                messages: [
+              
+                "Chơi 1 em đã cứng mẹ giò rồi còn đâu mà có sức chơi mấy em 1 lúc hả b",
+                    "Xuất xong e nó bú mà k chịu nổi",
+                    "Má lên chọn mấy e mà thấy e nào cũng ngon",
+                    "Mấy e mái đây cắt tỉa lông lồn gọn gàng nhỉ",
+                    "Đéo như mấy quán hát với massa kia đéo biết làm tình j hết chơi chán vl",
                     ]
             },
             {
@@ -2266,11 +2381,16 @@ const characters = [
                 avatar: "https://i.ibb.co/TbB9FZP/241280385-2011849205642140-8610168309376988925-n.jpg",
                 messages: [
                 "Dễ thương thế k book thì phí",
-                "https://i.ibb.co/091Nsdr/photo-43-2024-10-23-11-52-15.jpg",
+            
                     "E nó đang nứng quá đấy bác",
-                    "https://i.ibb.co/CbgMhX5/glue-hotel.jpg",
+          
                     "Em móc thế hỏng hết hàng họ em ơi",
                     "Mấy bé hôm nay vắng khách nên nứng quá à",
+                    "Mây ae bú lồn các em nó đi chứ ngại j",
+"khổ quá ae à đi chơi đêm qua nay về đi chân run luôn",
+"Cuối tuần mà ít anh em lên chém gió tý nhỉ",
+"Chán quá tâm sự các em mà các em nó bận đi khách hết",
+"Mình nay có việc hk đi được thấy anh e đi mà thèm quá ",
                 ]
             },
             {
@@ -2278,11 +2398,11 @@ const characters = [
                 avatar: "https://i.ibb.co/54R9nZv/242726891-2058879164272477-4153675998582393962-n.jpg",
                 messages: [
                 "Mấy em hôm nay k ông nào chơi chắc lắm nc lắm đây",
-                "https://i.ibb.co/HgRhj8D/photo-43-2024-10-23-11-52-30.jpg",
+         
                     "Các em đợi a tối a đến a chiều mấy em cho bớt nứng",
                     "Chơi ngày đầu tuần này là mấy e nó nhiều nc hơn",
                     "Ông bạn cái j cũng biết nhỉ",
-                    "https://i.ibb.co/m64NW1j/caption.jpg",
+         
                     "Nói gì thì nói chứ cái nc lồn này ae nào muốn bú k",
                     "E này nc dâm thủy thì đúng nhiều luôn vừa động vào cái đã chảy nc rồi",
                     "Cũng k ăn thua ngày làm ngày nghỉ chỉ đủ ăn thôi",
@@ -2294,21 +2414,14 @@ const characters = [
                 avatar: "https://i.ibb.co/NCk7t5P/272220237-2110103892483337-2781115009146832995-n.jpg",
                 messages: [
                 "Giờ này ae đang nướng khoai hết r nhỉ",
-                "https://i.ibb.co/fYY996j/photo-44-2024-10-23-11-51-38.jpg",
+          
         "Chắc k đợi bác nhắc đâu 😆",
         "Tôi tăng 1 chưa xong mà ae đã tăng 2 tăng 3 rồi ak",
         "Thôi xong .. combo nay xong ngồi bắn cá thì hết bài",
         "Mất ngủ. Đến sáng mới tỉnh. Vì. Hít quá. Sâu",
         "Cuối cùng cũng dc húp 😁",
-        "https://i.ibb.co/x5b94BF/glue-hotel-1.jpg",
         "Giờ này ae đang nướng khoai hết r nhỉ",
-        "Dáng người đẹp hàng cũng ngon nữa😆",
-        "E này mà bú cu thì đúng sướng lắm đây",
-        "Mấy em gầy gầy này bú cặc giỏi mà đụ cũng sướng nữa",
-        "https://i.ibb.co/7VHyZZS/photo-64-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/y4sDqq2/photo-65-2024-10-23-11-52-15.jpg",
-        "Em này mới đi hôm nọ thấy cũng ok nên rivew cho ae ấy mà",
-        "Call mấy e nó phải call ngay k nhiều ae call liên tục",
+     
     
                 ]
             },
@@ -2334,26 +2447,31 @@ const characters = [
                 messages: [
                 "Thế sao bác ko xơi mak còn ở đây 😆",
         "Đơn giản thôi. Hết tiền 😐😐",
-        "https://i.ibb.co/pjSHRhc/photo-44-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/WyBRncv/photo-45-2024-10-23-11-22-02.jpg",
+
         "Vú này kh ngon thì vú mô ngon nữa",
         "Đưa tôi bú thử biết liền",
         "Địt thì địt đi ngon hay dở bọn tôi có ăn dc đâu vl 😐",
+        "Tầm này có mà nhiều bố đi bú liếm rồi còn đâu mà lên đây chém",
+"Thời gian đi chơi  các e nên hôm nay ae ít lên chém rồi",
+"Có em nào rảnh k nhỉ a call tý cho vui",
+"Call mấy em nó vẫn call ma t vừa gọi nói chuyện xong",
+
                 ]
             },
             {
                 name: "khaiminh",
-                avatar: "https://i.ibb.co/g41VJkW/272882107-1743526929177041-8680476091434594245-n.jpg",
+                avatar: "https://i.ibb.co/85vkyyB/465450789-28285079087757578-6736121979036951049-n.jpg",
                 messages: [
                 "Ae đi cày mà lấy tiền đi đụ đĩ",
                     "Dễ thương lắm bé ơi",
                     "Mấy bé chụp hình dễ thương mà ở ngoài còn dễ thương hơn",
-                    "https://i.ibb.co/SvrxbV1/photo-45-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/hCtwGhB/photo-46-2024-10-23-11-52-15.jpg",
+               
                     "1 lúc mấy e thế kia có mà ngại chết sức đâu mà địt cho nổi",
                     "Cuộc sống đại gia mới dám chơi kiểu này chứ đi cày bục mặt tiền đâu mà chơi 1 lúc mấy e",
                     "Chơi để điện ngắm các em cho sướng chứ tắt làm j ông",
                     "Thôi ae chơi bình dân 1 mình 1 em thôi chơi gì mà mình 3 em có mà đi k nổi",
+                    "Mấy bé nó cũng chịu khó chăm chút lắm đấy",
+
                 ]
             },
             {
@@ -2363,8 +2481,7 @@ const characters = [
                 "Làm 2 nháy lô thì dữ tiền đi nên k thành vấn đề",
                     "Kaka nhiều lúc ae phải thử cảm giác lạ chứ sống mà k thử sau già hối hận đấy",
                     "Mệt mỏi j có gái nằm đợi sẵn thế kia mỏi đến mấy cũng đè ra đụ cái",
-                    "https://i.ibb.co/ZBL16zc/photo-47-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/F8htkCL/photo-48-2024-10-23-11-22-02.jpg",
+             
                     "Quá mệt mỏi rồi k biết nên làm gì tiếp đây",
                     "Mấy bác gọi mấy e nó đến phục vụ đi tầm này là giờ đẹp rồi",
                     "Bú liếm mà mặt e nó nhìn phê phê",
@@ -2379,16 +2496,13 @@ const characters = [
                     "Có ae ở cùng có ng yêu đôi lúc khó chịu phết nhỉ",
                     "Ae nó có hàng đưa về mừng cho nó chứ",
                     "Đồ ngon đấy có bạn hiền gái đẹp nữa là ok",
-                    "https://i.ibb.co/47jG43K/photo-49-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/KNDSTNF/photo-50-2024-10-23-11-52-15.jpg",
-                    "Mẹ các bố kiếm gái đi chơi hay j thì nt cho nó đúng ng bố khỉ tự dung có thằng nt đến bảo book e đi chơi nổi da gà",
-                    "Bế e nó ra ban công chơi cho cảm giác lạ",
-                    "Đc đấy nhỉ chơi kiểu này tung tóe nc",
-                    "Chơi e nó trong bồn tắm cảm giác nó phê thì hết chỗ nói",
-                    "Má nó chứ gọi call mấy e tý mà các e nó bận quá",
-                    "https://i.ibb.co/FbGD5wD/photo-62-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/Dg19W52/photo-62-2024-10-23-11-52-15.jpg",
-                    "Bác kết em ngon thế này đúng quá ok",
+                    "Mẹ gái bây giờ mà k chăm chút sao có khách hả bác",
+"Chỉ muốn ngắm mãi",
+"Mẹ mê mấy e nó thì cưới lấy 1 em về làm vk thôi",
+"Kiếm đc mấy e này sáu làm vk đã ngon",
+"Các bố nói chuyẹn tào lao",
+"Lấy đc gái ở đây về làm vk",
+         
                     ] 
             },
             {
@@ -2411,25 +2525,18 @@ const characters = [
                     "Thiếu j em ngon đâu bác",
                     "Có mấy em đang hot trên web kìa ae lên đặt lịch ngay kẻu lại hết phần",
                     "E nó bảo a ơi bắn vào mồm e nhé",
-                    "https://i.ibb.co/GPhbK9W/photo-51-2024-10-23-11-51-38.jpg",
-"https://i.ibb.co/bgh2gck/photo-35-2024-10-23-11-52-30.jpg",
-                    "Chơi 1 em đã cứng mẹ giò rồi còn đâu mà có sức chơi mấy em 1 lúc hả b",
-                    "Xuất xong e nó bú mà k chịu nổi",
-                    "Má lên chọn mấy e mà thấy e nào cũng ngon",
-                    "Mấy e mái đây cắt tỉa lông lồn gọn gàng nhỉ",
-                    "Đéo như mấy quán hát với massa kia đéo biết làm tình j hết chơi chán vl",
+
                     ]
             },
             {
                 name: "datlanday",
-                avatar: "https://i.ibb.co/z7xGM2z/301855321-467074835292540-5086007929985430333-n.jpg",
+                avatar: "https://i.ibb.co/GRVCzmn/93964409-876737382831465-576211549710974976-n.jpg",
                 messages: [
                 "Mà đéo có gái là con cu nó hỏng",
         "Mông má nhìn đúng tiêu chuẩn rồi",
-        "https://i.ibb.co/55PGJHx/photo-52-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/D1b6Ngv/photo-53-2024-10-23-11-22-02.jpg",
+
         "Ae thấy e hàng này dáng nuột k",
-        "https://i.ibb.co/sHTf8QH/travelodge-dongadaemun.jpg",
+
         "Đã đứng kiểu nMà chơi mấy chị lớn tuổi có khả năng kỹ năng làm tình thì thôi rồi nhỉ hôm nào thử phát lái máy bay xem sao kkkk",
         ]
             },
@@ -2439,25 +2546,258 @@ const characters = [
                 messages: [
                 "Mấy ae lên web đặt lịch nay t thấy có mấy bé nhìn ngon đòn lắm",
         "Đúng k có gái là con cu đéo biết xả ở đâu",
-        "https://i.ibb.co/ncjgPsG/photo-39-2024-10-23-11-52-30.jpg",
-"https://i.ibb.co/YPc3hBG/photo-56-2024-10-23-11-22-02.jpg",
         "Vú này kh ngon thì vú mô ngon nữa",
-        "https://i.ibb.co/7GjkJcg/travelodge-dongadaemun-1.jpg",
+       
         "Thi thoảng làm tý cho nó thông thái cái đầu óc",
         "Đặt lịch mấy e đó khó lắm toàn phải đặt trước 2 3 ngày thôi",
                 ]
             },
             {
+                name: "Michael Võ",
+                avatar: "https://i.ibb.co/Xjh8HHn/462261911-2888369187998955-2310973258146286833-n.jpg",
+                messages: [
+                "Mấy bé càng nhìn càng cuốn",
+"Boss có video mới k gửi cho mình thẩm tý nhỉ",
+"Trên ứng dụng có video đó",
+"Lên đó mà xem",
+"Mới cập nhật mấy bộ phim hay lắm ae lên xem đi",
+"Vừa xem có mấy bộ clip đã thật",
+                ]
+            },
+            {
+              name: "John Nguyễn",
+                avatar: "https://i.ibb.co/0fVzYyW/186949004-536609740916120-5281768654044084900-n.jpg",
+                messages: [
+                "Mấy ae đi bú liếm hết các em sao mà mấy em chát sex nay cũng bận hết rồi",
+"Đi ngủ đi các bố giờ này còn thưc mà gái gú nữa",
+"Mấy bé xinh cứ đợi anh cuối tuần a sẽ gọi mấy em đi đụ cho sướng",
+"Chưa sáng ra đã nứng cặc rồi à ng ae",
+"Mấy bé nó nứng lồn nên phải an ủi các bé",
+"Sao  vú hồng hào vậy bé nhìn mà chảy dãi",
+"Công nhận mẹ nhìn hồng thật đẹp nữa",
+                ]
+            },
+            {
+              name: "David Long",
+                avatar: "https://i.ibb.co/cwkTf6v/334600567-605460174296773-8603073031472028019-n.jpg",
+                messages: [
+                "Mấy bố xem nhiều sex quá à mẹ chơi gái sướng tùy từng đứa thôi",
+"Mỗi đứa thích 1 kiểu",
+"Cứ đè ra giường mà địt là sướng nhất chứ kiểu đéo j mấy bố cứ vẽ",
+"Chuẩn bị thôi các chiến hữu",
+"Đè ra húp thôi bác",
+"Bú lồn thôi chứ ngại j nữa",
+"Nhìn mấy em này chỉ muốn đè ra bú thôi",
+"Mẹ kiếp nay mới cập nhật video mới lên ứng dụng nằm xem mãi k hết",
+"Xem mấy e nó rên nghe tê hết ng",
+                ]
+            },
+            {
+              name: "Peter Quân",
+                avatar: "https://i.ibb.co/1K96BmN/photo-2024-11-28-23-10-21.jpg",
+                messages: [
+                "Ôg mà chơi kiểu này các e nó k quên ôg đc luôn",
+"Chơi gái mà để các em nó k quên là cũng ghê đấy",
+"Mấy ae có kinh nghiệm chơi gái nhiều cho biết chơi kiểu nào là sướng nhất",
+"Chơi kiểu úp thì bác à",
+"Sướng nhất t là t khoái kiểu đó",
+"úp thìa chỉ có bú lồn thôi chứ chơi thì bế lên chơi là đã nhất",
+"Em nào ng nhỏ nhỏ bế gác 2 chân lên chơi thì đúng hết bài",
+"Chơi kiểu chó là đút sâu nhất sướng nhất",
+                ]
+            },
+            {
+              name: "Cân 2 1 lúc",
+                avatar: "https://i.ibb.co/n8fdJ2r/photo-2024-11-28-23-11-31.jpg",
+                messages: [
+                "Chơi kiểu này mấy e nó sướng rên to vl",
+"Nhìn ông đụ kìa dã man thật e nó cứng đơ ng",
+"Chơi kiểu này chym dài chơi các em nó mới thốn",
+"T mà đụ mấy em thì chỉ có bê lồn chạy quang phòng thôi",
+"Mẹ địt e nó nhớ đời luôn",
+"Người ae chơi ác vậy",
+"Nhìn ôg chơi mà nghiến ngấu",
+"Chơi kiểu này hay đấy hôm nào cũng thử phát chứ chưa chơi bao giờ",
+"Thử đi ng ae mấy e nó sướng tê lồn luôn",
+                ]
+            },
+            {
+              name: "Nhà đầy tiền",
+                avatar: "https://i.ibb.co/nb58QbP/photo-2024-11-28-23-12-34.jpg",
+                messages: [
+                "T khoái xem phim việt chứ phim nhật với châu âu xem toàn phải đọc chữ",
+"Xem phim việt nghe mấy e nó khẩu dâm sướng",
+"Xem của nhật nó mới nhiều kỹ năng mà học",
+"Mấy ae xem nhiều có học đc chiêu nào để đi đụ mấy e nó phê k",
+"Học đc nhiều chứ ng ae",
+"Xem sex nhiều đi chơi gái có kinh nghiệm hản ra",
+"Kỹ năng bú lồn hả bác",
+"Xem nhiều học đc mấy chiêu bú lồn để làm các em nó sướng hơn chứ có mẹ j",
+"Dã thế này em nó rên ư ử",
+                ]
+            },
+            {
+                name: "Bố già",
+                avatar: "https://i.ibb.co/nRQ2vRd/photo-2024-11-28-23-13-25.jpg",
+                messages: [
+                "T thích mấy em mình dây làm tình mới sướng chứ mấy e mập thịt ko chán lắm ",
+"Mõi người sở thích ai hợp món nào thì húp món đó thôi ae ak ",
+"Hi vậy mới có chuyện anh e tán dốc ",
+"Mà anh e thích chơi gái kểu nào thế có kểu nào mà chơi sướng ko tham khảo coi nào ",
+"Chơi kểu chó đi kểu đó sướng đó chổng mông lên là đẩy ",
+"Tôi thích chơi kểu thằn lằn đu kẹt cửa ",
+"Vãi chè chơi kểu gì mà lạ thế người anh e 😜",
+                ]
+            },
+            {
+                name: "Andrew Trần",
+                avatar: "https://i.ibb.co/zNjTd62/192819380-138529991670803-1553214975721851111-n.jpg",
+                messages: [
+                "Cuối tuần các em bận hay sao mà k có em nào call với anh tý cho đỡ buồn",
+"Mẹ kiếp qua đi chơi đồ gọi em mối quen ssi xả nó lại đến tháng đen thật ae ạ",
+"Vl thế thì sui cả tháng rồi",
+"Đen ông bạn à kkkk",
+"Đồ đạc mà k đc sả là đen rồi đó",
+"Các em nó đang nứng hết rồi ae tranh thủ gọi đi chơi đi",
+"Tôi thích mấy e mũm mĩm tí chơi mới đã nắt kêu óc ách kkkkk",
+"Vl bác thật đấy gu gì mà mặn thế ",
+"Kk gu tôi vậy đó chịu ko chịu cũng chịu 😝",
+                ]
+            },
+            {
+                name: "Maroda",
+                avatar: "https://i.ibb.co/0yGxYWy/449519496-1538659880394259-7581042262964536571-n.jpg",
+                messages: [
+                "Nhanh lắm ông bạn tôi đi rồi ",
+"Kkk có tiền là bé nó đến ngay thôi các bố ",
+"Tôi thấy cũng lạ có mấy bố không tiền mà đòi hít lol thơm ",
+"Đụ mạ chán mấy thanh niên thật ",
+"T trước kết 1 em đặt 2 ngày bé xuống tận chỗ tôi luôn",
+"A dù đến tận 2 ngày ak lâu thế ",
+"Không tại có việc hẹn em nó 2 ngày đó chứ ",
+"Mấy em ở gần cũng ngon mà đâu nhất thiết phải chọn e ở xa cho mệt hả các bố",
+"Tôi thấy em nào cũng múp ngọt nước hết haha",
+                ]
+            },
+            {
+                name: "huyhuy11",
+                avatar: "https://i.ibb.co/HgJ01b3/photo-2024-11-28-23-07-24.jpg",
+                messages: [
+                "Gái gú nhiều phải tẩm bổ cho bản thân",
+"Đúng gái gú nhiều phải tẩm bổ cho bản thân",
+"Ngon qua ông bạn",
+"Cứ phải ăn uống cho ấm vào thân là đúng rồi",
+"Cứ phải say  xưa đã rồi mới nghĩ đến gái dú đc bác à",
+"Làm vài lon bia nữa ae ngồi tâm sự lai zai ngày này quá ok",
+"Mấy nhỏ ng dây dây này bê 2 chân lên mà đập thì thôi khỏi nói luôn",
+"Tôi thích chơi some cùng lúc 2 bé chơi mới sướng ",
+"Ý kiến hay đó còn gì bằng nữa ",
+"Mà ko biết đặt lịch e nó có đến nhanh ko nữa",
+                ]
+            },
+            {
+                name: "Thế toàn",
+                avatar: "https://i.ibb.co/9sRyvrZ/photo-2024-11-28-23-09-12.jpg",
+                messages: [
+                "Mấy bố đi chơi cứ quay thế này đéo ông nào ở nhà chịu đc lại khổ con cu thôi",
+"Ae tối nay có đi bú liếm j k nhỉ",
+"Mấy e nó nứng gọi chát sex mà móc nc lồn bắn tung tóe",
+"Mẹ ngày nào cũng tâm sự đêm khuya thôi",
+"Đẹp qua ae nay triển khai đụ chưa nay cuối tuần rồi lụm thôi ",
+"Mẹ tháng đi 2 3 lần thôi chứ đi nhiều sức đâu",
+"Đi làm mà cứ ngắm gái xinh cũng k có thấy mệt",
+"Mấy bác ăn uống vào có sức mà chơi ",
+                ]
+            },
+            {
+                name: "Đình anh",
+                avatar: "https://i.ibb.co/4dXjQd8/429677885-3662381424017977-2141145838791282278-n.jpg",
+                messages: [
+                "Mấy em ở đây các ông yên tâm đi",
+"T đi cũng nhiều e em nào làm tình cũng ok hết",
+"Tối bé nhé đợi anh sẽ đến làm em lên đỉnh",
+"Đi với mấy e này chắc nghiện con mẹ nó mất",
+"Làm tình thế này mới gọi là làm nghề có tâm kaka",
+"Đó biết e nó đag làm j",
+"E này hàng hơi lép đấy",
+"Ngon đòn nhỉ",
+                ]
+            },
+            {
+                name: "Anh Hai",
+                avatar: "https://i.ibb.co/r63gTjH/414616464-122106876614157655-1761956163174041681-n.jpg",
+                messages: [
+                "T đi trước ae có tranh thủ nhanh đi k lại nứng cặc",
+"Sao bắt e nó nằm thế kia tội e nó ra",
+"Chuẩn bị lên thuyền chiến đấu nên anh để em nó nằm thư giãn",
+"Bú cho ké cái",
+"Mấy em này nhìn dáng đã thật nhỉ",
+                ]
+            },
+            {
                 name: "Phucquy",
-                avatar: "https://i.ibb.co/HFmN3VJ/307175241-485972230069467-1336353791094509721-n.jpg",
+                avatar: "https://i.ibb.co/qsP05ZS/85117387-617240912405510-807100113846534144-n.jpg",
                 messages: [
                 "Hàng mới cập nhật trên web ông bạn k xem à",
-                "https://i.ibb.co/0GmtgRX/photo-61-2024-10-23-11-22-02.jpg",
-"https://i.ibb.co/kGQtzb0/photo-61-2024-10-23-11-52-15.jpg",
+
+
         "T chơi cũng nhiều chỗ rồi mà mấy e ở đây làm tình đúng giỏi",
-        "https://i.ibb.co/mDgpphk/photo-2024-07-17-22-06-53.jpg",
+ 
         "sợ mấy CLB vl giờ mới biết ở đây toàn gái ngon",
         "Mất thì nghỉ đit có chi đâu",
+                ]
+            },
+            {
+                name: "Đăng hùng Australia",
+                avatar: "https://i.ibb.co/ZgK5mKn/434183331-3573928282856684-79915933187163549-n.jpg",
+                messages: [
+                "Mây ae bú lồn các em nó đi chứ ngại j",
+"khổ quá ae à đi chơi đêm qua nay về đi chân run luôn",
+"Cuối tuần mà ít anh em lên chém gió tý nhỉ",
+"Chán quá tâm sự các em mà các em nó bận đi khách hết",
+"Mình nay có việc hk đi được thấy anh e đi mà thèm quá ",
+"Tầm này có mà nhiều bố đi bú liếm rồi còn đâu mà lên đây chém",
+"Thời gian đi chơi  các e nên hôm nay ae ít lên chém rồi",
+                ]
+            },
+            {
+                name: "LÊ ĐỨC DŨNG",
+                avatar: "https://i.ibb.co/kDYxGSV/429966775-2309506575912308-7184145435031443502-n.jpg",
+                messages: [
+                "Liếm chứ sao k",
+"Mẹ cái ngon nhất là bú lồn mà",
+"Bú em nào hàng quên chứ mẹ con nào cũng bú à bác",
+"Mấy em lồn múp múp bú mới sướng",
+"Sướng nhất ng ae rồi",
+"Đi chơi là bắt em nó mặc đồ kiểu này nhìn cho dâm ae à",
+"Đc đấy dã mạnh lên bác cho e nó tốc váy luôn",
+"Mấy e có e nào đang rảnh k nhỉ a gt b a dk để nó kiếm 1 e nào",
+                ]
+            },
+            {
+                name: "minhdat33",
+                avatar: "https://i.ibb.co/8gkj0Cd/357485362-268148242484294-212235252920489508-n.jpg",
+                messages: [
+                "Ae chơi gái chắc cũng nhiều nơi rồi thì biết chỗ này ok nhất còn j",
+"Mẹ gái đẹp chiều làm tình giỏi",
+"Dm nay làm mệt vcl giờ mà cho gái nằm ngửa ra cũng đéo có sức địt",
+"Địt được hết anh bạn",
+"mẹ gái ngon có mệt cũng cố",
+"Các ông cứ  nói thế chứ mẹ mệt mà gái ngon nó bú cho lên có mà đụ tới tấp",
+"Kaka nói thế chứ lồn ai mà k thèm",
+"Các bố có hay liếm lồn mấy e nó k chứ t mà chơi em nào cũng phải thử",
+                ]
+            },
+            {
+                name: "hoangnam",
+                avatar: "https://i.ibb.co/TPJFz75/453245571-504940565263461-8567594985714965195-n.jpg",
+                messages: [
+                "T ngày nào chả lên xem",
+"Ae hay thật đấy có hàng mới cái cập nhật ngay đc",
+"Chuyên ăn với đi ngắm gái mà bác",
+"Lo mà kiếm tiền đi mấy ae mới có sức mà đụ",
+"1 like cho ng ae thiện lành",
+"Các e nhìn cứ như hoa hậu thế này bọn a mê chết",
                 ]
             },
             {
@@ -2467,8 +2807,6 @@ const characters = [
                 "Địt đi rồi review tôi xem phát kk",
         "Thế đợi hóng nha 😂😂",
         "Múp máp đấy mà nhậu ít lại nha b 😁",
-        "https://i.ibb.co/yVJ0YX6/photo-56-2024-10-23-11-52-15.jpg",
-"https://i.ibb.co/Dfg6cwr/photo-60-2024-10-23-11-52-15.jpg",
         "Đụ vào NGÀY THƯỜNG thì tha hồ mà chọn gái ngon",
           
             ],
@@ -3766,10 +4104,10 @@ function closeNotification() {
                   <div class="info-content">
                       <img src="https://i.ibb.co/tJj6hLk/462006996-1242880183805449-8096432800750068393-n.jpg" alt="JULY Image" class="info-image" style="height: 250px;">
                       <div class="info-text">
-                        <p><i class="fas fa-money-bill-wave"></i> <strong></strong></p>
+                        <p><i class=""></i> <strong></strong></p>
                         <div id="contact-info" class="hidden-info">
-                          <p><i class="fas fa-phone"></i> <strong></strong></p>
-                            <div class="location-info">
+                          <p><i class=""></i> <strong></strong></p>
+                            <div class="">
                              
                           </div>
                             <style>
@@ -5775,8 +6113,7 @@ document.querySelectorAll('.review-section').forEach(section => {
         <a href="https://ibb.co/khjQRP5"><img src="https://i.ibb.co/khjQRP5/465168800-1097488541723717-3663567964369007810-n.jpg" alt="Image 8" style="height: 250px; width: auto;"></a>
         <div class="info-text">
           <p>
-            <i class="fas fa-money-bill-wave"></i>
-      
+    
          
          
           </p>
@@ -6449,7 +6786,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 .statistics-widget strong {
 
-    color: #00ff22; /* Chữ vàng */
+    color: #ffffff; /* Chữ vàng */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
     border-radius: 20px;
 }
@@ -7007,7 +7344,7 @@ button {
     padding: 10px 15px;
     background-color: #000000;
     font-weight: bold;
-   
+    margin-bottom: 10px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     
 }
@@ -7155,7 +7492,7 @@ body {
     background-color: #000000; /* Màu nền nút cam đậm */
     border: 2px solid #ffffff; /* Viền bạc */
 
-    border-radius: 10px;   
+    border-radius: 5px;   
     padding: 0 3%; /* Điều chỉnh padding hai bên cho cả trang */
 }
 
