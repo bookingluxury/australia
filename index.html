@@ -112,7 +112,7 @@
             
           </span>
       </div>
-      <button onclick="checkAccessCode()" style=" box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng đổ bóng */ transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; background-color: #000000; /* Nền đen */ Viền vàng */ padding: 10px 20px;  border-radius: 5px;    
+      <button onclick="checkAccessCode()" style=" box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng đổ bóng */ transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Nền đen */ Viền vàng */ padding: 10px 20px;  border-radius: 5px;    
        cursor: pointer;">
           Xác nhận
       </button>
@@ -789,7 +789,6 @@ h1 {
                 <img src="https://i.ibb.co/LCX2dKV/photo-2024-10-29-23-43-13.jpg" alt="Banner Image" class="banner-image">
                 <img src="https://i.ibb.co/H7YvZVJ/photo-2024-10-29-23-42-21-3.jpg" alt="Banner Image" class="banner-image">
                 <img src="https://i.ibb.co/d6D4CMS/photo-2024-10-29-23-42-21.jpg" alt="Banner Image" class="banner-image">
-                <img src="https://i.ibb.co/12vWhwY/Flag-of-South-Korea-svg.png" alt="Banner Image" class="banner-image">
                 <img src="https://i.ibb.co/5K5Nv9b/photo-2024-11-07-00-39-08.jpg" alt="Banner Image" class="banner-image">
                 <img src="https://i.ibb.co/P9qtdvL/photo-2024-11-07-00-37-49-4.jpg" alt="Banner Image" class="banner-image">
                 <img src="https://i.ibb.co/64r0Rkm/photo-2024-11-07-00-37-49-5.jpg" alt="Banner Image" class="banner-image">
@@ -987,18 +986,18 @@ h1 {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Chat Tự Động</title>
     <style>
-      /* Container tổng thể */
+       /* Container tổng thể */
 #chat-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 350px;
-    height: 650px;
+    height: 700px;
 
     display: flex;
     border: 2px solid #ffffff;
     flex-direction: column;
-    background: linear-gradient(135deg, #ff7043, #e65100);
+    background: #121212;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -1024,8 +1023,8 @@ h1 {
     padding: 10px;
     border-radius: 15px;
     overflow-y: auto;
-    background: #f0f4f8;
-    border: 3px solid #e65100;
+    background: ##121212;
+    border: 2px solid #ffffff;
     transition: background 0.5s ease;
 }
 
@@ -1049,11 +1048,12 @@ h1 {
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    border: 2px solid #ffffff;
+    height: 45px;
     border-radius: 50%;
     margin: 0 8px;
-    border: 2px solid #ff5722;
+ 
 }
 
 .message-bubble {
@@ -1077,19 +1077,20 @@ h1 {
 .character-message {
     color: black;
     border-radius: 10px;
+    
 }
 
 /* Tên người dùng và trạng thái */
 .user-name {
     font-weight: bold;
     font-size: 14px;
-    color: #ff5722;
+    color: #000000;
     padding: -10px;
 }
 
 .message-status {
     font-size: 12px;
-    color: #ff5722;
+    color: #ffffff;
     position: absolute;
     bottom: -15px;
     right: 0;
@@ -1110,7 +1111,7 @@ h1 {
     border-radius: 20px;
     border: 1px solid #ccc;
     margin-left: 5px;
-     margin-bottom: -13px;
+  
     transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -1150,8 +1151,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     margin-left: 5px;
-    padding: 10px;
-    background: linear-gradient(135deg, #ff8a65, #ff7043);
+ 
+    background: #ffffff;
     color: #ffffff;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -6375,7 +6376,7 @@ document.querySelectorAll('.review-section').forEach(section => {
 
 
 <div class="ranking-container">
-    <div class="ranking-header">Bảng Xếp Hạng Tháng 11</div>
+    <div class="ranking-header">Bảng Xếp Hạng Tháng 12</div>
     <div class="ranking-controls">
         <button onclick="sortRankings('votes')">Sắp xếp theo Votes</button>
         <button onclick="sortRankings('change')">Sắp xếp theo Thay Đổi</button>
@@ -6561,17 +6562,17 @@ document.querySelectorAll('.review-section').forEach(section => {
 
 
 
-   const rankings = [
-    { position: 1, name: "Chang", likes: 28065, change: 5.29, ratings: 10450, avatar: "https://i.ibb.co/CMzrMHz/378854303-855617289244178-5284751463597591029-n.jpg", rating: 5 },
-    { position: 2, name: "Gia Hân", likes: 22340, change: 2.21, ratings: 8146, avatar: "https://i.ibb.co/1TRWLYN/448066649-3778888015771584-1306281735794756456-n.jpg", rating: 4.5 },
-    { position: 3, name: "Thúy Vy", likes: 21021, change: 5.56, ratings: 6753, avatar: "https://i.ibb.co/vXtLZBD/photo-2022-12-27-10-55-09.jpg", rating: 4.5 },
-    { position: 4, name: "JenNi", likes: 19740, change: -3.72, ratings: 4012, avatar: "https://i.ibb.co/fv3cs1W/461767365-18326685538194877-298191053835901842-n.jpg", rating: 4.5 },
-    { position: 5, name: "An Nhi", likes: 18136, change: -0.62, ratings: 3590, avatar: "https://i.ibb.co/QXDZgJ1/reup-be-ana-pga-chuan-mat-xinh-body-dep-vu-to-dam-tiep-cac-boss-3113753-original.jpg", rating: 4 },
-    { position: 6, name: "Hạ Vũ", likes: 15373, change: -0.33, ratings: 3267, avatar: "https://i.ibb.co/t33RTG6/398466992-1133936840908077-2787695977615575197-n.jpg", rating: 4 },
-    { position: 7, name: "Anh Thư", likes: 14526, change: 0.87, ratings: 2944, avatar: "https://i.ibb.co/P91y2Dp/photo-2024-08-15-12-49-14.jpg", rating: 4 },
-    { position: 8, name: "Yuna", likes: 12352, change: 1.38, ratings: 1670, avatar: "https://i.ibb.co/7gT51Mr/458315545-2877650585726341-611499681677932774-n.jpg", rating: 3.5 },
-    { position: 9, name: "Lan Vy", likes: 11317, change: -0.73, ratings: 1341, avatar: "https://i.ibb.co/GWmbNJt/426318819-1098436931490982-4805370043843722560-n.jpg", rating: 3.5 },
-    { position: 10, name: "Huyền Anh", likes: 9935, change: -0.67, ratings: 1084, avatar: "https://i.ibb.co/YpKMmTm/photo-2022-12-22-09-00-19.jpg", rating: 3 },
+const rankings = [
+    { position: 1, name: "Naa", likes: 3024, change: 5.29, ratings: 450, avatar: "https://i.ibb.co/nPVfv9c/photo-2024-08-11-13-05-35.jpg", rating: 5 },
+    { position: 2, name: "Trúc Anh", likes: 2980, change: 2.21, ratings: 346, avatar: "https://i.ibb.co/k3jRTts/photo-2024-08-10-20-05-20.jpg", rating: 4.5 },
+    { position: 3, name: "LyLy", likes: 2621, change: 5.56, ratings: 253, avatar: "https://i.ibb.co/YjgjhmX/photo-2024-07-21-21-25-48.jpg", rating: 4.5 },
+    { position: 4, name: "Thi Thi", likes: 2540, change: -3.72, ratings: 212, avatar: "https://i.ibb.co/d7qthYp/photo-2024-07-05-12-27-17.jpg", rating: 4.5 },
+    { position: 5, name: "Yến Nhi", likes: 2136, change: -0.62, ratings: 150, avatar: "https://i.ibb.co/Dz2xDRf/photo-2024-07-04-13-51-05-2.jpg", rating: 4 },
+    { position: 6, name: "Trâm Anh", likes: 1773, change: -0.33, ratings: 147, avatar: "https://i.ibb.co/C96n32S/taoanhdep-lam-net-anh-53181.jpg", rating: 4 },
+    { position: 7, name: "Ngọc Như", likes: 1326, change: 0.87, ratings: 104, avatar: "https://i.ibb.co/VCZs9YB/review-of-me-gai-dep-for-thu-ky-new-xinh-dep-sac-sao-ky-nang-dinh-cao-3218975-original.jpg", rating: 4 },
+    { position: 8, name: "Huyền Anh", likes: 1152, change: 1.38, ratings: 70, avatar: "https://i.ibb.co/ZHt0m10/reup-trieu-uyen-cuc-pham-sieu-non-to-nong-bong-ngot-ngao-dang-yeu-2970339-original.jpg", rating: 3.5 },
+    { position: 9, name: "Annie", likes: 917, change: -0.73, ratings: 61, avatar: "https://i.ibb.co/z8m3D3c/photo-2024-10-19-08-08-02.jpg", rating: 3.5 },
+    { position: 10, name: "MiMi", likes: 735, change: -0.67, ratings: 54, avatar: "https://i.ibb.co/TBKGpDc/photo-2024-07-26-18-41-01.jpg", rating: 3 },
 ];
 
 rankings.forEach((item, index) => {
@@ -6980,15 +6981,15 @@ border-radius: 5px; /* Bo góc ảnh */
             <div class="slider-images-wrapper">
             <div class="slider-images">
                 <a href="https://ibb.co/HT7XRt6"><img src="https://i.ibb.co/HT7XRt6/photo-6-2024-10-23-11-52-30.jpg" alt="Image 1" border="0"></a>
-                <a href="https://ibb.co/ZgMh5Rz"><img src="https://i.ibb.co/ZgMh5Rz/photo-15-2024-10-23-11-52-15.jpg" alt="Image 2" border="0"></a>
+                <a href="https://ibb.co/ZgMh5Rz"><img src="https://i.ibb.co/HPgZR2d/photo-2024-07-07-12-01-11.jpg" alt="Image 2" border="0"></a>
                 <a href="https://ibb.co/hWFT7BW"><img src="https://i.ibb.co/hWFT7BW/photo-19-2024-10-23-11-22-02.jpg" alt="Image 3" border="0"></a>
                 <a href="https://ibb.co/FDfxQHd"><img src="https://i.ibb.co/FDfxQHd/photo-22-2024-10-23-11-51-38.jpg" alt="Image 4" border="0"></a>
-                <a href="https://ibb.co/g7GNv7g"><img src="https://i.ibb.co/g7GNv7g/photo-2024-08-20-14-51-53.jpg" alt="Image 5" border="0"></a>
+                <a href="https://ibb.co/g7GNv7g"><img src="https://i.ibb.co/sRPmjz3/photo-2024-07-09-20-09-22.jpg" alt="Image 5" border="0"></a>
                 <a href="https://ibb.co/r7SNbfP"><img src="https://i.ibb.co/r7SNbfP/photo-32-2024-10-23-11-52-30.jpg" alt="Image 6" border="0"></a>
-                <a href="https://ibb.co/WPSLQyZ"><img src="https://i.ibb.co/WPSLQyZ/photo-43-2024-10-23-11-52-15.jpg" alt="Image 7" border="0"></a>
+                <a href="https://ibb.co/WPSLQyZ"><img src="https://i.ibb.co/1ZTBM8F/photo-2024-07-07-11-38-49.jpg" alt="Image 7" border="0"></a>
                 <a href="https://ibb.co/26KKrtZ"><img src="https://i.ibb.co/26KKrtZ/photo-50-2024-10-23-11-51-38.jpg" alt="Image 8" border="0"></a>
                 <a href="https://ibb.co/L6G6g5k"><img src="https://i.ibb.co/L6G6g5k/photo-80-2024-10-23-11-22-02.jpg" alt="Image 9" border="0"></a>
-                <a href="https://ibb.co/LSGs6cV"><img src="https://i.ibb.co/LSGs6cV/photo-83-2024-10-23-11-52-15.jpg" alt="Image 10" border="0"></a>
+                <a href="https://ibb.co/LSGs6cV"><img src="https://i.ibb.co/FYKDS0k/photo-2024-07-29-18-46-37.jpg" alt="Image 10" border="0"></a>
                 <a href="https://ibb.co/WvLsK1R"><img src="https://i.ibb.co/WvLsK1R/photo-96-2024-10-23-11-52-15.jpg" alt="Image 11" border="0"></a>
                 <a href="https://ibb.co/mRf4Tps"><img src="https://i.ibb.co/mRf4Tps/photo-98-2024-10-23-11-52-15.jpg" alt="Image 12" border="0"></a>
                 <a href="https://ibb.co/1KCVprp"><img src="https://i.ibb.co/1KCVprp/photo-2024-10-17-23-30-54.jpg" alt="Image 13" border="0"></a>
@@ -7000,54 +7001,54 @@ border-radius: 5px; /* Bo góc ảnh */
                 <a href="https://ibb.co/vhc79wJ"><img src="https://i.ibb.co/vhc79wJ/taoanhdep-lam-net-anh-22071.jpg" alt="Image 19" border="0"></a>
                 <a href="https://ibb.co/rQpDrXj"><img src="https://i.ibb.co/rQpDrXj/taoanhdep-lam-net-anh-84350.jpg" alt="Image 20" border="0"></a>
                 <a href="https://ibb.co/NncCRYJ"><img src="https://i.ibb.co/NncCRYJ/photo-9-2024-10-23-11-52-15.jpg" alt="Image 21" border="0"></a>
-                <a href="https://ibb.co/B4SWLf2"><img src="https://i.ibb.co/B4SWLf2/photo-4-2024-10-23-11-52-15.jpg" alt="Image 22" border="0"></a>
+                <a href="https://ibb.co/B4SWLf2"><img src="https://i.ibb.co/5njjhyG/photo-2024-07-05-13-28-08.jpg" alt="Image 22" border="0"></a>
                 <a href="https://ibb.co/3TBjJrS"><img src="https://i.ibb.co/3TBjJrS/photo-3-2024-10-23-11-52-15.jpg" alt="Image 23" border="0"></a>
                 <a href="https://ibb.co/mNNL9h6"><img src="https://i.ibb.co/mNNL9h6/photo-8-2024-10-23-11-51-38.jpg" alt="Image 24" border="0"></a>
                 <a href="https://ibb.co/5RBJHX0"><img src="https://i.ibb.co/5RBJHX0/photo-2024-09-05-18-25-49.jpg" alt="Image 25" border="0"></a>
                 <a href="https://ibb.co/c10Lbzk"><img src="https://i.ibb.co/c10Lbzk/photo-2024-09-05-18-37-42-2.jpg" alt="Image 26" border="0"></a>
-                <a href="https://ibb.co/q7kXCmx"><img src="https://i.ibb.co/q7kXCmx/photo-2024-09-05-18-37-43.jpg" alt="Image 27" border="0"></a>
+                <a href="https://ibb.co/q7kXCmx"><img src="https://i.ibb.co/XSy4PDb/photo-2024-06-23-13-17-10.jpg" alt="Image 27" border="0"></a>
                 <a href="https://ibb.co/HrWycSc"><img src="https://i.ibb.co/HrWycSc/photo-2024-09-05-18-35-45-4.jpg" alt="Image 28" border="0"></a>
-                <a href="https://ibb.co/xXN7XND"><img src="https://i.ibb.co/xXN7XND/photo-2024-09-05-18-37-46.jpg" alt="Image 29" border="0"></a>
-                <a href="https://ibb.co/wRg0Fxr"><img src="https://i.ibb.co/wRg0Fxr/photo-2024-09-05-18-37-54.jpg" alt="Image 30" border="0"></a>
-                <a href="https://ibb.co/hVvFThy"><img src="https://i.ibb.co/hVvFThy/photo-2024-07-08-15-35-10.jpg" alt="Image 31" border="0"></a>
-                <a href="https://ibb.co/XVFxydz"><img src="https://i.ibb.co/XVFxydz/photo-2024-07-08-18-29-39.jpg" alt="Image 32" border="0"></a>
+                <a href="https://ibb.co/xXN7XND"><img src="https://i.ibb.co/zQYnCtj/photo-2024-06-29-13-54-47.jpg" alt="Image 29" border="0"></a>
+                <a href="https://ibb.co/wRg0Fxr"><img src="https://i.ibb.co/w76YbQ0/photo-82-2024-10-23-11-51-38.jpg" alt="Image 30" border="0"></a>
+                <a href="https://ibb.co/hVvFThy"><img src="https://i.ibb.co/Y79xf14/photo-2024-06-23-13-15-09.jpg" alt="Image 31" border="0"></a>
+                <a href="https://ibb.co/XVFxydz"><img src="https://i.ibb.co/6b9PGtD/photo-90-2024-10-23-11-52-15.jpg" alt="Image 32" border="0"></a>
                 <a href="https://ibb.co/C1vzDrm"><img src="https://i.ibb.co/C1vzDrm/photo-2024-07-13-20-02-05.jpg" alt="Image 33" border="0"></a>
                 <a href="https://ibb.co/P4N1RxC"><img src="https://i.ibb.co/P4N1RxC/photo-2024-07-16-19-46-04.jpg" alt="Image 34" border="0"></a>
                 <a href="https://ibb.co/cbFvT6w"><img src="https://i.ibb.co/cbFvT6w/photo-2024-07-17-21-33-48.jpg" alt="Image 35" border="0"></a>
-                <a href="https://ibb.co/mDgpphk"><img src="https://i.ibb.co/mDgpphk/photo-2024-07-17-22-06-53.jpg" alt="Image 36" border="0"></a>
+                <a href="https://ibb.co/mDgpphk"><img src="https://i.ibb.co/rvBxyjv/Untitled-design-13.png" alt="Image 36" border="0"></a>
                 <a href="https://ibb.co/fxYN92r"><img src="https://i.ibb.co/fxYN92r/photo-2024-07-26-20-22-05.jpg" alt="Image 37" border="0"></a>
                 <a href="https://ibb.co/hfPm5kQ"><img src="https://i.ibb.co/hfPm5kQ/photo-2024-07-27-19-41-23.jpg" alt="Image 38" border="0"></a>
                 <a href="https://ibb.co/6gJpcCv"><img src="https://i.ibb.co/6gJpcCv/photo-2024-08-01-19-45-35.jpg" alt="Image 39" border="0"></a>
-                <a href="https://ibb.co/xMgVzrm"><img src="https://i.ibb.co/xMgVzrm/photo-2024-08-02-21-35-06.jpg" alt="Image 40" border="0"></a>
+                <a href="https://ibb.co/xMgVzrm"><img src="https://i.ibb.co/RHMf0Sb/photo-96-2024-10-23-11-52-15.jpg" alt="Image 40" border="0"></a>
                 <a href="https://ibb.co/7SyF1KP"><img src="https://i.ibb.co/7SyF1KP/photo-2024-08-11-13-02-15.jpg" alt="Image 41" border="0"></a>
                 <a href="https://ibb.co/7NP8yrr"><img src="https://i.ibb.co/7NP8yrr/photo-2024-08-11-20-22-43.jpg" alt="Image 42" border="0"></a>
                 <a href="https://ibb.co/6FSKKz0"><img src="https://i.ibb.co/6FSKKz0/photo-2024-08-12-13-41-26.jpg" alt="Image 43" border="0"></a>
                 <a href="https://ibb.co/1RfR70n"><img src="https://i.ibb.co/1RfR70n/photo-2024-08-14-21-11-07.jpg" alt="Image 44" border="0"></a>
-                <a href="https://ibb.co/5n5Fvcv"><img src="https://i.ibb.co/5n5Fvcv/photo-2024-08-14-22-24-10.jpg" alt="Image 45" border="0"></a>
+                <a href="https://ibb.co/5n5Fvcv"><img src="https://i.ibb.co/6tNrHpF/Untitled-design-14.png" alt="Image 45" border="0"></a>
                 <a href="https://ibb.co/P91y2Dp"><img src="https://i.ibb.co/P91y2Dp/photo-2024-08-15-12-49-14.jpg" alt="Image 46" border="0"></a>
                 <a href="https://ibb.co/rpSrxZv"><img src="https://i.ibb.co/rpSrxZv/photo-2024-08-18-18-37-18.jpg" alt="Image 47" border="0"></a>
-                <a href="https://ibb.co/bN1JjqW"><img src="https://i.ibb.co/bN1JjqW/photo-2024-08-19-22-58-05.jpg" alt="Image 48" border="0"></a>
+                <a href="https://ibb.co/bN1JjqW"><img src="https://i.ibb.co/nB1D576/photo-92-2024-10-23-11-51-38.jpg" alt="Image 48" border="0"></a>
                 <a href="https://ibb.co/2qwCJnX"><img src="https://i.ibb.co/2qwCJnX/photo-2024-08-23-13-26-54.jpg" alt="Image 49" border="0"></a>
-                <a href="https://ibb.co/n7cmdBv"><img src="https://i.ibb.co/n7cmdBv/photo-2024-08-28-15-21-12.jpg" alt="Image 50" border="0"></a>
+                <a href="https://ibb.co/n7cmdBv"><img src="https://i.ibb.co/QKQCMwh/photo-87-2024-10-23-11-52-15.jpg" alt="Image 50" border="0"></a>
                 <a href="https://ibb.co/m86KxLK"><img src="https://i.ibb.co/m86KxLK/photo-2024-08-29-21-21-48.jpg" alt="Image 51" border="0"></a>
                 <a href="https://ibb.co/F0LX904"><img src="https://i.ibb.co/F0LX904/photo-2024-09-02-21-10-06.jpg" alt="Image 52" border="0"></a>
-                <a href="https://ibb.co/DDfzdWD"><img src="https://i.ibb.co/DDfzdWD/photo-2024-09-09-13-05-48.jpg" alt="Image 53" border="0"></a>
+                <a href="https://ibb.co/DDfzdWD"><img src="https://i.ibb.co/t4Q6Bjb/Untitled-design-16.png" alt="Image 53" border="0"></a>
                 <a href="https://ibb.co/nQBW2Nc"><img src="https://i.ibb.co/nQBW2Nc/photo-2024-09-09-13-05-50.jpg" alt="Image 54" border="0"></a>
                 <a href="https://ibb.co/2Z6T8pw"><img src="https://i.ibb.co/2Z6T8pw/photo-2024-09-09-20-28-17.jpg" alt="Image 55" border="0"></a>
-                <a href="https://ibb.co/Yh4GSS9"><img src="https://i.ibb.co/Yh4GSS9/photo-2024-09-11-17-36-56.jpg" alt="Image 56" border="0"></a>
+                <a href="https://ibb.co/Yh4GSS9"><img src="https://i.ibb.co/88JpJNq/Untitled-design-17.png" alt="Image 56" border="0"></a>
                 <a href="https://ibb.co/X3Vw2Dx"><img src="https://i.ibb.co/X3Vw2Dx/photo-2024-09-11-19-40-50.jpg" alt="Image 57" border="0"></a>
-                <a href="https://ibb.co/BNJtPRk"><img src="https://i.ibb.co/BNJtPRk/photo-2024-09-12-18-59-24.jpg" alt="Image 58" border="0"></a>
+                <a href="https://ibb.co/BNJtPRk"><img src="https://i.ibb.co/q5xFSr3/Untitled-design-12.png" alt="Image 58" border="0"></a>
                 <a href="https://ibb.co/S5cZB7m"><img src="https://i.ibb.co/S5cZB7m/419418603-1508797216580744-6598850606428340490-n.jpg" alt="Image 59" border="0"></a>
                 <a href="https://ibb.co/qYSb9Mm"><img src="https://i.ibb.co/qYSb9Mm/photo-2024-06-24-20-18-13.jpg" alt="Image 60" border="0"></a>
-                <a href="https://ibb.co/zsGMw70"><img src="https://i.ibb.co/zsGMw70/review-of-hay-tim-em-dam-for-reup-be-ana-pga-chuan-mat-xinh-body-dep-vu-to-dam-tiep-cac-boss-3134082.jpg" alt="Image 61" border="0"></a>
+                <a href="https://ibb.co/zsGMw70"><img src="https://i.ibb.co/TMpwGhP/Untitled-design-19.png" alt="Image 61" border="0"></a>
                 <a href="https://ibb.co/y0ghTLq"><img src="https://i.ibb.co/y0ghTLq/reup-trieu-uyen-cuc-pham-sieu-non-to-nong-bong-ngot-ngao-dang-yeu-3218910-original.jpg" alt="Image 62" border="0"></a>
-                <a href="https://ibb.co/ZHt0m10"><img src="https://i.ibb.co/ZHt0m10/reup-trieu-uyen-cuc-pham-sieu-non-to-nong-bong-ngot-ngao-dang-yeu-2970339-original.jpg" alt="Image 63" border="0"></a>
+                <a href="https://ibb.co/ZHt0m10"><img src="https://i.ibb.co/Pm4BcBm/taoanhdep-lam-net-anh-28370.jpg" alt="Image 63" border="0"></a>
                 <a href="https://ibb.co/x1fnZ28"><img src="https://i.ibb.co/x1fnZ28/reup-trieu-uyen-cuc-pham-sieu-non-to-nong-bong-ngot-ngao-dang-yeu-2961977-original.jpg" alt="Image 64" border="0"></a>
                 <a href="https://ibb.co/cNswv30"><img src="https://i.ibb.co/cNswv30/review-of-luke-for-sieu-pham-mia-thien-than-2k4-moi-lon-tieu-muoi-douyin-hong-hao-3258387-original.jpg" alt="Image 65" border="0"></a>
-                <a href="https://ibb.co/tBvCVwX"><img src="https://i.ibb.co/tBvCVwX/photo-2024-09-05-18-55-28-2.jpg" alt="Image 66" border="0"></a>
-                <a href="https://ibb.co/wJcM7dm"><img src="https://i.ibb.co/wJcM7dm/photo-2024-08-19-21-10-58.jpg" alt="Image 67" border="0"></a>
+                <a href="https://ibb.co/tBvCVwX"><img src="https://i.ibb.co/0CC40GZ/taoanhdep-lam-net-anh-90826.jpg" alt="Image 66" border="0"></a>
+                <a href="https://ibb.co/wJcM7dm"><img src="https://i.ibb.co/RpFjxhL/taoanhdep-lam-net-anh-91810.jpg" alt="Image 67" border="0"></a>
                 <a href="https://ibb.co/pX3P1kG"><img src="https://i.ibb.co/pX3P1kG/photo-2024-08-28-19-44-03.jpg" alt="Image 68" border="0"></a>
-                <a href="https://ibb.co/TmHHqC7"><img src="https://i.ibb.co/TmHHqC7/photo-2024-09-09-13-05-49.jpg" alt="Image 69" border="0"></a>
+                <a href="https://ibb.co/TmHHqC7"><img src="https://i.ibb.co/8mXWd6r/Untitled-design-20.png" alt="Image 69" border="0"></a>
                 
 <!-- Thêm các ảnh khác vào đây -->
 
@@ -7055,17 +7056,17 @@ border-radius: 5px; /* Bo góc ảnh */
 
   <!-- Lặp lại bộ hình ảnh 1 để tạo hiệu ứng cuộn liên tục -->
   <a href="https://ibb.co/HT7XRt6"><img src="https://i.ibb.co/HT7XRt6/photo-6-2024-10-23-11-52-30.jpg" alt="Image 1" border="0"></a>
-<a href="https://ibb.co/ZgMh5Rz"><img src="https://i.ibb.co/ZgMh5Rz/photo-15-2024-10-23-11-52-15.jpg" alt="Image 2" border="0"></a>
+<a href="https://ibb.co/ZgMh5Rz"><img src="https://i.ibb.co/GVDRKfG/photo-78-2024-10-23-11-52-15.jpg" alt="Image 2" border="0"></a>
 <a href="https://ibb.co/hWFT7BW"><img src="https://i.ibb.co/hWFT7BW/photo-19-2024-10-23-11-22-02.jpg" alt="Image 3" border="0"></a>
 <a href="https://ibb.co/FDfxQHd"><img src="https://i.ibb.co/FDfxQHd/photo-22-2024-10-23-11-51-38.jpg" alt="Image 4" border="0"></a>
 <a href="https://ibb.co/g7GNv7g"><img src="https://i.ibb.co/g7GNv7g/photo-2024-08-20-14-51-53.jpg" alt="Image 5" border="0"></a>
 <a href="https://ibb.co/r7SNbfP"><img src="https://i.ibb.co/r7SNbfP/photo-32-2024-10-23-11-52-30.jpg" alt="Image 6" border="0"></a>
 <a href="https://ibb.co/WPSLQyZ"><img src="https://i.ibb.co/WPSLQyZ/photo-43-2024-10-23-11-52-15.jpg" alt="Image 7" border="0"></a>
 <a href="https://ibb.co/26KKrtZ"><img src="https://i.ibb.co/26KKrtZ/photo-50-2024-10-23-11-51-38.jpg" alt="Image 8" border="0"></a>
-<a href="https://ibb.co/L6G6g5k"><img src="https://i.ibb.co/L6G6g5k/photo-80-2024-10-23-11-22-02.jpg" alt="Image 9" border="0"></a>
+<a href="https://ibb.co/L6G6g5k"><img src="https://i.ibb.co/B6Sqp1L/Untitled-design-18.png" alt="Image 9" border="0"></a>
 <a href="https://ibb.co/LSGs6cV"><img src="https://i.ibb.co/LSGs6cV/photo-83-2024-10-23-11-52-15.jpg" alt="Image 10" border="0"></a>
 <a href="https://ibb.co/WvLsK1R"><img src="https://i.ibb.co/WvLsK1R/photo-96-2024-10-23-11-52-15.jpg" alt="Image 11" border="0"></a>
-<a href="https://ibb.co/mRf4Tps"><img src="https://i.ibb.co/mRf4Tps/photo-98-2024-10-23-11-52-15.jpg" alt="Image 12" border="0"></a>
+<a href="https://ibb.co/mRf4Tps"><img src="https://i.ibb.co/p0N3Vsb/Untitled-design-21.png" alt="Image 12" border="0"></a>
 <a href="https://ibb.co/1KCVprp"><img src="https://i.ibb.co/1KCVprp/photo-2024-10-17-23-30-54.jpg" alt="Image 13" border="0"></a>
 <a href="https://ibb.co/yVwR18k"><img src="https://i.ibb.co/yVwR18k/photo-2024-10-17-23-32-44.jpg" alt="Image 14" border="0"></a>
 <a href="https://ibb.co/TBKGpDc"><img src="https://i.ibb.co/TBKGpDc/photo-2024-07-26-18-41-01.jpg" alt="Image 15" border="0"></a>
@@ -7076,19 +7077,19 @@ border-radius: 5px; /* Bo góc ảnh */
 <a href="https://ibb.co/rQpDrXj"><img src="https://i.ibb.co/rQpDrXj/taoanhdep-lam-net-anh-84350.jpg" alt="Image 20" border="0"></a>
 <a href="https://ibb.co/NncCRYJ"><img src="https://i.ibb.co/NncCRYJ/photo-9-2024-10-23-11-52-15.jpg" alt="Image 21" border="0"></a>
 <a href="https://ibb.co/B4SWLf2"><img src="https://i.ibb.co/B4SWLf2/photo-4-2024-10-23-11-52-15.jpg" alt="Image 22" border="0"></a>
-<a href="https://ibb.co/3TBjJrS"><img src="https://i.ibb.co/3TBjJrS/photo-3-2024-10-23-11-52-15.jpg" alt="Image 23" border="0"></a>
+<a href="https://ibb.co/3TBjJrS"><img src="https://i.ibb.co/S6vzCrT/Untitled-design-23.png" alt="Image 23" border="0"></a>
 <a href="https://ibb.co/mNNL9h6"><img src="https://i.ibb.co/mNNL9h6/photo-8-2024-10-23-11-51-38.jpg" alt="Image 24" border="0"></a>
 <a href="https://ibb.co/5RBJHX0"><img src="https://i.ibb.co/5RBJHX0/photo-2024-09-05-18-25-49.jpg" alt="Image 25" border="0"></a>
 <a href="https://ibb.co/c10Lbzk"><img src="https://i.ibb.co/c10Lbzk/photo-2024-09-05-18-37-42-2.jpg" alt="Image 26" border="0"></a>
 <a href="https://ibb.co/q7kXCmx"><img src="https://i.ibb.co/q7kXCmx/photo-2024-09-05-18-37-43.jpg" alt="Image 27" border="0"></a>
 <a href="https://ibb.co/HrWycSc"><img src="https://i.ibb.co/HrWycSc/photo-2024-09-05-18-35-45-4.jpg" alt="Image 28" border="0"></a>
 <a href="https://ibb.co/xXN7XND"><img src="https://i.ibb.co/xXN7XND/photo-2024-09-05-18-37-46.jpg" alt="Image 29" border="0"></a>
-<a href="https://ibb.co/wRg0Fxr"><img src="https://i.ibb.co/wRg0Fxr/photo-2024-09-05-18-37-54.jpg" alt="Image 30" border="0"></a>
+<a href="https://ibb.co/wRg0Fxr"><img src="https://i.ibb.co/zGkqhv7/photo-73-2024-10-23-11-22-02.jpg" alt="Image 30" border="0"></a>
 <a href="https://ibb.co/hVvFThy"><img src="https://i.ibb.co/hVvFThy/photo-2024-07-08-15-35-10.jpg" alt="Image 31" border="0"></a>
 <a href="https://ibb.co/XVFxydz"><img src="https://i.ibb.co/XVFxydz/photo-2024-07-08-18-29-39.jpg" alt="Image 32" border="0"></a>
 <a href="https://ibb.co/C1vzDrm"><img src="https://i.ibb.co/C1vzDrm/photo-2024-07-13-20-02-05.jpg" alt="Image 33" border="0"></a>
 <a href="https://ibb.co/P4N1RxC"><img src="https://i.ibb.co/P4N1RxC/photo-2024-07-16-19-46-04.jpg" alt="Image 34" border="0"></a>
-<a href="https://ibb.co/cbFvT6w"><img src="https://i.ibb.co/cbFvT6w/photo-2024-07-17-21-33-48.jpg" alt="Image 35" border="0"></a>
+<a href="https://ibb.co/cbFvT6w"><img src="https://i.ibb.co/pJGtHmG/Untitled-design-22.png" alt="Image 35" border="0"></a>
 <a href="https://ibb.co/mDgpphk"><img src="https://i.ibb.co/mDgpphk/photo-2024-07-17-22-06-53.jpg" alt="Image 36" border="0"></a>
 <a href="https://ibb.co/fxYN92r"><img src="https://i.ibb.co/fxYN92r/photo-2024-07-26-20-22-05.jpg" alt="Image 37" border="0"></a>
 <a href="https://ibb.co/hfPm5kQ"><img src="https://i.ibb.co/hfPm5kQ/photo-2024-07-27-19-41-23.jpg" alt="Image 38" border="0"></a>
@@ -7099,13 +7100,13 @@ border-radius: 5px; /* Bo góc ảnh */
 <a href="https://ibb.co/6FSKKz0"><img src="https://i.ibb.co/6FSKKz0/photo-2024-08-12-13-41-26.jpg" alt="Image 43" border="0"></a>
 <a href="https://ibb.co/1RfR70n"><img src="https://i.ibb.co/1RfR70n/photo-2024-08-14-21-11-07.jpg" alt="Image 44" border="0"></a>
 <a href="https://ibb.co/5n5Fvcv"><img src="https://i.ibb.co/5n5Fvcv/photo-2024-08-14-22-24-10.jpg" alt="Image 45" border="0"></a>
-<a href="https://ibb.co/P91y2Dp"><img src="https://i.ibb.co/P91y2Dp/photo-2024-08-15-12-49-14.jpg" alt="Image 46" border="0"></a>
+<a href="https://ibb.co/P91y2Dp"><img src="https://i.ibb.co/LY0k0J5/Untitled-design-24.png" alt="Image 46" border="0"></a>
 <a href="https://ibb.co/rpSrxZv"><img src="https://i.ibb.co/rpSrxZv/photo-2024-08-18-18-37-18.jpg" alt="Image 47" border="0"></a>
-<a href="https://ibb.co/bN1JjqW"><img src="https://i.ibb.co/bN1JjqW/photo-2024-08-19-22-58-05.jpg" alt="Image 48" border="0"></a>
+<a href="https://ibb.co/bN1JjqW"><img src="https://i.ibb.co/W58JP3W/taoanhdep-lam-net-anh-40844.jpg" alt="Image 48" border="0"></a>
 <a href="https://ibb.co/g7GNv7g"><img src="https://i.ibb.co/g7GNv7g/photo-2024-08-20-14-51-53.jpg" alt="Image 49" border="0"></a>
 <a href="https://ibb.co/2qwCJnX"><img src="https://i.ibb.co/2qwCJnX/photo-2024-08-23-13-26-54.jpg" alt="Image 50" border="0"></a>
 <a href="https://ibb.co/n7cmdBv"><img src="https://i.ibb.co/n7cmdBv/photo-2024-08-28-15-21-12.jpg" alt="Image 51" border="0"></a>
-<a href="https://ibb.co/m86KxLK"><img src="https://i.ibb.co/m86KxLK/photo-2024-08-29-21-21-48.jpg" alt="Image 52" border="0"></a>
+<a href="https://ibb.co/m86KxLK"><img src="https://i.ibb.co/HhwjSFp/Untitled-design-26.png" alt="Image 52" border="0"></a>
 <a href="https://ibb.co/F0LX904"><img src="https://i.ibb.co/F0LX904/photo-2024-09-02-21-10-06.jpg" alt="Image 53" border="0"></a>
 <a href="https://ibb.co/DDfzdWD"><img src="https://i.ibb.co/DDfzdWD/photo-2024-09-09-13-05-48.jpg" alt="Image 54" border="0"></a>
 <a href="https://ibb.co/nQBW2Nc"><img src="https://i.ibb.co/nQBW2Nc/photo-2024-09-09-13-05-50.jpg" alt="Image 55" border="0"></a>
@@ -7125,7 +7126,7 @@ border-radius: 5px; /* Bo góc ảnh */
 <a href="https://ibb.co/tBvCVwX"><img src="https://i.ibb.co/tBvCVwX/photo-2024-09-05-18-55-28-2.jpg" alt="Image 69" border="0"></a>
 <a href="https://ibb.co/wJcM7dm"><img src="https://i.ibb.co/wJcM7dm/photo-2024-08-19-21-10-58.jpg" alt="Image 70" border="0"></a>
 <a href="https://ibb.co/pX3P1kG"><img src="https://i.ibb.co/pX3P1kG/photo-2024-08-28-19-44-03.jpg" alt="Image 71" border="0"></a>
-<a href="https://ibb.co/TmHHqC7"><img src="https://i.ibb.co/TmHHqC7/photo-2024-09-09-13-05-49.jpg" alt="Image 72" border="0"></a>
+<a href="https://ibb.co/TmHHqC7"><img src="https://i.ibb.co/TmHHqC7/photo-2024-09-09-13-05-49.jpg" alt="Image 72" border="0"></a><a href="https://ibb.co/TmHHqC7"><img src="https://i.ibb.co/TmHHqC7/photo-2024-09-09-13-05-49.jpg" alt="Image 72" border="0"></a>
 
 </div>
 </div>
@@ -7342,7 +7343,7 @@ button {
     color: #000000; /* Màu chữ vàng */
     border-radius: 10px;
     padding: 10px 15px;
-    background-color: #000000;
+    
     font-weight: bold;
     margin-bottom: 10px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -7541,7 +7542,275 @@ body {
     });
 }
 
-  // Vô hiệu hóa chuột phải
+
+  </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DIAMOND CLUB</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+  />
+    <style>
+        
+    
+            #clock {
+            font-size: 15px;
+            text-align: center;
+            font-family: "Poppins", sans-serif;    
+            color: #2bff00; /* Màu chữ đen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+            padding: 10px;
+            border-radius: 5px;
+            position: fixed;  /* Giữ đồng hồ cố định */
+            top: 25px;        /* Căn cách lề trên */
+            left: 20px;       /* Căn cách lề trái */
+            z-index: 9999; 
+            border: 3px solid #C0C0C0; /* Viền vàng */
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+              
+        }
+             #clock:hover {
+                color: #ff0000; /* Màu chữ đen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+              
+      transform: scale(1.05); /* Phóng to nhẹ khi hover */
+
+
+        }
+
+#timezone {
+    font-size: 16px;
+    color: #ff0000/* Màu chữ đen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+    text-align: center;
+    font-family: 'Poppins", sans-serif;
+    margin-top: 5px;
+     border-radius: 5px;
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="copyright-section">
+        <p>Copyright © 2021. All rights reserved
+        </p>
+    </div>
+
+    <div id="clock"></div>
+    <div id="timezone"></div>
+
+    <script>
+        // Hàm cập nhật đồng hồ theo múi giờ Hàn Quốc
+        function updateClock() {
+            var now = new Date();
+
+            // Lấy thời gian ở múi giờ Hàn Quốc (Asia/Seoul)
+            var options = {
+                timeZone: 'Australia/Melbourne',  // Múi giờ Melbourne
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false // Sử dụng định dạng 24 giờ
+            };
+
+            // Lấy múi giờ hiện tại
+            var timeString = new Intl.DateTimeFormat('vi-VN', options).format(now);
+
+            // Hiển thị thời gian và múi giờ
+            document.getElementById('clock').innerHTML = timeString;
+            document.getElementById('timezone').innerHTML = "Australia";
+        // Xóa dòng liên quan đến múi giờ
+document.getElementById('timezone').innerHTML = "Australia";
+
+        }
+
+        // Cập nhật đồng hồ mỗi giây
+        setInterval(updateClock, 1000);
+        updateClock();
+   
+        
+    </script>
+
+     <style>  
+.copyright-section {
+
+  border-radius: 10px; /* Bo tròn góc nút */ 
+  color: #000000; /* Màu chữ đen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+
+    text-align: center; /* Canh giữa nội dung */
+    font-size: 15px; /* Kích thước chữ nhỏ vừa */
+    
+    font-family: 'Poppins", sans-serif; /* Đặt font đơn giản */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  
+}
+
+
+</style>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>LUXURY GIRL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+      @keyframes scrollLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Hiệu ứng thông báo chuyên nghiệp */
+        .notification-container {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 1000;
+            white-space: nowrap;
+            background-color: #000000;
+            padding: -30px 0;
+        }
+
+        .notification {
+           
+            display: inline-block;
+            color: #ffffff; /* Chữ trắng */
+            font-family: 'Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            animation: scrollLeft 18s linear infinite;
+           
+        }
+    </style>
+</head>
+<body>
+
+<div class="notification-container">
+    <div id="notification" class="notification">Nội dung mặc định</div>
+</div>
+
+<script>
+const notifications = [
+    "Customer David Ngô from Sydney, NSW has successfully booked! Thank you for choosing Luxury Girl Booking. ❤️",
+    "Khách hàng Trần Duy Hùng ở Melbourne, VIC đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn. ❤️",
+    "Customer Peter Đỗ from Brisbane, QLD has joined our community for the first time. Find your favorite match now!",
+    "Khách hàng Nguyễn Văn Nam tại Perth, WA đã trở thành Member VIP 💎! Chào mừng anh đến với dịch vụ cao cấp.",
+    "Customer Jack Hoàng from Adelaide, SA has just joined! Start your journey by choosing a suitable match.",
+    "Khách hàng Lê Hữu Phước ở Canberra, ACT đã đặt lịch thành công! Hệ thống Luxury Girl Booking xin cảm ơn. ❤️",
+    "Customer Alex Võ from Gold Coast, QLD has successfully booked! Thank you for being part of our community. ❤️",
+    "Khách hàng Phạm Văn Long ở Hobart, TAS đã gia nhập cộng đồng VIP 💎! Chúc mừng anh đã chọn dịch vụ cao cấp của chúng tôi.",
+    "Customer Liam Nguyễn from Darwin, NT has just joined. Don't wait—find your match today!",
+    "Khách hàng Vũ Thanh Tùng ở Newcastle, NSW đã đặt lịch thành công! Luxury Girl Booking xin cảm ơn. ❤️",
+    "Customer Ethan Trần from Wollongong, NSW has successfully booked! Thank you for choosing Luxury Girl Booking. ❤️",
+    "Khách hàng Nguyễn Minh Hoàng ở Sunshine Coast, QLD đã nâng cấp thành VIP Member 💎! Chúc mừng anh.",
+    "Customer Noah Phạm from Geelong, VIC has successfully booked! Thank you for trusting us. ❤️",
+    "Khách hàng Lê Văn Hoàng tại Cairns, QLD đã gia nhập cộng đồng. Chọn ngay bé phù hợp để trải nghiệm dịch vụ nhé!",
+    "Customer Daniel Hoàng from Townsville, QLD has successfully booked! Thank you for using Luxury Girl Booking. ❤️",
+    "Khách hàng Trương Văn Huy ở Albury, NSW đã đặt lịch thành công! Chúc anh có trải nghiệm tuyệt vời.",
+    "Customer Henry Nguyễn from Bendigo, VIC has upgraded to VIP 💎! Welcome to the ultimate experience.",
+    "Khách hàng Nguyễn Văn Quân ở Rockhampton, QLD đã đặt lịch thành công! Luxury Girl Booking cảm ơn sự tin tưởng của anh. ❤️",
+    "Customer James Võ from Ballarat, VIC has joined our VIP membership 💎! Enjoy your exclusive privileges.",
+    "Khách hàng Đỗ Văn Thành ở Darwin, NT đã gia nhập VIP Member 💎! Chúc mừng anh đã đến với chúng tôi.",
+    "Customer Lucas Võ from Ballina, NSW has joined the VIP tier 💎! Welcome aboard.",
+    "Khách hàng Đỗ Hải Nam ở Orange, NSW đã gia nhập. Đừng bỏ lỡ cơ hội trải nghiệm ngay hôm nay!",
+    "Customer Andrew Phạm from Brisbane, QLD has upgraded to VIP 💎! Explore premium benefits now.",
+    "Khách hàng Nguyễn Văn Hùng ở Sydney, NSW đã đặt lịch thành công! Hệ thống Luxury Girl Booking chân thành cảm ơn. ❤️",
+    "Customer Jack Lê from Perth, WA has successfully booked! Thank you for choosing us. ❤️",
+    "Khách hàng Trần Văn Khôi tại Brisbane, QLD đã trở thành VIP Member 💎! Chúc mừng anh đã gia nhập cộng đồng của chúng tôi.",
+    "Customer Ethan Võ from Townsville, QLD has joined as a VIP Member 💎! Welcome to the premium experience.",
+    "Khách hàng Mai Văn Tú tại Mackay, QLD đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn. ❤️",
+    "Customer David Nguyễn from Newcastle, NSW has just joined! Start your journey by choosing a match.",
+    "Khách hàng Phạm Minh Nhật tại Toowoomba, QLD đã gia nhập cộng đồng VIP. Tận hưởng ngay các ưu đãi đặc biệt!",
+    "Customer Jack Trần from Cairns, QLD has joined the VIP Club 💎! Explore exclusive benefits.",
+    "Khách hàng Nguyễn Minh Trí ở Geelong, VIC vừa gia nhập. Chọn ngay một bé phù hợp nhé!",
+    "Customer Jack Hoàng from Sydney, NSW has successfully booked! Thank you for your trust in our service. ❤️",
+    "Khách hàng Trần Văn Thịnh ở Adelaide, SA đã trở thành Member VIP 💎! Chào mừng anh đến với trải nghiệm cao cấp.",
+    "Customer Andrew Nguyễn from Hobart, TAS has successfully booked! Luxury Girl Booking appreciates your trust. ❤️",
+    "Khách hàng Lê Văn An ở Rockhampton, QLD đã đặt lịch thành công! Hệ thống Luxury Girl Booking chân thành cảm ơn.",
+    "Customer Jack Nguyễn from Sunshine Coast, QLD has successfully booked! Thank you for your trust. ❤️",
+    "Khách hàng Vũ Hữu Tài tại Launceston, TAS đã nâng cấp lên VIP Member 💎! Chúc mừng anh.",
+    "Customer Ethan Võ Hoài from Sydney, NSW has successfully booked! Thank you for choosing Luxury Girl Booking. ❤️",
+    "Khách hàng Võ Hoài Nam ở Melbourne, VIC đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn. ❤️",
+    "Customer Chris Nguyễn Hoàng from Brisbane, QLD has joined our community for the first time. Welcome aboard!",
+    "Khách hàng Nguyễn Duy Khánh tại Perth, WA đã trở thành Member VIP 💎! Chào mừng anh đến với trải nghiệm cao cấp.",
+    "Customer Brian Võ Minh from Adelaide, SA has successfully upgraded to VIP Member 💎! Enjoy exclusive privileges.",
+    "Khách hàng Lê Văn Khải ở Canberra, ACT đã đặt lịch thành công! Hệ thống Luxury Girl Booking xin cảm ơn. ❤️",
+    "Customer Jason Trần Duy from Gold Coast, QLD has successfully booked! Thank you for trusting us. ❤️",
+    "Khách hàng Phạm Văn Hoàng ở Hobart, TAS đã gia nhập cộng đồng VIP 💎! Chúc mừng anh đã chọn dịch vụ cao cấp.",
+    "Customer Andrew Võ Nam from Darwin, NT has just joined. Explore the best matches today!",
+    "Khách hàng Bùi Văn Dũng ở Newcastle, NSW đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn. ❤️",
+    "Customer Ethan Nguyễn Minh from Wollongong, NSW has successfully upgraded to VIP Member 💎! Welcome aboard.",
+    "Khách hàng Trần Văn Hiếu ở Sunshine Coast, QLD đã gia nhập cộng đồng. Chọn ngay bé phù hợp nhé!",
+    "Customer Kevin Lê Khánh from Geelong, VIC has successfully booked! We appreciate your choice. ❤️",
+    "Khách hàng Nguyễn Hoài An tại Cairns, QLD đã gia nhập cộng đồng. Tận hưởng dịch vụ ngay hôm nay!",
+    "Customer Daniel Nguyễn Duy from Townsville, QLD has successfully upgraded to VIP Member 💎! Congratulations!",
+    "Khách hàng Võ Hoàng Nam ở Ballarat, VIC đã đặt lịch thành công! Luxury Girl Booking cảm ơn sự tin tưởng của anh. ❤️",
+    "Customer Alex Hoàng Huy from Mackay, QLD has joined our VIP membership 💎! Enjoy the benefits.",
+    "Khách hàng Đỗ Hữu Lộc ở Launceston, TAS đã gia nhập. Đừng bỏ lỡ cơ hội trải nghiệm ngay hôm nay!",
+    "Customer Jack Trần Nam from Sydney, NSW has successfully booked! We appreciate your trust. ❤️",
+    "Khách hàng Nguyễn Văn Tài ở Brisbane, QLD đã đặt lịch thành công! Cảm ơn anh đã đồng hành cùng chúng tôi.",
+    "Customer Ethan Võ Khánh from Perth, WA has upgraded to VIP Member 💎! Welcome aboard.",
+    "Khách hàng Lê Văn Khôi tại Adelaide, SA đã gia nhập cộng đồng VIP 💎! Chúc mừng anh.",
+    "Customer Chris Nguyễn Tuấn from Rockhampton, QLD has successfully booked! Thank you for your trust. ❤️",
+    "Khách hàng Bùi Hữu Khoa ở Ballina, NSW đã gia nhập. Hãy khám phá dịch vụ ngay hôm nay!",
+    "Customer Brian Võ Duy from Mackay, QLD has just joined! Start exploring our services.",
+    "Khách hàng Trần Văn An tại Cairns, QLD đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn.",
+    "Customer Daniel Hoàng Khánh from Newcastle, NSW has joined the VIP Club 💎! Welcome aboard.",
+    "Khách hàng Nguyễn Minh Hoàng tại Geelong, VIC đã gia nhập cộng đồng. Đừng bỏ lỡ các ưu đãi hôm nay!",
+    "Customer Kevin Võ Huy from Townsville, QLD has successfully upgraded to VIP Member 💎! Enjoy premium privileges.",
+    "Khách hàng Đỗ Văn Khánh tại Sunshine Coast, QLD đã đặt lịch thành công! Hệ thống xin cảm ơn.",
+    "Customer Ethan Võ Tuấn from Darwin, NT has joined the VIP membership 💎! Welcome aboard.",
+    "Khách hàng Nguyễn Văn Tú ở Wollongong, NSW đã gia nhập cộng đồng VIP! Hãy tận hưởng ngay.",
+    "Customer Jack Nguyễn Nam from Launceston, TAS has successfully booked! Thank you for your trust. ❤️",
+    "Khách hàng Trần Hoài Nam tại Ballarat, VIC đã gia nhập cộng đồng. Chọn ngay bé phù hợp!",
+    "Customer Daniel Võ Huy from Melbourne, VIC has upgraded to VIP Member 💎! Start your premium experience.",
+    "Khách hàng Nguyễn Văn Long ở Sydney, NSW đã đặt lịch thành công! Chúng tôi chân thành cảm ơn anh.",
+    "Customer Jason Trần Khánh from Adelaide, SA has successfully booked! Thank you for trusting us. ❤️",
+    "Khách hàng Lê Văn Tùng ở Brisbane, QLD đã nâng cấp lên VIP Member 💎! Chào mừng anh.",
+    "Customer Andrew Hoàng Tuấn from Perth, WA has joined our VIP membership! Enjoy the exclusive benefits.",
+    "Khách hàng Võ Văn Hòa tại Hobart, TAS đã gia nhập. Đừng bỏ lỡ cơ hội khám phá hôm nay!",
+    "Customer Brian Nguyễn Duy from Cairns, QLD has successfully upgraded to VIP Member 💎! Welcome aboard.",
+    "Khách hàng Đỗ Văn Hùng tại Ballina, NSW đã đặt lịch thành công! Luxury Girl Booking chân thành cảm ơn.",
+    "Customer Ethan Võ Tuấn from Newcastle, NSW has joined the VIP membership 💎! Explore your benefits.",
+    "Khách hàng Phạm Văn Tùng ở Townsville, QLD đã gia nhập. Hãy bắt đầu hành trình của anh ngay hôm nay!",
+    "Customer Alex Hoàng Nam from Rockhampton, QLD has successfully booked! Thank you for trusting us. ❤️",
+    "Khách hàng Bùi Minh Hoàng tại Mackay, QLD đã gia nhập cộng đồng VIP 💎! Đừng bỏ lỡ các ưu đãi.",
+    "Customer Kevin Võ Duy from Gold Coast, QLD has joined the VIP tier 💎! Start your journey now.",
+    "Khách hàng Nguyễn Văn Hòa tại Darwin, NT đã đặt lịch thành công! Cảm ơn anh đã đồng hành cùng chúng tôi.",
+    "Customer Henry Trần Hoài from Sydney, NSW has successfully booked! Welcome to the premium experience.",
+    "Customer Ethan Hoàng from Wollongong, NSW has joined the VIP membership 💎! Welcome aboard.",
+    "Khách hàng Nguyễn Văn Lâm tại Ballarat, VIC đã gia nhập. Đừng bỏ lỡ cơ hội trải nghiệm ngay hôm nay!",
+];
+
+function updateNotification() {
+        const notification = document.getElementById('notification');
+        const randomIndex = Math.floor(Math.random() * notifications.length);
+        notification.textContent = notifications[randomIndex];
+    }
+
+    // Cập nhật nội dung thông báo mỗi 20 giây
+    window.addEventListener('load', () => {
+        updateNotification();
+        setInterval(updateNotification, 20000); // 20 giây
+    });
+    // Vô hiệu hóa chuột phải
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
@@ -7552,8 +7821,8 @@ body {
       e.preventDefault();
     }
   });
-
-  </script>
+</script>
 
 </body>
 </html>
+
