@@ -6375,242 +6375,317 @@ document.querySelectorAll('.review-section').forEach(section => {
 </html>
 
 
-<div class="ranking-container">
-    <div class="ranking-header">Bảng Xếp Hạng Tháng 12</div>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Bảng Xếp Hạng</title>
+  
+<body>
+  <div class="ranking-container">
+    <div class="ranking-header">Bảng Xếp Hạng lượt thích</div>
     <div class="ranking-controls">
-        <button onclick="sortRankings('votes')">Sắp xếp theo Votes</button>
-        <button onclick="sortRankings('change')">Sắp xếp theo Thay Đổi</button>
-        <button onclick="sortRankings('rating')">Sắp xếp theo Đánh Giá</button>
-    </div>
-    <div class="ranking-container">
-        <ul class="ranking-list" id="ranking-list"></ul>
-    </div>
-    
-</div>
-<!-- Thêm CSS -->
-<style>
-    body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #fff;
-        }
-
-        .ranking-container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .ranking-header {
-            text-align: center;
-            font-size: 24px;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Đổ bóng cho chữ */
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .ranking-controls {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .ranking-controls button {
-            background: #ff6b6b;
-            color: #000000;
-            border: none;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Đổ bóng cho chữ */
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 1px solid #fff; /* Viền vàng */
-
-            margin: 0 10px;
-            transition: background 0.3s ease;
-        }
-
-        .ranking-controls button:hover {
-            background: #1a1515;
-            color: #ffffff;
-        }
-
-        .ranking-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .ranking-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            background: #292929;
-            border-bottom: 1px solid #444;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .ranking-item:hover {
-            background: #333;
-            transform: translateY(-3px);
-        }
-
-        .ranking-position {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ffd700;
-            width: 40px;
-            text-align: center;
-            position: relative;
-        }
    
+    </div>
+    <ul class="ranking-list" id="ranking-list"></ul>
+  </div>
+</body>
 
-        .ranking-avatar {
-            width: 70px;
-            height: 70px;
-            margin: 0 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
 
-        .ranking-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+<style>
+  body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #121212;
+          color: #fff;
+      }
 
-        .ranking-avatar img:hover {
-            transform: scale(1.1);
-        }
+  .give-flower-btn {
+      background-color: #ff4d6d;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+    }
 
-        .ranking-info {
-            flex: 1;
-        }
+    .give-flower-btn:hover {
+      background-color: #ff6b8b;
+    }
 
-        .ranking-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-            color: #fff;
-        }
+    .flower-count {
+      background-color: #fff;
+      color: #ff4d6d;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 12px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 12px;
+    }
 
-        .ranking-likes {
-            font-size: 16px;
-            color: #ff6b6b;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
 
-        .ranking-likes i {
-            margin-right: 5px;
-        }
 
-        .ranking-change {
-            font-size: 16px;
-            font-weight: bold;
-            color: #4caf50;
-        }
 
-        .ranking-change.negative {
-            color: #e53935;
-        }
+      .ranking-container {
+          max-width: 800px;
+          margin: 50px auto;
+          background: #1e1e1e;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
 
-        .ranking-ratings {
-            font-size: 14px;
-            color: #bbb;
-     }        
+      .ranking-header {
+          text-align: center;
+          font-size: 24px;
+          color: #fff;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Đổ bóng cho chữ */
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          font-weight: bold;
+      }
+
+      .ranking-controls {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .ranking-controls button {
+        background: linear-gradient(135deg, #00bfa5, #00796b);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 550;
+    padding: 12px 0;
+    width: 100%;
+    max-width: 150px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+      }
+
+      .ranking-controls button:hover {
+          background: #1a1515;
+          color: #ffffff;
+      }
+
+      .ranking-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+
+      .ranking-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 15px;
+          background: #292929;
+          border-bottom: 1px solid #444;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .ranking-item:hover {
+          background: #333;
+          transform: translateY(-3px);
+      }
+
+      .ranking-position {
+          font-size: 20px;
+          font-weight: bold;
+          color: #ffd700;
+          width: 40px;
+          text-align: center;
+          position: relative;
+      }
+ 
+
+      .ranking-avatar {
+          width: 70px;
+          height: 70px;
+          margin: 0 15px;
+          border-radius: 10px;
+          overflow: hidden;
+          border: 2px solid #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .ranking-avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+      }
+
+      .ranking-avatar img:hover {
+          transform: scale(1.1);
+      }
+
+      .ranking-info {
+          flex: 1;
+      }
+
+      .ranking-name {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0;
+          color: #fff;
+      }
+
+      .ranking-likes {
+          font-size: 16px;
+          color: #ff6b6b;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .ranking-likes i {
+          margin-right: 5px;
+      }
+
+      .ranking-change {
+          font-size: 16px;
+          font-weight: bold;
+          color: #4caf50;
+      }
+
+      .ranking-change.negative {
+          color: #e53935;
+      }
+
+      .ranking-ratings {
+          font-size: 14px;
+          color: #bbb;
+   }        
 /* Định nghĩa chung cho biểu tượng đặc biệt */
 .special-icon {
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline-block;
-    margin-left: 5px;
-    vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
 }
 
 /* Vương miện cho Top 1 */
 .ranking-position.top-1 .special-icon {
-    background-image: url('https://i.ibb.co/wSQJfrg/64ec2c8fedc1c.png');
+  background-image: url('https://i.ibb.co/wSQJfrg/64ec2c8fedc1c.png');
 }
 
 /* Ngôi sao cho Top 2 */
 .ranking-position.top-2 .special-icon {
-    background-image: url('https://i.ibb.co/HgdLXyT/671bab6aa4122.png');
+  background-image: url('https://i.ibb.co/HgdLXyT/671bab6aa4122.png');
 }
 
 /* Huy chương cho Top 3 */
 .ranking-position.top-3 .special-icon {
-    background-image: url('https://i.ibb.co/7pykV2z/2055905-removebg-preview.png');
+  background-image: url('https://i.ibb.co/7pykV2z/2055905-removebg-preview.png');
 }
 
 </style>
 <script>
+let flowerInterval; // Biến để lưu interval
+let flowerCount = 0; // Đếm số hoa tặng
+const rankingList = document.getElementById("ranking-list");
 
-
-
-const rankings = [
-    { position: 1, name: "Naa", likes: 3024, change: 5.29, ratings: 450, avatar: "https://i.ibb.co/nPVfv9c/photo-2024-08-11-13-05-35.jpg", rating: 5 },
+let rankings = [
+    { position: 1, name: "Naa", likes: 2981, change: 1.29, ratings: 450, avatar: "https://i.ibb.co/nPVfv9c/photo-2024-08-11-13-05-35.jpg", rating: 5 },
     { position: 2, name: "Trúc Anh", likes: 2980, change: 2.21, ratings: 346, avatar: "https://i.ibb.co/k3jRTts/photo-2024-08-10-20-05-20.jpg", rating: 4.5 },
-    { position: 3, name: "LyLy", likes: 2621, change: 5.56, ratings: 253, avatar: "https://i.ibb.co/YjgjhmX/photo-2024-07-21-21-25-48.jpg", rating: 4.5 },
+    { position: 3, name: "LyLy", likes: 4010, change: 5.56, ratings: 253, avatar: "https://i.ibb.co/YjgjhmX/photo-2024-07-21-21-25-48.jpg", rating: 4.5 },
     { position: 4, name: "Thi Thi", likes: 2540, change: -3.72, ratings: 212, avatar: "https://i.ibb.co/d7qthYp/photo-2024-07-05-12-27-17.jpg", rating: 4.5 },
     { position: 5, name: "Yến Nhi", likes: 2136, change: -0.62, ratings: 150, avatar: "https://i.ibb.co/Dz2xDRf/photo-2024-07-04-13-51-05-2.jpg", rating: 4 },
     { position: 6, name: "Trâm Anh", likes: 1773, change: -0.33, ratings: 147, avatar: "https://i.ibb.co/C96n32S/taoanhdep-lam-net-anh-53181.jpg", rating: 4 },
     { position: 7, name: "Ngọc Như", likes: 1326, change: 0.87, ratings: 104, avatar: "https://i.ibb.co/VCZs9YB/review-of-me-gai-dep-for-thu-ky-new-xinh-dep-sac-sao-ky-nang-dinh-cao-3218975-original.jpg", rating: 4 },
     { position: 8, name: "Huyền Anh", likes: 1152, change: 1.38, ratings: 70, avatar: "https://i.ibb.co/ZHt0m10/reup-trieu-uyen-cuc-pham-sieu-non-to-nong-bong-ngot-ngao-dang-yeu-2970339-original.jpg", rating: 3.5 },
     { position: 9, name: "Annie", likes: 917, change: -0.73, ratings: 61, avatar: "https://i.ibb.co/z8m3D3c/photo-2024-10-19-08-08-02.jpg", rating: 3.5 },
-    { position: 10, name: "MiMi", likes: 735, change: -0.67, ratings: 54, avatar: "https://i.ibb.co/TBKGpDc/photo-2024-07-26-18-41-01.jpg", rating: 3 },
+    { position: 10, name: "MiMi", likes: 735, change: -0.67, ratings: 54, avatar: "https://i.ibb.co/TBKGpDc/photo-2024-07-26-18-41-01.jpg", rating: 3 }
 ];
 
-rankings.forEach((item, index) => {
-    const specialClass = item.position === 1 ? "top-1"
-        : item.position === 2 ? "top-2"
-        : item.position === 3 ? "top-3" : "";
-    });      
-
-const rankingList = document.getElementById("ranking-list");
-
-// Hàm tăng số liệu ngẫu nhiên
-function updateDynamicData() {
-    rankings.forEach(item => {
-        const likeChange = Math.floor(Math.random() * 5) + 1; // Tăng 1-5 lượt thích
-        const percentChange = Math.random() * 0.1; // Tăng chậm 0.1%
-        item.likes += likeChange;
-        item.change += percentChange;
-        item.ratings += Math.floor(Math.random() * 2); // Thêm số lượt đánh giá
-    });
-    renderRankings();
+function loadFromLocalStorage() {
+    const storedRankings = localStorage.getItem('rankings');
+    if (storedRankings) {
+        rankings = JSON.parse(storedRankings);
+    } else {
+        saveToLocalStorage();
+    }
 }
 
-// Hàm tạo hiệu ứng động
-function animateValue(element, start, end, duration) {
-    let startTime = null;
+function saveToLocalStorage() {
+    localStorage.setItem('rankings', JSON.stringify(rankings));
+}
 
-    function step(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = value;
+// Bắt đầu đếm hoa khi giữ nút
+function startGivingFlowers(index, button) {
+    const flowerCountElement = button.querySelector('.flower-count');
+    flowerCount = 0;
 
-        if (progress < 1) {
-            requestAnimationFrame(step);
-        }
+    flowerInterval = setInterval(() => {
+        flowerCount++;
+        flowerCountElement.textContent = flowerCount;
+    }, 200);
+
+    button.dataset.index = index;
+}
+
+// Dừng đếm và tặng hoa khi thả nút
+function stopGivingFlowers() {
+    clearInterval(flowerInterval);
+
+    const button = document.querySelector('.give-flower-btn[data-index]');
+    if (button) {
+        const index = button.dataset.index;
+        rankings[index].likes += flowerCount;
+        button.querySelector('.flower-count').textContent = '0';
+        delete button.dataset.index;
+
+        sortRankings('votes');
+        saveToLocalStorage();
+        renderRankings();
     }
+}
 
-    requestAnimationFrame(step);
+
+function updateDynamicData() {
+    rankings.forEach(item => {
+        const likeChange = Math.floor(Math.random() * 10) + 1;
+        const percentChange = (Math.random() * 2 - 1).toFixed(2);
+
+        item.likes += likeChange;
+        item.change = parseFloat(percentChange);
+        item.ratings += Math.floor(Math.random() * 3);
+    });
+
+    sortRankings('votes');
+    saveToLocalStorage();
+}
+
+function sortRankings(criteria) {
+    rankings.sort((a, b) => {
+        if (criteria === "votes") return b.likes - a.likes;
+        if (criteria === "change") return b.change - a.change;
+        if (criteria === "rating") return b.rating - a.rating;
+        return 0;
+    });
+
+    rankings.forEach((item, index) => {
+        item.position = index + 1;
+    });
+
+    renderRankings();
+    saveToLocalStorage();
 }
 
 function renderRankings() {
@@ -6624,10 +6699,7 @@ function renderRankings() {
         const listItem = document.createElement("li");
         listItem.className = `ranking-item ${specialClass}`;
         listItem.innerHTML = `
-            <div class="ranking-position">
-                ${item.position}
-                ${specialClass ? '<div class="special-icon"></div>' : ""}
-            </div>
+            <div class="ranking-position">${item.position}</div>
             <div class="ranking-avatar">
                 <img src="${item.avatar}" alt="${item.name}">
             </div>
@@ -6636,8 +6708,8 @@ function renderRankings() {
                 <div class="ranking-likes">
                     <i class="fas fa-heart"></i> 
                     <span class="likes-count">${item.likes}</span> Thích
-                    <span class="ranking-ratings">${item.ratings} lượt đánh giá</span>
                 </div>
+                <button class="give-flower-btn" onclick="giveFlower(${item.position - 1})">Tặng Hoa 🌹</button>
             </div>
             <div class="ranking-change ${item.change < 0 ? "negative" : ""}">
                 <span class="change-count">${item.change.toFixed(2)}</span>% 
@@ -6646,23 +6718,63 @@ function renderRankings() {
         rankingList.appendChild(listItem);
     });
 }
-function sortRankings(criteria) {
-    rankings.sort((a, b) => {
-        if (criteria === "likes") return b.likes - a.likes;
-        if (criteria === "change") return b.change - a.change;
-        if (criteria === "rating") return b.rating - a.rating;
-        return 0;
-    });
+
+function giveFlower(index) {
+    rankings[index].likes += 1; // Mỗi hoa tăng 1 điểm
+    rankings[index].change += 0.1; // Tăng nhẹ phần trăm thay đổi để thể hiện sự thay đổi
+
+    // Sắp xếp lại sau khi tặng hoa
+    sortRankings('votes');
+    saveToLocalStorage();
     renderRankings();
 }
 
+function startGivingFlowers(index, button) {
+    const flowerCountElement = button.querySelector('.flower-count');
+    flowerCount = 0;
+
+    // Bắt đầu đếm hoa mỗi 200ms
+    flowerInterval = setInterval(() => {
+        flowerCount++;
+        flowerCountElement.textContent = flowerCount;
+    }, 200);
+    
+    // Ghi lại index của nhân vật được tặng hoa
+    button.dataset.index = index;
+}
+
+function stopGivingFlowers() {
+    clearInterval(flowerInterval); // Dừng đếm hoa
+
+    const button = document.querySelector('.give-flower-btn[data-index]');
+    if (button) {
+        const index = button.dataset.index;
+        rankings[index].likes += flowerCount; // Tặng số hoa đếm được
+        rankings[index].change += flowerCount * 0.1; // Tăng phần trăm thay đổi
+
+        // Reset hiển thị số hoa
+        button.querySelector('.flower-count').textContent = '0';
+        delete button.dataset.index; // Xóa index lưu tạm
+
+        // Cập nhật xếp hạng
+        sortRankings('votes');
+        saveToLocalStorage();
+        renderRankings();
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  
+    loadFromLocalStorage();
     renderRankings();
-    setInterval(updateDynamicData, 3000); // Cập nhật số liệu mỗi 3 giây
+    setInterval(updateDynamicData, 1000);
 });
+
+
 </script>
 </body>
 </html>
+
 
 
 <!DOCTYPE html>
