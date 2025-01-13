@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
   <audio id="background-music" autoplay loop>
-    <source src="https://www.dropbox.com/scl/fi/fj6a20iu8f5w6kpp3g1l4/Th-ng-Th-Th-i-Ciray-Remix-_-R-i-B-N-i-Anh-Bi-t-Em-C-Vui-B-n-Ng-i-__-HOT-TIKTOK.mp3?rlkey=wvecu8ejj56jc8u8d7y9a5v36&st=6mxu7f5b&raw=1" type="audio/mpeg">
+    <source src="https://www.dropbox.com/scl/fi/33oaqndvbzphjwbqb58v8/c-u-b-l_-nh-21-t-i-sinh-remix-vietmix-2024-em-l-kh-ng-th-nst-nonstop-vi-t-mix-taivideoaz.mp3?rlkey=2r13posgcu1myrb53itazx8y9&st=n2sghn7z&raw=1" type="audio/mpeg">
     Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
 
@@ -792,7 +792,7 @@ checkLocation();
       </div>
       <div class="stat-item">
         <i class="fas fa-clock"></i>
-        <span>Sydney Time</span>
+        <span>Time</span>
         <strong id="australiaTime">--:--:--</strong>
       </div>
     </div>
@@ -5951,44 +5951,53 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="confirm-button" onclick="confirmBooking()">Xác nhận</button>
     </div>
   </div>
+
+
   <!-- Modal Nhập Mã Đặt Lịch -->
-  <div id="bookingCodeModal" class="modal">
-    <div class="modal-content">
-      <h2>Nhập Mã Thẻ Thành Viên</h2>
-      <p>Xác nhận để hoàn tất đặt lịch.</p>
-      <input type="text" id="bookingCodeInput" placeholder="Nhập mã thẻ thành viên" required>
-      <div class="button-container">
-      </div>
+<div id="bookingCodeModal" class="modal">
+  <div class="modal-content">
+    <h2>Nhập Membership Card CODE Nếu Đã Có</h2>
+   
+    
+    <!-- Thêm hình thẻ thành viên -->
+    <div class="member-card">
+      <img src="https://i.ibb.co/7GmDHKL/H-n-2.png" alt="Thẻ Thành Viên" class="member-card-image">
+    </div>
+    <p>Xác nhận để hoàn tất đặt lịch</p>
+    <!-- Input Nhập Mã -->
+    <input type="text" id="bookingCodeInput" placeholder="Nhập mã thẻ thành viên" required>
 
-        <div id="errorNotification" class="error-notification" style="display: none;">
-          <span id="errorMessage"></span>
-        </div>
-        
-          
+    <div id="errorNotification" class="error-notification" style="display: none;">
+      <span id="errorMessage"></span>
+    </div>
 
-      <p class="help-note">
-        <a href="https://direct.lc.chat/18963027/" target="_blank" style="color: #ffffff; text-decoration: none;">
-          Hướng dẫn lấy mã thẻ nếu chưa có !
-        </a>
-      </p>
-  
-      <!-- Nút xác nhận -->
-      <div class="button-container">
-        <button class="confirm-button" onclick="submitBookingCode()">Xác nhận</button>
-      </div>
-      <!-- Spinner khi đang xử lý -->
-      <div id="spinner" class="spinner" style="display: none;"></div>
+    <p class="help-note">
+      <a href="https://direct.lc.chat/18963027/" target="_blank" style="color: #ffffff; text-decoration: none;">
+        Vui lòng bấm vào đây nếu chưa có Membership Card 
+      </a>
+    </p>
 
-      <div id="successNotification" class="success-notification" style="display: none;">
-        <div class="notification-content">
-          <span id="notificationIcon">🎉</span>
-          <span id="notificationMessage">Đặt lịch thành công!</span>
-        </div>
-        <div class="progress-bar" id="progressBar"></div>
+    <!-- Nút xác nhận -->
+    <div class="button-container">
+      <button class="confirm-button" onclick="submitBookingCode()">Xác nhận</button>
+    </div>
+
+    <div class="spinner-container">
+      <div class="spinner">
+        <div class="wave"></div>
       </div>
     </div>
-         </div>
+
+    <div id="successNotification" class="success-notification" style="display: none;">
+      <div class="notification-content">
+        <span id="notificationIcon">🎉</span>
+        <span id="notificationMessage">Đặt lịch thành công!</span>
+      </div>
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
   </div>
+</div>
+</div>
 <style>
 
   /* Modal chung */
@@ -6022,6 +6031,17 @@ document.addEventListener('DOMContentLoaded', () => {
   font-size: 20px;
  
 }
+.member-card {
+  text-align: center;
+  margin: 10px 0; /* Khoảng cách giữa hình và các thành phần khác */
+}
+
+.member-card-image {
+  width: 180px; /* Điều chỉnh kích thước hình thẻ */
+  height: auto;
+  border-radius: 10px; /* Bo góc mềm mại */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng */
+}
 
 /* Dropdown */
 .custom-dropdown select,
@@ -6030,7 +6050,7 @@ document.addEventListener('DOMContentLoaded', () => {
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: 2px solid #ffcc00; /* Viền vàng */
+
   background: #2a2a2a; /* Nền dropdown tối */
   color: #ffffff;
   margin-bottom: 20px;
@@ -6057,7 +6077,7 @@ document.addEventListener('DOMContentLoaded', () => {
   width: 100%;
   padding: 10px;
   font-size: 14px;
-  border: 2px solid #ffcc00; /* Viền vàng */
+
   border-radius: 5px;
   background: #2a2a2a;
   color: #ffffff;
@@ -6082,12 +6102,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .location-container button {
-  padding: 10px 15px;
-  font-size: 14px;
+  padding: 7px 11px;
+  font-size: 12px;
   font-weight: bold;
   color: #000000;
   background: #ff1500;
-  border: none;
+  border: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -6102,34 +6122,97 @@ document.addEventListener('DOMContentLoaded', () => {
   text-align: center;
   margin-top: 20px;
 }
-
 .confirm-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 8px 20px; /* Giảm padding để nút nhỏ gọn hơn */
+  font-size: 14px; /* Giảm kích thước chữ */
   font-weight: bold;
-  color: #000000;
-  background: linear-gradient(145deg, #00c853, #00e676); /* Gradient xanh */
-  border: none;
-  border-radius: 5px;
+  color: #000000; /* Màu chữ trắng */
+  background: linear-gradient(145deg, #00c853, #00e676); /* Gradient xanh lá */
+  border: 2px solid #00c853; /* Viền xanh lá nhạt */
+  border-radius: 25px; /* Bo tròn nút để mềm mại hơn */
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Bóng nhẹ hơn để trông tinh tế */
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  margin-bottom: 10px; /* Đẩy nút lên gần hơn với các thành phần phía trên */
 }
 
 .confirm-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 230, 118, 0.8);
+  transform: translateY(-2px); /* Nhấc nhẹ nút khi hover */
+  box-shadow: 0 5px 12px rgba(0, 230, 118, 0.5); /* Tăng bóng khi hover */
+  background: linear-gradient(145deg, #00e676, #00c853); /* Đổi gradient khi hover */
 }
 
-/* Spinner */
-.spinner {
-  margin: 20px auto;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #6a0dad;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
+.confirm-button:active {
+  transform: scale(0.92); /* Thu nhỏ nút khi nhấn */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Giảm bóng khi nhấn */
+  background: linear-gradient(145deg, #00b248, #00d662); /* Tối màu hơn khi nhấn */
 }
+
+.confirm-button:focus {
+  outline: none; /* Loại bỏ viền mặc định khi focus */
+  box-shadow: 0 0 5px 2px rgba(0, 255, 118, 0.5); /* Hiệu ứng phát sáng nhẹ khi focus */
+}
+
+
+  /* Container cho spinner */
+  .spinner-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #000; /* Nền đen */
+    }
+
+    /* Spinner chính */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #6a0dad; /* Màu tím */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      position: relative;
+    }
+
+    /* Gợn sóng */
+    .wave {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 2px solid #9c27b0; /* Màu tím nhạt */
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: pulse 1.5s linear infinite;
+    }
+
+    /* Keyframes cho spin */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Keyframes cho pulse */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
 
 /* Thông báo thành công */
 .success-notification {
@@ -6137,26 +6220,80 @@ document.addEventListener('DOMContentLoaded', () => {
   align-items: center;
   justify-content: center;
   background: #00c853;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 10px;
   box-shadow: 0 4px 8px rgba(0, 200, 83, 0.5);
+  animation: fade-in 1s ease-out, fade-out 1s ease-in 3s forwards;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Hiệu ứng thanh tiến trình */
 .success-notification .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   height: 5px;
-  background: #00e676;
-  animation: progress 3s ease-out;
+  width: 100%;
+  background: linear-gradient(90deg, #00e676, #76ff03);
+  animation: progress-bar 3s linear;
 }
 
-@keyframes spin {
+/* Keyframes cho fade-in */
+@keyframes fade-in {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes cho fade-out */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Keyframes cho progress-bar */
+@keyframes progress-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Hiệu ứng lắc (shake) khi hover */
+.success-notification:hover {
+  animation: shake 0.5s ease-out;
+}
+
+/* Keyframes cho shake */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
   }
 }
 
@@ -6241,7 +6378,10 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 <script>
-
+ setTimeout(() => {
+      const spinnerContainer = document.querySelector('.spinner-container');
+      spinnerContainer.style.display = 'none';
+    }, 5000); // 5 giây
  // Đóng modal theo ID  
  function closeModal(modalId) {  
       const modal = document.getElementById(modalId);  
@@ -10349,6 +10489,7 @@ userInput.addEventListener("keypress", (e) => {
       e.preventDefault();
     }
   });
+
 
   </script>
 </body>
