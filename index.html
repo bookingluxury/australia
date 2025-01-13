@@ -7438,6 +7438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 <!DOCTYPE html>  
 <html lang="vi">  
 
@@ -7486,39 +7487,16 @@ document.addEventListener('DOMContentLoaded', () => {
       box-shadow: 0 3px 15px rgba(255, 78, 205, 0.5);  
     }  
 
-    /* Bảng giá */  
-    #pricing-table {  
-      display: none;  /* Ẩn bảng giá khi trang tải */  
-      position: fixed;  /* Sử dụng fixed để bảng luôn hiển thị ở vị trí cố định khi cuộn trang */  
-      top: 50%;  
-      left: 50%;  
-      transform: translate(-50%, -50%);  
-      width: 90%;  
-      max-width: 1200px;  
-      height: 80%;  
-      background: rgba(0, 0, 0, 0.95); /* Nền tối mờ */  
-      z-index: 2000;  
-      overflow-y: auto;  /* Cho phép cuộn nếu nội dung quá dài */  
-      transition: opacity 0.3s ease;  
-      padding: 20px;  
-      border-radius: 8px;  
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);  
-    }  
 
-    /* Hình ảnh tiêu đề */  
-    .pricing-title-image {  
-      display: block;  
-      margin: 0 auto 15px auto;  
-      border: 5px solid #504b4e; /* Màu viền hồng */  
-      border-radius: 10px; /* Bo tròn góc */  
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Đổ bóng */  
-      width: 100%;  
-      height: 200px;  
-    }  
+
+
+
+
+   
 
     /* Nút đóng bảng giá */  
     .close-button {  
-
+      margin-bottom: 30px;
       top: 10px;  
       right: 10px; /* Cách phải modal 10px */  
       background: linear-gradient(135deg, #6a0dad, #a12ff2);  
@@ -7544,44 +7522,74 @@ document.addEventListener('DOMContentLoaded', () => {
       transform: scale(0.95); /* Hiệu ứng thu nhỏ nhẹ khi bấm */  
       box-shadow: 0 3px 15px rgba(255, 78, 205, 0.5); /* Giảm độ đổ bóng khi nhấn */  
     }  
+    #pricing-table {
+  display: none; /* Ẩn bảng giá khi trang tải */
+  position: fixed; /* Bảng luôn hiển thị ở vị trí cố định khi cuộn trang */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
 
-    /* Tiêu đề chính của bảng giá */  
-    .pricing-title {  
-      font-size: 36px;  
-      font-weight: bold;  
-      text-align: center;  
-      background: linear-gradient(90deg, #ffffff, #ffffff);  
-      -webkit-background-clip: text;  
-      -webkit-text-fill-color: transparent;  
-      text-transform: uppercase;  
-      margin-bottom: 30px;  
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgb(255, 255, 255);  
-    }  
+  z-index: 2000;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+  transition: opacity 0.3s ease;
 
-    /* Gói dịch vụ */  
-    .package {  
-      background: linear-gradient(135deg, #2c2c3a, #1f1f2e);  
-      padding: 20px;  
-      border-radius: 12px;  
-      text-align: center;  
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);  
-      margin-bottom: 30px;  
-      transition: transform 0.3s ease, box-shadow 0.3s ease;  
-    }  
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  position: relative;
+}
 
-    .package:hover {  
-      transform: translateY(-10px);  
-      box-shadow: 0 12px 30px rgba(74, 105, 189, 0.6);  
-    }  
 
-    /* Tiêu đề gói dịch vụ - Mỗi gói một màu */  
-    .package h2 {  
-      font-size: 24px;  
-      font-weight: 700;  
-      text-transform: uppercase;  
-      letter-spacing: 1px;  
-      margin-bottom: 15px;  
-    }  
+
+
+
+/* Hình ảnh tiêu đề */
+.pricing-title-image {
+  display: block;
+  margin: 0 auto 15px auto;
+  border: 5px solid #00247d; /* Viền xanh lam từ cờ Úc */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 200px;
+}
+
+/* Tiêu đề bảng giá */
+.pricing-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #002868, #FFFFFF); /* Xanh và trắng */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(0, 40, 104, 0.5);
+}
+
+.package {
+  background: #000000;
+  color: #ffffff; /* Màu chữ trắng */
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
 
     /* Gói Basic */  
     .package:nth-child(1) h2 {  
