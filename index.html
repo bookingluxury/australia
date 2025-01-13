@@ -891,59 +891,41 @@ body, html {
 }
 
 .container {
-	width: 100%;
-	max-width: 100%;
-	border-radius: 10px;
-	margin: 0 auto;
-	box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* Điều chỉnh menu-button để di chuyển trái và giảm khoảng cách */
 .menu-button {
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
-  padding: 0; /* Không có khoảng cách nội tại */
-  margin: 0; /* Không có khoảng cách bên ngoài */
+  padding: 0;
+  margin: -10px 0; /* Giảm khoảng cách trên dưới */
+  transform: translateX(-10px); /* Di chuyển qua trái */
   cursor: pointer;
-}
-
-.menu-logo {
-  width: 200px; /* Giảm kích thước logo nếu cần */
   height: auto;
-  margin: 0; /* Đảm bảo logo không có khoảng cách bên ngoài */
 }
 
-
-.menu-button i {
-  font-size: 16px;
-  color: #ffffff;
+/* Logo trong menu */
+.menu-logo {
+  width: 180px;
+  height: auto;
+  margin: -10px 0; /* Giảm khoảng cách trên dưới */
+  position: relative;
+  left: 0px; /* Dịch qua trái */
 }
 
-
-.menu-button:active {
-  transform: scale(0.95);
-  
-}
-
-
-.menu-button:hover::before {
-  left: 50%;
-  transform: scale(1.5); /* Ánh sáng chuyển động lớn hơn khi hover */
-  opacity: 1;
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Slide menu (nếu cần) */
+.slide-menu {
+  padding: 0;
+  margin: -10px 0; /* Giảm khoảng cách trên dưới */
+  position: relative;
 }
 
 
