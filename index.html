@@ -57,6 +57,9 @@
         }
       }
 
+      .lc-message-box {
+    display: none !important;
+}
 
       
   </style>
@@ -69,6 +72,15 @@
 <!-- Start of LiveChat (www.livechat.com) code -->
 <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var messageBox = document.querySelector(".lc-message-box");
+    if (messageBox) {
+        messageBox.style.display = "none";
+    }
+});
+
+
   window.__lc = window.__lc || {};
   window.__lc.license = 18986618;
   window.__lc.integration_name = "manual_onboarding";
@@ -887,27 +899,22 @@ body, html {
 }
 
 .menu-button {
-  animation: gradientMove 5s ease infinite;
-  border: 2px solid #000000; /* Viền neon hồng */
-  background: linear-gradient(145deg, #d3d3ff, #a8a8ff); /* Nền gradient mềm mại */
-  color: #ffffff;
-  font-size: 14px;
-  padding: 5px 7px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  position: relative;
-  overflow: hidden;
-  z-index: 100000;
-  
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0; /* Không có khoảng cách nội tại */
+  margin: 0; /* Không có khoảng cách bên ngoài */
+  cursor: pointer;
 }
+
+.menu-logo {
+  width: 200px; /* Giảm kích thước logo nếu cần */
+  height: auto;
+  margin: 0; /* Đảm bảo logo không có khoảng cách bên ngoài */
+}
+
 
 .menu-button i {
   font-size: 16px;
@@ -920,18 +927,6 @@ body, html {
   
 }
 
-.menu-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
-  opacity: 0.8;
-  transform: scale(1.2);
-  transition: all 0.5s ease;
-}
 
 .menu-button:hover::before {
   left: 50%;
@@ -952,10 +947,6 @@ body, html {
 }
 
 
-.menu-logo {
-	width: 70px;
-	object-fit: contain;
-}
 
 .menu-panel {
   position: fixed;
@@ -966,53 +957,57 @@ body, html {
   padding-top: 15px; /* Giảm khoảng cách trên */
   transition: left 0.4s ease, box-shadow 0.3s ease;
   z-index: 1004;
-  background: #2b2b2b; /* Nền tối đơn giản */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Đổ bóng mờ */
+  background: linear-gradient(135deg, #001f3f, #003366); /* Nền gradient xanh lam đậm */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Đổ bóng */
+  border-right: 2px solid #0056b3; /* Đường viền xanh lam nhạt */
 }
 
 .menu-panel.active {
   left: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Đổ bóng mạnh hơn khi mở */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); /* Tăng bóng khi mở */
 }
 
 .menu-panel a {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Căn trái */
-  padding: 8px 12px; /* Giảm padding để tiết kiệm không gian */
+  justify-content: flex-start;
+  padding: 10px 15px; /* Khoảng cách padding lớn hơn */
   text-decoration: none;
-  margin: 8px 10px; /* Thu hẹp khoảng cách giữa các mục */
-  border-radius: 8px; /* Giảm độ bo tròn */
-  font-size: 13px; /* Giảm kích thước chữ */
-  background: #3b3b3b; /* Nền tối hơn so với panel */
-  color: #ffffff;
+  margin: 10px 12px; /* Khoảng cách giữa các mục */
+  border-radius: 50px; /* Bo tròn giống nút "Main Menu" */
+  font-size: 14px; /* Kích thước chữ */
+  background: linear-gradient(135deg, #004080, #0066cc); /* Nền gradient xanh lam nhạt hơn */
+  color: #ffffff; /* Màu chữ trắng */
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Giảm hiệu ứng bóng */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng bóng */
+  text-align: center; /* Căn giữa chữ */
 }
 
 .menu-panel a:hover {
-  transform: translateX(5px); /* Hiệu ứng trượt nhẹ khi hover */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Tăng bóng khi hover */
+  transform: translateX(10px); /* Hiệu ứng trượt mạnh hơn khi hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8); /* Tăng bóng khi hover */
+  background: linear-gradient(135deg, #0066cc, #0080ff); /* Đổi gradient khi hover */
 }
 
 .menu-panel a:active {
-  transform: scale(0.97); /* Nhấn nút nhỏ lại */
+  transform: scale(0.95); /* Nhấn nút nhỏ lại */
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Giảm bóng khi nhấn */
 }
 
 .menu-panel a i {
   margin-right: 10px; /* Giảm khoảng cách giữa biểu tượng và chữ */
   font-size: 16px; /* Giảm kích thước biểu tượng */
-  color: #bbbbbb; /* Màu biểu tượng xám nhạt */
+  color: #e6e6e6; /* Màu biểu tượng xám nhạt */
   transition: color 0.3s ease;
 }
 
 .menu-panel a:hover i {
   color: #ffffff; /* Biểu tượng chuyển thành trắng khi hover */
 }
+
 
 
 .content-section {
@@ -1631,10 +1626,10 @@ h2:hover::before {
 
     <div class="slide-menu">
       <button class="menu-button" id="menuButton">
-        <img src="https://i.ibb.co/4fJmhzm/kisspng-logo-passform-industrial-design-text-font-menu-text-5b57d2832b94c6-1806817415324821791785-re.png" alt="Logo" class="menu-logo">
-        <i class="fas fa-bars"></i>
+        <img src="https://i.ibb.co/McBT8HR/taoanhdep-lam-net-anh-82779-removebg-preview.png" alt="Logo" class="menu-logo">
       </button>
     </div>
+    
  <div id="spinner" class="spinner hidden"></div>  
 
     <div class="menu-panel" id="menuPanel">
