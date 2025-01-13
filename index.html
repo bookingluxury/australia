@@ -229,7 +229,7 @@
 </head>
 <body>
   <audio id="background-music" autoplay loop>
-    <source src="https://www.dropbox.com/scl/fi/922vtnppk0w5by2ghsddc/Th-ng-Th-Th-i-Style-Huy-PT-Remix-Jank-AIR-Remix-R-i-B-N-i-Anh-Bi-t-Em-C-Vui-B-n-Ng-i.mp3?rlkey=9fp3a3rdxw852gwmshwu4l4ko&raw=1" type="audio/mpeg">
+    <source src="https://www.dropbox.com/scl/fi/fj6a20iu8f5w6kpp3g1l4/Th-ng-Th-Th-i-Ciray-Remix-_-R-i-B-N-i-Anh-Bi-t-Em-C-Vui-B-n-Ng-i-__-HOT-TIKTOK.mp3?rlkey=wvecu8ejj56jc8u8d7y9a5v36&st=6mxu7f5b&raw=1" type="audio/mpeg">
     Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
 
@@ -3185,6 +3185,12 @@ img.lazy-loaded {
 	transform: scale(.95);
 }
 
+.gift-icon {
+	width: 80px;
+	height: auto;
+	margin-bottom: 5px;
+	animation: bounceGift 1.5s infinite;
+}
 .gift-success-popup {
 	position: fixed;
 	top: 50%;
@@ -3236,6 +3242,21 @@ img.lazy-loaded {
 	100% {
 		filter: drop-shadow(0 0 20px rgba(255, 69, 0, 1));
 	}
+}
+.fake-live-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.91); /* Giảm độ tối từ 0.97 xuống 0.5 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 10;
+	backdrop-filter: blur(3px);
+	box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3); /* Giảm mức độ bóng tối */
 }
 
 .gift-message {
@@ -3680,7 +3701,7 @@ iframe {
 .donate-notification {
 	position: absolute;
 	bottom: 20px;
-	right: -10px;
+	right: -70px;
 	padding: 10px;
 	transform: translateX(-50%);
 	font-size: 10px;
@@ -3706,12 +3727,7 @@ iframe {
 	}
 }
 
-.donate-notification img {
-	width: 50px;
-	margin-bottom: 10px;
-	height: 50px;
-	animation: pulse 1.5s infinite alternate;
-}
+
 
 @keyframes pulse {
 	0% {
@@ -3730,12 +3746,6 @@ iframe {
 	color: #ff4d4d;
 }
 
-.gift-icon {
-	width: 80px;
-	height: auto;
-	margin-bottom: 5px;
-	animation: bounceGift 1.5s infinite;
-}
 
 .gift-icon, .gift-name {
 	animation: glow 1.5s infinite alternate;
@@ -3870,21 +3880,7 @@ iframe {
 	vertical-align: middle;
 }
 
-.fake-live-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, .97);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	z-index: 10;
-	backdrop-filter: blur(3px);
-	box-shadow: inset 0 0 40px rgba(0, 0, 0, .5);
-}
+
 
 .fake-live-content {
 	text-align: center;
@@ -4254,37 +4250,65 @@ iframe {
       <div class="live-grid">
         <div class="live-row">
           <!-- Thẻ mới với iframe -->
-          <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status offline">● Offline</span>
+          <div class="live-card" onclick="showLiveStream('https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/4b6efd5ec0dc2d0fe0afc3912cb65753/iframe')">
+            <span class="status online">● Online</span>
+          
+            <!-- Giữ lại hình ảnh -->
             <img src="https://i.ibb.co/b5HqZJX/142266575-webp.webp" alt="Streamer 2">
-            <div class="card-info">
-                <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
-                <span class="name">Nhã Uyên</span>
-                <button class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">
-                    <i class="fas fa-heart"></i>
-                </button>
-            </div>
-        </div>
-        
-        
-        <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-          <span class="status offline">● Offline</span>
-            <img src="https://i.ibb.co/Kb7yzwR/photo-3291-24-06-2024-20-38-28.jpg" alt="Streamer 3">
+          
+            <!-- Video tự phát -->
+            <video autoplay muted playsinline loop preload="auto" poster="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/4b6efd5ec0dc2d0fe0afc3912cb65753/thumbnails/thumbnail.jpg?time=&height=600">
+              <source src="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/4b6efd5ec0dc2d0fe0afc3912cb65753/iframe" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ video.
+            </video>
+          
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
-              <span class="name">Miu Miu</span>
+              <span class="name">Nhã Uyên</span>
             </div>
-            <span class="top-badge">
-              <img src="https://i.ibb.co/5W327R1/md-3572a88c007d18e2ac7f4b9655297589-removebg-preview.png" alt="Top Logo" class="top-logo">
-            </span>
+          
+          
+          
             <!-- Nút yêu thích -->
             <button class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">
               <i class="fas fa-heart"></i>
-              <!-- Biểu tượng yêu thích -->
             </button>
           </div>
+          
+        
+        
+        <div class="live-card" onclick="showLiveStream('https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/2c40a9a74d7b838fb83ef0e3f9fbd779/iframe')">
+          <span class="status online">● Online</span>
+          
+          <!-- Giữ lại hình ảnh -->
+          <img src="https://i.ibb.co/Kb7yzwR/photo-3291-24-06-2024-20-38-28.jpg" alt="Streamer 3">
+          
+          <!-- Video tự phát -->
+          <video autoplay muted playsinline loop preload="auto" poster="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/2c40a9a74d7b838fb83ef0e3f9fbd779/thumbnails/thumbnail.jpg?time=&height=600">
+            <source src="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/2c40a9a74d7b838fb83ef0e3f9fbd779/iframe" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+          
+          <div class="card-info">
+            <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
+            <span class="name">Miu Miu</span>
+          </div>
+          
+          <span class="top-badge">
+            <img src="https://i.ibb.co/5W327R1/md-3572a88c007d18e2ac7f4b9655297589-removebg-preview.png" alt="Top Logo" class="top-logo">
+          </span>
+          
+          <!-- Nút yêu thích -->
+          <button class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        
+        
+        
+        
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status online">● Online</span>
+            <span class="status offline">● Offline</span>
         <img src="https://i.ibb.co/7NrNXw7/taoanhdep-lam-net-anh-94654.jpg" alt="Streamer 4">
         <div class="card-info">
           <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
@@ -4316,9 +4340,18 @@ iframe {
               </button>
             </div>
           </div>
-          <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status offline">● Offline</span>
+          <div class="live-card" onclick="showLiveStream('https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/f18f47df36f2736a2137ff0415da96ef/iframe')">
+            <span class="status online">● Online</span>
+          
+            <!-- Giữ lại hình ảnh -->
             <img src="https://i.ibb.co/VqRq7Np/168021555-webp.webp" alt="Streamer 7">
+            
+            <!-- Video tự phát -->
+            <video autoplay muted playsinline loop preload="auto" poster="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/f18f47df36f2736a2137ff0415da96ef/thumbnails/thumbnail.jpg">
+              <source src="https://customer-vd2dw6zchzsa06w6.cloudflarestream.com/f18f47df36f2736a2137ff0415da96ef/iframe" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ video.
+            </video>
+          
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
               <span class="name">Quỳnh Chi</span>
@@ -4326,10 +4359,12 @@ iframe {
                 <i class="fas fa-heart"></i>
               </button>
             </div>
+            
             <span class="top-badge">
               <img src="https://i.ibb.co/TBSjbNS/pngtree-ranking-label-png-image-3569728-removebg-preview.png" alt="Top Logo" class="top-logo">
             </span>
           </div>
+          
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
             <span class="status offline">● Offline</span>
             <img src="https://i.ibb.co/487J7mb/152053279-webp.webp" alt="Streamer 8">
@@ -4388,7 +4423,7 @@ iframe {
             </div>
           </div>
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status online">● Online</span>
+            <span class="status offline">● Offline</span>
             <img src="https://i.ibb.co/hFQG6z5/photo-2364-24-06-2024-18-27-06.jpg" alt="Streamer 13">
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
@@ -4424,7 +4459,7 @@ iframe {
             </div>
           </div>
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status online">● Online</span>
+            <span class="status offline">● Offline</span>
             <img src="https://i.ibb.co/tLqFXs7/82dd3be7b5d672d1a0cbe14aacc075b9-thumb-small.webp" alt="Streamer 16">
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
@@ -4457,7 +4492,7 @@ iframe {
             </div>
           </div>
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status online">● Online</span>
+            <span class="status offline">● Offline</span>
             <img src="https://i.ibb.co/dQfs1MR/photo-1-16136972389091030663303.jpg" alt="Streamer 19">
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
@@ -4468,7 +4503,7 @@ iframe {
             </div>
           </div>
           <div class="live-card" onclick="showLiveStream('https://i.ibb.co/VWwZccP/live-streaming-symbol-set-online-broadcast-icon-the-concept-of-live-streaming-for-selling-on-social.webp')">
-            <span class="status online">● Online</span>
+            <span class="status offline">● Offline</span>
             <img src="https://i.ibb.co/tpq8zPS/152053279-webp.webp" alt="Streamer 20">
             <div class="card-info">
               <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag">
@@ -4577,35 +4612,35 @@ iframe {
       {
           UserID: '535313',
           flag: 'https://flagpedia.net/data/flags/w40/vn.png',
-          avatar: 'https://i.ibb.co/HHV4hcR/464499472-532878919599580-4687002064873479948-n.jpg',
+          avatar: 'https://i.ibb.co/wCqKM27/photo-2024-11-28-23-07-49.jpg',
           flowers: 45849,
           updateTimes: [] // Lưu thời gian cập nhật
       },
       {
           UserID: '543210',
           flag: 'https://flagpedia.net/data/flags/w40/vn.png',
-          avatar: 'https://i.ibb.co/4p5CGDZ/410274561-926577562228483-5651142562609102213-n.jpg',
+          avatar: 'https://i.ibb.co/jGxqb2C/photo-2024-11-28-23-09-37.jpg',
           flowers: 45728,
           updateTimes: []
       },
       {
           UserID: '785432',
-          flag: 'https://flagpedia.net/data/flags/w40/jp.png',
-          avatar: 'https://i.ibb.co/T13PkKz/463780581-527298090157663-601024373815710168-n.jpg',
+          flag: 'https://flagcdn.com/h80/au.png',
+          avatar: 'https://i.ibb.co/xMJ2sXf/photo-2024-11-28-23-10-21.jpg',
           flowers: 44697,
           updateTimes: []
       },
       {
           UserID: '647284',
-          flag: 'https://flagpedia.net/data/flags/w40/kr.png',
-          avatar: 'https://i.ibb.co/cyvZ0hf/451379936-460814410139365-7975840436709961853-n.jpg',
+          flag: 'https://flagcdn.com/h80/au.png',
+          avatar: 'https://i.ibb.co/8dcgRck/photo-2024-11-28-23-11-31.jpg',
           flowers: 44514,
           updateTimes: []
       },
       {
           UserID: '223289',
           flag: 'https://flagpedia.net/data/flags/w40/vn.png',
-          avatar: 'https://i.ibb.co/T2Gr6gh/434174483-1153210246018881-4793355785770925562-n.jpg',
+          avatar: 'https://i.ibb.co/TMpTsxD/photo-2024-11-28-23-12-34.jpg',
           flowers: 44051,
           updateTimes: []
       }
@@ -4899,22 +4934,53 @@ function showGiftNotification(donorName, giftImage, giftName) {
 
         // Danh sách mẫu bình luận phong phú
         const commentTemplates = [
-      "Đang cần tìm chỗ thư giãn quá!",
-      "Gặp em xinh quá, không chịu nổi!",
-    
-      "Tối nay có em nào không?",
-      "What are you doing, you worked all week and then gave me a day off to relieve stress, oh my god","I'm still working tomorrow, guys, it's so great","Why are you doing so much, are you making money to support the doctor","Do you have any good products to share with me","Everyone uses their own products, why do you share them with me?","Dịch vụ bên này uy tín không?","Ai book rồi cho xin review!","Xinh thế này k chịch phí cả cuộc đời","Làm nốt ngày mai rồi đi chưa muộn đâu 😂","Giờ này book về 1 bé còn gì bằng nữa","Chúc mừng tham gia hội đồng râm","Haha thank bác nhiều nhé","À thì ra mấy nay ông nt hỏi tôi suốt đó à","Hóng bé mới lên sóng!","Ignore them, play something else","Bên này ok không các bác","Ai đã book mấy bé bên này chưa","Tôi đang tìm phòng thoải mái ai biết chỗ nào không","Playing with girls is not easy","Such a delicious pussy, fits my dick perfectly 😁","Why are you so weak, haven't you eaten yet, bro 😂","You must be feeling the warmth kk","Watching full fucking is really fucking 😁","Her breasts are pumped but they're really beautiful","Watching girls show off is even more exciting than dads fucking 🤣","Don't worry about your work, you watch sex all day and then complain about being poor 😌😌😌😌","I'm sure you know what I'm doing 😒😒","Nhìn em này là muốn đặt lịch liền!","Cần một buổi thư giãn hết mình!","Muốn trải nghiệm dịch vụ VIP!","Ai đi rồi chia sẻ kinh nghiệm nhé!","Hôm nay có khuyến mãi gì không?","Book gấp để giải tỏa nào!",
-      "Bé nào phục vụ tận tình không?",
-      "Nhìn hình là muốn gặp ngay!",
-      ];
+  "I really need to find a place to relax!",
+  "Meeting a gorgeous girl like you, I can't resist!",
+  "Any girls available tonight?",
+  "What are you doing? You worked all week, now it's time to take a day off and relieve some stress!",
+  "I'm still working tomorrow, but tonight feels amazing, guys!",
+  "Why are you working so hard? Are you saving up to support the doctor?",
+  "Do you have any great recommendations for me?",
+  "Everyone seems to have their own preferences, why not share them with me?",
+  "Is this service reliable?",
+  "Anyone tried it before? I'd love to hear your reviews!",
+  "Such beauty deserves no regrets, live life fully!",
+  "One more day of work, then it's never too late to relax 😂",
+  "At this hour, nothing beats booking one amazing girl!",
+  "Welcome to the naughty board of directors!",
+  "Haha, thanks so much, mate!",
+  "Oh, so you’ve been messaging me all this time, huh?",
+  "Can’t wait for the new girls to come on board!",
+  "Ignore the drama and let’s enjoy ourselves!",
+  "Is this service good, guys?",
+  "Has anyone booked girls from here yet?",
+  "I'm looking for a cozy place; does anyone know a good spot?",
+  "Playing with girls isn't easy, is it?",
+  "Such a delicious sight, it's absolutely tempting 😁",
+  "Why are you so weak? Haven't eaten yet, bro? 😂",
+  "You must be feeling all warm and fuzzy now, haha!",
+  "Watching a full show is really something special 😁",
+  "Her curves might be enhanced, but they look amazing!",
+  "Watching girls show off is even more thrilling than expected 🤣",
+  "Don't stress about work; if you watch this all day, you can’t complain about being broke 😌",
+  "I'm sure you know what I’m up to! 😒",
+  "Looking at her makes me want to book right now!",
+  "I need an all-out relaxing session!",
+  "I want to experience a VIP service!",
+  "Anyone who's been here, share your experience, please!",
+  "Any promotions today?",
+  "Book quickly and unwind!",
+  "Any girl providing exceptional service?",
+  "Looking at the pictures makes me want to meet her now!"
+];
 
-        // Danh sách quốc gia với cờ
-        const countryFlags = [
-            { code: 'vn', url: 'https://flagcdn.com/h80/vn.png' },
-            { code: 'kr', url: 'https://flagcdn.com/h80/kr.png' },
-            { code: 'us', url: 'https://flagcdn.com/h80/us.png' },
-            { code: 'jp', url: 'https://flagcdn.com/h80/jp.png' },
-        ];
+
+const countryFlags = [
+    { code: 'vn', url: 'https://flagcdn.com/h80/vn.png' }, // Cờ Việt Nam
+    { code: 'au', url: 'https://flagcdn.com/h80/au.png' }, // Cờ Úc
+
+];
+
 
         // Tạo ID người dùng và lấy bình luận ngẫu nhiên
         const randomUserID = generateRandomUserID();
@@ -4989,51 +5055,31 @@ function showGiftNotification(donorName, giftImage, giftName) {
   
   
 // Hàm hiển thị mục Live 18+
+// Hàm hiển thị mục Live 18+
 function showLive18Plus() {
     document.getElementById('live18Section').style.display = 'block';
     document.getElementById('liveStreamWrapper').style.display = 'none';
 }
 
-function showLiveStream(url, idolName) {
+function showLiveStream(url) {
     const liveFrame = document.getElementById('liveFrame');
     const liveStreamWrapper = document.getElementById('liveStreamWrapper');
-    const localStorageKey = `liveStreamTime_${idolName}`;
 
-    // Lấy thời gian lưu trước đó từ LocalStorage
-    const savedTime = localStorage.getItem(localStorageKey) || 0;
-
-    // Kiểm tra và xử lý URL để thêm thời gian bắt đầu
-    let newUrl = url;
-    if (url.includes('cloudflarestream.com')) {
-        const updatedUrl = new URL(url);
-        updatedUrl.searchParams.set('t', savedTime); // Thêm tham số thời gian
-        newUrl = updatedUrl.toString();
-    } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
-        const videoIdMatch = url.match(/(?:v=|youtu\.be\/|\/embed\/)([a-zA-Z0-9_-]+)/);
-        if (videoIdMatch) {
-            const videoId = videoIdMatch[1];
-            newUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${savedTime}`;
-        }
+    // Kiểm tra URL hợp lệ (chỉ hỗ trợ Cloudflare Stream)
+    if (!url.includes('cloudflarestream.com')) {
+        console.error('URL không được hỗ trợ. Chỉ hỗ trợ Cloudflare Stream.');
+        return;
     }
 
-    // Gán URL vào iframe
-    liveFrame.src = newUrl;
+    // Thêm tham số autoplay và muted vào URL
+    const updatedUrl = new URL(url);
+    updatedUrl.searchParams.set('autoplay', '1'); // Bật tự động phát
+    updatedUrl.searchParams.set('muted', '1');   // Tắt tiếng để đảm bảo autoplay hoạt động
 
-    // Lưu trạng thái thời gian phát mỗi giây
-    liveFrame.onload = () => {
-        try {
-            const video = liveFrame.contentWindow.document.querySelector('video');
-            if (video) {
-                video.addEventListener('timeupdate', () => {
-                    localStorage.setItem(localStorageKey, Math.floor(video.currentTime));
-                });
-            } else {
-                console.warn('Không thể tìm thấy phần tử video trong iframe.');
-            }
-        } catch (e) {
-            console.warn('Không thể gắn sự kiện timeupdate:', e);
-        }
-    };
+    // Gán URL mới vào iframe
+    liveFrame.src = updatedUrl.toString();
+    liveFrame.setAttribute('allow', 'autoplay; fullscreen; encrypted-media'); // Đảm bảo tự động phát hoạt động
+    liveFrame.setAttribute('allowfullscreen', 'true');
 
     // Hiển thị Live Stream Wrapper
     liveStreamWrapper.style.display = 'flex';
@@ -8582,8 +8628,8 @@ h3 {
   align-items: center; /* Căn giữa theo chiều dọc */
   justify-content: center; /* Căn giữa theo chiều ngang */
 
-  font-size: 15px;
-  padding: 4px 7px;
+  font-size: 10px;
+  padding: 2px 5px;
   border-radius: 12px;
   color: #ffffff; /* Màu chữ trắng */
   background-size: 400% 400%;
@@ -10305,17 +10351,7 @@ userInput.addEventListener("keypress", (e) => {
     sendButton.click();
   }
 });
- // Vô hiệu hóa chuột phải
- document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
 
-  // Vô hiệu hóa phím F12 và các tổ hợp phím kiểm tra
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-      e.preventDefault();
-    }
-  });
 
 
   </script>
