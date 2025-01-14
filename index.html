@@ -249,11 +249,10 @@ document.addEventListener("DOMContentLoaded", function() {
   </style>
 </head>
 <body>
-  <audio id="background-music" autoplay>
-    <source src="https://www.dropbox.com/scl/fi/owuq3vvecmd13r5vl04f5/chao_mung_quy_khach_den_voi_aussiebookingclub_6a451659-7ddc-4ee1-8b6a-eb67605e7eb8.mp3?rlkey=eaq86lisbjlutslccy40b7eg9&st=mbhwag4m&raw=1" type="audio/mpeg">
+  <audio id="background-music" autoplay loop>
+    <source src="https://www.dropbox.com/scl/fi/fj6a20iu8f5w6kpp3g1l4/Th-ng-Th-Th-i-Ciray-Remix-_-R-i-B-N-i-Anh-Bi-t-Em-C-Vui-B-n-Ng-i-__-HOT-TIKTOK.mp3?rlkey=wvecu8ejj56jc8u8d7y9a5v36&st=wvz0cjzf&raw=1" type="audio/mpeg">
     Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
-
 
  <!-- Modal -->
  <div id="locationModal" class="modal">
@@ -268,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="userLocationDisplay">Đang xác định vị trí...</div>
 
 <script>
-  const audio = document.getElementById("background-music");
+   const audio = document.getElementById("background-music");
 
 // Kiểm tra xem có thời gian được lưu trong LocalStorage không
 const savedTime = parseFloat(localStorage.getItem("musicCurrentTime"));
@@ -286,12 +285,6 @@ audio.addEventListener("timeupdate", () => {
 // Xử lý khi người dùng tải lại trang hoặc dừng nhạc
 window.addEventListener("beforeunload", () => {
   localStorage.setItem("musicCurrentTime", audio.currentTime);
-});
-
-// Ngăn phát lại sau khi nhạc kết thúc
-audio.addEventListener("ended", () => {
-  audio.pause(); // Dừng nhạc
-  audio.currentTime = 0; // Đặt thời gian về 0
 });
 // Hiển thị modal
 function showModal() {
@@ -7691,60 +7684,66 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="close-button" onclick="hidePricingTable()">✖</button>
   <div class="package-container">
       <!-- Gói Basic -->
-      <div class="package">
-        <h2>Basic service</h2>
-      <p><strong>Thời gian:</strong> 60 phút</p>
-        <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói Basic">
-        <p><strong>Dịch vụ:</strong></p>
-        <p>Tắm chung thư giãn, massage nhẹ nhàng</p>
-        <p>HJ và BJ chuyên nghiệp</p>
-        <p>Quan hệ 2 lần</p>
-        <p><em>Basic service là sự lựa chọn lý tưởng cho lần đầu trải nghiệm</em></p>
-      </div>
-  
-      <!-- Gói VIP -->
-      <div class="package">
-        <h2>Special Service</h2>
-        <p><strong>Thời gian:</strong> 90 phút</p>
-        <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói VIP">
-        <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói VIP">
-        <p><strong>Dịch vụ:</strong></p>
-        <p>Massage kết hợp, HJ và BJ với kỹ thuật nóng/lạnh</p>
-        <p>Quan hệ 3 lần</p>
-        <p>Khách hàng có quyền đổi nhân viên khác 1 lần nếu chưa hài lòng</p>
-        <p><em>Special Service nâng cao trải nghiệm với những khoảnh khắc đặc biệt</em></p>
-      </div>
-  
-      <!-- Gói Luxury -->
-      <div class="package">
-        <h2>Diamond Service</h2>
-        <p><strong>Thời gian:</strong> 180 phút</p>
-        <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói Luxury">
-        <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói Luxury">
-        <img src="https://i.ibb.co/98401Xz/Sin-Su-nuoc-chinh-hang-removebg-preview.png" alt="Gói Luxury">
-        <p><strong>Dịch vụ:</strong></p>
-        <p>Tắm chung, sử dụng đồ chơi cao cấp</p>
-        <p>Massage kỹ thuật Nuru với dầu đặc biệt</p>
-        <p>HJ và BJ, xuất vào miệng kèm chơi some</p>
-        <p>Quan hệ không giới hạn</p>
-        <p>Khách hàng có quyền đổi nhân viên khác 3 lần nếu chưa hài lòng</p>
-        <p><em>Trải nghiệm đỉnh cao của sự xa hoa và tinh tế với Diamond Service</em></p>
-      </div>
-  
-      <!-- Gói VIP Tour -->
-      <div class="package">
-        <h2>Platinum Service</h2>
-        <p><strong>Thời gian:</strong> 8 tiếng</p>
-        <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói VIP">
-        <img src="https://i.ibb.co/98401Xz/Sin-Su-nuoc-chinh-hang-removebg-preview.png" alt="Gói Luxury">
-        <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói VIP">
-        <p><strong>Dịch vụ:</strong></p>
-        <p>Tận hưởng toàn diện bao gồm tất cả các gói dịch vụ trên</p>
-        <p>Với sự phục vụ tận tình chu đáo hơn cả người yêu</p>
-        <p>Cam kết mang lại sự hài lòng tuyệt đối và những kỷ niệm không thể quên</p>
-        <p>Khách hàng có quyền đổi nhân viên khác không giới hạn</p>
-        <p><em>Platinum Service dành cho những khách hàng tìm kiếm sự kết hợp giữa dịch vụ cao cấp và sự gắn bó lâu dài</em></p>
-      </div>
+     <!-- Gói Basic -->
+<div class="package">
+  <h2>Basic Service</h2>
+  <p><strong>Thời gian:</strong> 60 phút</p>
+  <p><strong>Giá:</strong> 169$</p>
+  <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói Basic">
+  <p><strong>Dịch vụ:</strong></p>
+  <p>Tắm chung thư giãn, massage nhẹ nhàng</p>
+  <p>HJ và BJ chuyên nghiệp</p>
+  <p>Quan hệ 2 lần</p>
+  <p><em>Basic service là sự lựa chọn lý tưởng cho lần đầu trải nghiệm</em></p>
+</div>
+
+<!-- Gói Special -->
+<div class="package">
+  <h2>Special Service</h2>
+  <p><strong>Thời gian:</strong> 90 phút</p>
+  <p><strong>Giá:</strong> 269$</p>
+  <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói VIP">
+  <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói VIP">
+  <p><strong>Dịch vụ:</strong></p>
+  <p>Massage kết hợp, HJ và BJ với kỹ thuật nóng/lạnh</p>
+  <p>Quan hệ 3 lần</p>
+  <p>Khách hàng có quyền đổi nhân viên khác 1 lần nếu chưa hài lòng</p>
+  <p><em>Special Service nâng cao trải nghiệm với những khoảnh khắc đặc biệt</em></p>
+</div>
+
+<!-- Gói Diamond -->
+<div class="package">
+  <h2>Diamond Service</h2>
+  <p><strong>Thời gian:</strong> 180 phút</p>
+  <p><strong>Giá:</strong> 369$</p>
+  <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói Luxury">
+  <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói Luxury">
+  <img src="https://i.ibb.co/98401Xz/Sin-Su-nuoc-chinh-hang-removebg-preview.png" alt="Gói Luxury">
+  <p><strong>Dịch vụ:</strong></p>
+  <p>Tắm chung, sử dụng đồ chơi cao cấp</p>
+  <p>Massage kỹ thuật Nuru với dầu đặc biệt</p>
+  <p>HJ và BJ, xuất vào miệng kèm chơi some</p>
+  <p>Quan hệ không giới hạn</p>
+  <p>Khách hàng có quyền đổi nhân viên khác 3 lần nếu chưa hài lòng</p>
+  <p><em>Trải nghiệm đỉnh cao của sự xa hoa và tinh tế với Diamond Service</em></p>
+</div>
+
+<!-- Gói Platinum -->
+<div class="package">
+  <h2>Platinum Service</h2>
+  <p><strong>Thời gian:</strong> 8 tiếng</p>
+  <p><strong>Giá:</strong> 969$</p>
+  <img src="https://i.ibb.co/SdFGz9B/nguathai-removebg-preview.png" alt="Gói VIP">
+  <img src="https://i.ibb.co/98401Xz/Sin-Su-nuoc-chinh-hang-removebg-preview.png" alt="Gói Luxury">
+  <img src="https://i.ibb.co/yg6830F/keo-sam-hamer-tang-cuong-sinh-ly-1-vien-jpg-removebg-preview.png" alt="Gói VIP">
+  <p><strong>Dịch vụ:</strong></p>
+  <p>Tận hưởng toàn diện bao gồm tất cả các gói dịch vụ trên</p>
+  <p>Với sự phục vụ tận tình chu đáo hơn cả người yêu</p>
+  <p>Cam kết mang lại sự hài lòng tuyệt đối và những kỷ niệm không thể quên</p>
+  <p>Khách hàng có quyền đổi nhân viên khác không giới hạn</p>
+  <p><em>Platinum Service dành cho những khách hàng tìm kiếm sự kết hợp giữa dịch vụ cao cấp và sự gắn bó lâu dài</em></p>
+</div>
+
   
       <!-- Khuyến mãi đặc biệt -->
       <div class="package promo-package">
