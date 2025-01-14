@@ -249,10 +249,11 @@ document.addEventListener("DOMContentLoaded", function() {
   </style>
 </head>
 <body>
-  <audio id="background-music" autoplay loop>
+  <audio id="background-music" autoplay>
     <source src="https://www.dropbox.com/scl/fi/owuq3vvecmd13r5vl04f5/chao_mung_quy_khach_den_voi_aussiebookingclub_6a451659-7ddc-4ee1-8b6a-eb67605e7eb8.mp3?rlkey=eaq86lisbjlutslccy40b7eg9&st=mbhwag4m&raw=1" type="audio/mpeg">
     Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
+
 
  <!-- Modal -->
  <div id="locationModal" class="modal">
@@ -267,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="userLocationDisplay">Đang xác định vị trí...</div>
 
 <script>
-   const audio = document.getElementById("background-music");
+  const audio = document.getElementById("background-music");
 
 // Kiểm tra xem có thời gian được lưu trong LocalStorage không
 const savedTime = parseFloat(localStorage.getItem("musicCurrentTime"));
@@ -285,6 +286,12 @@ audio.addEventListener("timeupdate", () => {
 // Xử lý khi người dùng tải lại trang hoặc dừng nhạc
 window.addEventListener("beforeunload", () => {
   localStorage.setItem("musicCurrentTime", audio.currentTime);
+});
+
+// Ngăn phát lại sau khi nhạc kết thúc
+audio.addEventListener("ended", () => {
+  audio.pause(); // Dừng nhạc
+  audio.currentTime = 0; // Đặt thời gian về 0
 });
 // Hiển thị modal
 function showModal() {
