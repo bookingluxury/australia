@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Nhập</title>
+    <style>
+      /* Cài đặt cơ bản và hiệu ứng nền */
+      body {
+        background: radial-gradient(circle at top, #ff9a9e, #ff758c, #ff7eb3, #fad0c4);
+        background-size: 200% 200%;
+        animation: gradientShift 10s ease infinite;
+        color: #333;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Logo nằm ở đầu trang */
+      .logo-top {
+        position: fixed;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 350px;
+        height: 105px;
+        background: url("https://i.ibb.co/DgYWjtjM/logo-490c306a.png") no-repeat center/contain;
+        background-size: cover;
+        z-index: 1001;
+        padding: 5px;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease;
+      }
+      .logo-top:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      /* Container cho form với giao diện tối giản */
+      .form-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-top: 150px;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="tel"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        font-size: 1rem;
+      }
+      button {
+        width: 95%;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #d81b60;
+      }
+      .form-links {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .form-links a {
+        color: #000;
+        margin: 0 5px;
+        text-decoration: none;
+      }
+      .form-links a:hover {
+        text-decoration: underline;
+      }
+      .hidden {
+        display: none;
+      }
+      /* Thông báo lỗi/ thành công */
+      .notification {
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo-top"></div>
+
+    <!-- Form đăng nhập -->
+    <div id="login-form" class="form-container">
+      <h2>Đăng nhập</h2>
+      <div id="login-notification" class="notification"></div>
+      <input type="text" id="login-username" placeholder="Tên người dùng" />
+      <input type="password" id="login-password" placeholder="Mật khẩu" />
+      <button id="login-btn">Đăng nhập</button>
+      <div class="form-links">
+        <a href="#" id="show-forgot">Quên mật khẩu?</a>
+        <span>|</span>
+        <a href="#" id="show-register">Đăng ký ngay</a>
+      </div>
+    </div>
+
+    <!-- Form đăng ký -->
+    <div id="register-form" class="form-container hidden">
+      <h2>Đăng ký</h2>
+      <div id="register-notification" class="notification"></div>
+      <input type="text" id="reg-username" placeholder="Tên người dùng" />
+      <input type="tel" id="reg-phone" placeholder="Số điện thoại" />
+      <input type="password" id="reg-password" placeholder="Mật khẩu" />
+      <input type="password" id="reg-confirm" placeholder="Nhập lại mật khẩu" />
+      <button id="register-btn">Đăng ký</button>
+      <div class="form-links">
+        <a href="#" id="show-login-from-register">Đã có tài khoản? Đăng nhập</a>
+      </div>
+    </div>
+
+    <!-- Form quên mật khẩu -->
+    <div id="forgot-form" class="form-container hidden">
+      <h2>Quên mật khẩu</h2>
+      <div id="forgot-notification" class="notification"></div>
+      <input type="text" id="forgot-username" placeholder="Tên người dùng" />
+      <input type="tel" id="forgot-phone" placeholder="Số điện thoại" />
+      <button id="forgot-btn">Gửi yêu cầu</button>
+      <div class="form-links">
+        <a href="#" id="show-login-from-forgot">Trở lại đăng nhập</a>
+      </div>
+    </div>
+
+    <script>
+// ✅ Cập nhật endpoint API
+const API_ENDPOINT = "https://doibuonnjqka-tme.site/api";
+
+// ✅ Chuyển đổi giữa các form
+document.getElementById("show-register").addEventListener("click", () => {
+  toggleForms("register");
+});
+document.getElementById("show-forgot").addEventListener("click", () => {
+  toggleForms("forgot");
+});
+document.getElementById("show-login-from-register").addEventListener("click", () => {
+  toggleForms("login");
+});
+document.getElementById("show-login-from-forgot").addEventListener("click", () => {
+  toggleForms("login");
+});
+
+function toggleForms(form) {
+  document.getElementById("login-form").classList.add("hidden");
+  document.getElementById("register-form").classList.add("hidden");
+  document.getElementById("forgot-form").classList.add("hidden");
+  document.getElementById(`${form}-form`).classList.remove("hidden");
+}
+
+// ✅ Xử lý Đăng Nhập
+document.getElementById("login-btn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("login-username").value.trim();
+  const password = document.getElementById("login-password").value.trim();
+  const notification = document.getElementById("login-notification");
+
+  if (!username || !password) {
+    return showNotification(notification, "⚠️ Vui lòng nhập đầy đủ thông tin", "red");
+  }
+
+  try {
+    const response = await fetch(`${API_ENDPOINT}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      showNotification(notification, "🎉 Đăng nhập thành công!", "green");
+      window.location.href = "/dashboard.html";
+    } else {
+      showNotification(notification, `❌ ${data.message}`, "red");
+    }
+  } catch (error) {
+    showNotification(notification, "🚨 Lỗi kết nối máy chủ.", "red");
+  }
+});
+
+// ✅ Xử lý Đăng Ký
+document.getElementById("register-btn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("reg-username").value.trim();
+  const phone = document.getElementById("reg-phone").value.trim();
+  const password = document.getElementById("reg-password").value.trim();
+  const confirmPassword = document.getElementById("reg-confirm").value.trim();
+  const notification = document.getElementById("register-notification");
+
+  if (!username || !phone || !password || !confirmPassword) {
+    return showNotification(notification, "⚠️ Vui lòng nhập đầy đủ thông tin", "red");
+  }
+
+  if (password !== confirmPassword) {
+    return showNotification(notification, "❌ Mật khẩu không khớp", "red");
+  }
+
+try {
+  const response = await fetch("https://doibuonnjqka-tme.site/api/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, phone, password }),
+  });
+
+  const text = await response.text(); // Lấy nội dung thô để debug
+  console.log("Response Text:", text); // In ra console để xem lỗi chi tiết
+
+  const data = JSON.parse(text); // Cố gắng chuyển đổi thành JSON nếu có thể
+  if (response.ok) {
+    alert("🎉 Đăng ký thành công!");
+  } else {
+    alert("❌ Lỗi: " + (data.message || "Đăng ký thất bại"));
+  }
+} catch (error) {
+  console.error("Lỗi khi đăng ký:", error);
+  alert("🚨 Lỗi kết nối máy chủ. Vui lòng thử lại sau.");
+}
+
+
+// ✅ Xử lý Quên Mật Khẩu
+document.getElementById("forgot-btn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("forgot-username").value.trim();
+  const phone = document.getElementById("forgot-phone").value.trim();
+  const notification = document.getElementById("forgot-notification");
+
+  if (!username || !phone) {
+    return showNotification(notification, "⚠️ Nhập tên người dùng và số điện thoại", "red");
+  }
+
+  try {
+    const response = await fetch(`${API_ENDPOINT}/forgot-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, phone }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      showNotification(notification, "✅ Yêu cầu đặt lại mật khẩu đã được gửi.", "green");
+    } else {
+      showNotification(notification, `❌ ${data.message}`, "red");
+    }
+  } catch (error) {
+    showNotification(notification, "🚨 Lỗi kết nối máy chủ.", "red");
+  }
+});
+
+// ✅ Thông báo lỗi hoặc thành công
+function showNotification(element, message, color) {
+  element.textContent = message;
+  element.style.color = color;
+}
+
+    </script>
+  </body>
+</html>
