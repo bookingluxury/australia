@@ -784,8 +784,16 @@
         <span>Đăng Xuất</span>
       </a>
     </div>
+<div id="navbar-placeholder"></div>
 
-    <script>
+<script src="menu.js"></script>
+
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
       // Lọc thẻ đánh giá theo Sidebar sử dụng data-review
       function showReview(review) {
         document.querySelectorAll(".review-card").forEach((card) => {
