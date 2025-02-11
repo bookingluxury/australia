@@ -1356,24 +1356,25 @@ function showCharacterSection(){if(characterSection&&menuPanel){showSpinner();se
     text-transform: capitalize;
   }
   .new-character-item {
-    flex: 0 0 auto;
-    width: 220px;
-    height: 425px;
-    text-align: center;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-    will-change: transform, box-shadow;
-    margin-right: 3px;
-    margin-bottom: 45px;
-  }
-  .new-character-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 7px;
-    transition: transform 0.2s ease;
-  }
+	flex: 0 0 auto;
+	width: 180px;
+	height: 425px;
+	text-align: center;
+	overflow: hidden;
+	transition: transform .2s ease, box-shadow .2s ease;
+	position: relative;
+	will-change: transform, box-shadow;
+	margin-right: 3px;
+  margin-bottom: 45px;
+}
+
+.new-character-item img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	margin-bottom: 7px;
+	transition: transform .2s ease;
+}
   .new-character-item:hover img {
     transform: scale(1.03);
   }
