@@ -314,6 +314,7 @@
     </style>
   </head>
   <body>
+    <div id="navbar-placeholder"></div>
     <!-- Header with upgraded avatar -->
     <div class="profile-header">
       <div class="profile-info">
@@ -496,8 +497,13 @@
       </div>
     </div>
 
+    <script src="menu.js"></script>
     <script>
-      // Giả lập dữ liệu người dùng
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
       var userProfile = { points: 1500, trust: 100 };
       var dailyWithdrawCount = 0;
       var maxWithdrawPerDay = 9999999999;
