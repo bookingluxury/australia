@@ -70,63 +70,71 @@
 </style>
 
 <div class="bottom-nav">
-  <a class="nav-item" href="index.html" onclick="setActiveTab('index.html')">
+  <a class="nav-item" href="index.html">
     <i class="fa fa-home"></i>
     <span>Trang Chủ</span>
   </a>
-  <a class="nav-item" href="review.html" onclick="setActiveTab('review.html')">
+  <a class="nav-item" href="review.html">
     <i class="fa fa-star"></i>
     <span>Đánh Giá</span>
   </a>
-  <a class="nav-item" href="video.html" onclick="setActiveTab('video.html')">
+  <a class="nav-item" href="video.html">
     <i class="fa fa-film"></i>
     <span>Video Nổi Bật</span>
   </a>
-  <a class="nav-item" href="profile.html" onclick="setActiveTab('profile.html')">
+  <a class="nav-item" href="profile.html">
     <i class="fa fa-user"></i>
     <span>Hồ Sơ</span>
   </a>
-  <a class="nav-item" href="services.html" onclick="setActiveTab('services.html')">
+  <a class="nav-item" href="services.html">
     <i class="fa fa-briefcase"></i>
     <span>Dịch Vụ</span>
   </a>
-  <a class="nav-item" href="booking.html" onclick="setActiveTab('booking.html')">
+  <a class="nav-item" href="booking.html">
     <i class="fa fa-calendar-check"></i>
     <span>Đặt Lịch</span>
   </a>
-  <a class="nav-item" href="photos.html" onclick="setActiveTab('photos.html')">
+  <a class="nav-item" href="photos.html">
     <i class="fa fa-camera"></i>
     <span>Thư Viện Ảnh</span>
   </a>
-  <a class="nav-item" href="private-connection.html" onclick="setActiveTab('private-connection.html')">
+  <a class="nav-item" href="private-connection.html">
     <i class="fa fa-lock"></i>
     <span>Kết Nối Riêng Tư</span>
   </a>
-  <a class="nav-item" href="add-credit.html" onclick="setActiveTab('add-credit.html')">
+  <a class="nav-item" href="add-credit.html">
     <i class="fa fa-credit-card"></i>
     <span>Thêm Tín Dụng</span>
   </a>
-  <a class="nav-item" href="logout.html" onclick="setActiveTab('logout.html')">
+  <a class="nav-item" href="logout.html">
     <i class="fa fa-sign-out"></i>
     <span>Đăng Xuất</span>
   </a>
 </div>
 
 <script>
-  // Lưu trạng thái tab khi click
-  function setActiveTab(tabId) {
-    localStorage.setItem('activeTab', tabId);
+  // Tự động đánh dấu active dựa vào URL
+  function setActiveTab() {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+      if (item.getAttribute("href") === currentPath) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
   }
 
-  // Khi tải lại trang, giữ nguyên tab đã chọn
-  window.onload = function () {
-    const activeTab = localStorage.getItem('activeTab');
-    if (activeTab) {
-      const activeLink = document.querySelector(`a[href="${activeTab}"]`);
-      if (activeLink) {
-        document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-        activeLink.classList.add('active');
-      }
-    }
-  };
+  // Thực thi khi trang load
+  window.addEventListener("load", setActiveTab);
+
+  // Lưu trạng thái khi click vào nav-item
+  document.querySelectorAll(".nav-item").forEach(item => {
+    item.addEventListener("click", function () {
+      document.querySelectorAll(".nav-item").forEach(nav => nav.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
 </script>
