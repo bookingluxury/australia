@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Bảng Giá Dịch Vụ - Card Style Nổi Bật</title>
+    <title>Bảng Giá Dịch Vụ - Phong Cách Australia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Font Roboto & Font Awesome -->
     <link
@@ -14,9 +14,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      /* Tổng thể giao diện: nền gradient xanh bầu trời & màu cát, mang cảm giác bãi biển Australia */
       body {
-        background: linear-gradient(90deg, #916a7f, rgba(198, 160, 149, 1));
-        color: #fff;
+        background: linear-gradient(90deg, #87ceeb, #f4a460);
+        color: #333;
         margin: 0;
         padding: 20px;
         padding-bottom: 100px; /* Dự phòng cho thanh điều hướng */
@@ -26,6 +27,8 @@
         text-align: center;
         margin-bottom: 30px;
         font-size: 28px;
+        color: #0d3b66;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
       }
 
       /* Container chứa nội dung */
@@ -48,18 +51,18 @@
         }
       }
 
-      /* Card Styles với màu nền sáng và chữ tối */
+      /* Card Styles: nền trắng, bo tròn nhẹ, shadow mượt */
       .card {
         background-color: #fff;
         color: #333;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
       /* Card chiếm 2 cột nếu cần */
       .card.full-width {
@@ -71,13 +74,12 @@
         }
       }
 
-      /* Tiêu đề của card với gradient pastel hài hòa */
+      /* Tiêu đề card với gradient xanh - vàng (gợi nhớ biển và ánh nắng Australia) */
       .card h2 {
         margin: 0;
         font-size: 24px;
         text-align: center;
-        /* Dùng gam màu pastel nhẹ nhàng */
-        background: linear-gradient(90deg, #000000, #e3c0b9);
+        background: linear-gradient(90deg, #0d3b66, #f4d35e);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 10px;
@@ -87,10 +89,11 @@
         margin: 6px 0;
         text-align: center;
       }
+      /* Giá hiển thị với màu vàng ấm áp */
       .card .price {
         font-size: 26px;
         font-weight: 700;
-        color: #ff5100;
+        color: #f4d35e;
         text-align: center;
         margin: 10px 0;
       }
@@ -105,12 +108,12 @@
         text-align: left;
       }
 
-      /* Nút chọn gói với gradient pastel hài hòa */
+      /* Nút chọn gói với gradient xanh – vàng, tạo cảm giác năng động & hiện đại */
       .card .btn {
         display: block;
         text-align: center;
-        background: linear-gradient(135deg, #b59cae, #9e7b9d);
-        color: #000000;
+        background: linear-gradient(135deg, #0d3b66, #f4d35e);
+        color: #fff;
         padding: 10px 0;
         text-decoration: none;
         border-radius: 5px;
@@ -119,11 +122,11 @@
         transition: background 0.3s ease, transform 0.2s ease;
       }
       .card .btn:hover {
-        background: linear-gradient(135deg, #a68ea0, #8f7a8d);
+        background: linear-gradient(135deg, #0a2d4e, #d8b45d);
         transform: translateY(-3px);
       }
 
-      /* Nhóm hình ảnh */
+      /* Nhóm hình ảnh: bố trí đều, bo góc nhẹ */
       .image-group {
         display: flex;
         flex-wrap: wrap;
@@ -139,7 +142,6 @@
         border: 2px solid #444;
       }
 
-  
       .logo-top {
         width: 400px;
         height: 120px;
@@ -162,6 +164,7 @@
   </head>
   <body>
     <div class="logo-top"></div>
+        <div id="navbar-placeholder"></div>
     <h1>Bảng Giá Dịch Vụ</h1>
     <!-- Vùng chứa nội dung chính -->
     <div id="content">
@@ -335,16 +338,16 @@
       </div>
     </div>
 
- <div id="navbar-placeholder"></div>
 
-<script src="menu.js"></script>
 
-<script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
-    });
+    <script src="menu.js"></script>
+
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
       fetch("http://localhost:1337/api/navigation-items")
         .then((response) => response.json())
         .then((data) => {
