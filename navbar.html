@@ -5,7 +5,7 @@
     --text-color: #333;
     --hover-bg: #ced4da;
     --bg-color: #ffffff;
-    --nav-item-size: 80px; /* Kích thước đồng bộ */
+    --nav-item-size: 80px;
     --icon-size: 24px;
     --font-size: 13px;
   }
@@ -141,6 +141,22 @@
     const isDarkMode = document.body.classList.contains("dark-mode");
     localStorage.setItem("darkMode", isDarkMode);
     document.querySelector(".dark-mode-toggle").textContent = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+    applyDarkMode(isDarkMode);
+  }
+
+  function applyDarkMode(isDark) {
+    const root = document.documentElement;
+    if (isDark) {
+      root.style.setProperty('--nav-bg', '#2c2c2c');
+      root.style.setProperty('--text-color', '#f0f0f0');
+      root.style.setProperty('--hover-bg', '#3d3d3d');
+      root.style.setProperty('--bg-color', '#121212');
+    } else {
+      root.style.setProperty('--nav-bg', '#e9ecef');
+      root.style.setProperty('--text-color', '#333');
+      root.style.setProperty('--hover-bg', '#ced4da');
+      root.style.setProperty('--bg-color', '#ffffff');
+    }
   }
 
   window.addEventListener("load", () => {
@@ -148,6 +164,7 @@
     if (darkMode) {
       document.body.classList.add("dark-mode");
       document.querySelector(".dark-mode-toggle").textContent = "☀️ Light Mode";
+      applyDarkMode(true);
     }
     setActiveTab();
   });
