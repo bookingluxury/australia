@@ -2,300 +2,312 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Hồ Sơ Cá Nhân - Thông Tin Hiện Đại</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Hồ Sơ Cá Nhân</title>
     <!-- Font Awesome cho icon -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Google Fonts: Roboto & Montserrat -->
+    <!-- Google Fonts: Roboto -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      :root {
-        /* Gam màu sáng và hiện đại */
-        --bg-color: #f2f2f2;
-        --card-bg: #ffffff;
-        --text-color: #333333;
-        --accent: #ff2222; /* Dùng cho các thành phần khác nếu cần */
-        --hover: #e0e0e0;
-        /* Màu cho điểm số và thành viên */
-        --points-color: #4caf50;
-        --membership-color: #2196f3;
-        /* Biến riêng cho bottom navigation */
-        --nav-bg: #e9ecef;
-        --nav-accent: #007bff;
-        --nav-text-color: #333;
-        --nav-hover-bg: #ced4da;
-      }
-
       /* Global Styles */
       body {
         margin: 0;
-        padding: 20px;
-        background: var(--bg-color);
+        padding: 0;
         font-family: "Roboto", sans-serif;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding-bottom: 10px;
-      }
-      .profile-card {
-        background: var(--card-bg);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-      .profile-flex {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        background-color: #f5f5f5;
+        color: #333;
       }
 
-      /* ------------------ Avatar & Badge ------------------ */
-      .avatar-container {
+      .profile-header {
+        background: linear-gradient(90deg, #8e44ad, #f39c12);
+        color: #fff;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .profile-info {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Avatar Wrapper với hiệu ứng thu phóng và viền */
+      .avatar-wrapper {
         position: relative;
         width: 70px;
         height: 70px;
-        border-radius: 50%;
+        display: inline-block;
+        margin-right: 10px;
       }
-      /* Viền chính: sử dụng màu đỏ cố định */
-      .avatar-container::before {
-        content: "";
+      .avatar-wrapper img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .avatar-wrapper:hover img {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      /* Trạng thái online */
+      .online-status {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        width: 12px;
+        height: 12px;
+        background: #2ecc71;
+        border: 2px solid #fff;
+        border-radius: 50%;
         bottom: 0;
-        border: 3px solid #ff2222;
-        border-radius: 50%;
-        pointer-events: none;
-        transform-origin: center;
-        animation: pulse 3s ease-in-out infinite;
-      }
-      /* Viền thứ 2: nhỏ với hiệu ứng pulse nhanh hơn, cũng dùng màu đỏ */
-      .avatar-container::after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        right: -4px;
-        bottom: -4px;
-        border: 1px solid #ff2222;
-        border-radius: 50%;
-        pointer-events: none;
-        transform-origin: center;
-        animation: pulse-fast 1.5s ease-in-out infinite;
-      }
-      /* Viền nhỏ nhất, cố định cho avatar */
-      .avatar-image-wrapper {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 2px solid #ff2222;
-        box-sizing: border-box;
-      }
-      .avatar-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform-origin: center;
-        animation: pulse 3s ease-in-out infinite;
+        right: 0;
+        animation: pulse 2s infinite;
       }
       @keyframes pulse {
         0% {
           transform: scale(1);
+          opacity: 1;
         }
         50% {
-          transform: scale(1.15);
+          transform: scale(1.2);
+          opacity: 0.7;
         }
         100% {
           transform: scale(1);
+          opacity: 1;
         }
-      }
-      @keyframes pulse-fast {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.15);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      .vip-badge {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background: #ff2222;
-        color: #fff;
-        font-size: 8px;
-        padding: 2px 6px;
-        border-radius: 12px;
-        font-family: "Montserrat", sans-serif;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-      }
-      .online-badge {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #01ff0b;
-        color: #fff;
-        font-size: 8px;
-        padding: 2px 5px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        z-index: 10;
       }
 
-      /* ------------------ Thông tin tài khoản ------------------ */
-      .account-details {
-        flex: 1;
-        padding: 15px 20px;
-        background: linear-gradient(135deg, #ffffff, #f9f9f9);
-        border-left: 4px solid #ff2222;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      }
-      .account-details h2 {
-        font-size: 20px;
-        margin: 0 0 8px 0;
-        color: #000;
-        font-weight: 600;
-      }
-      .info-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 6px;
-      }
-      .info-item:not(:last-child) {
-        border-bottom: 1px dashed #ddd;
-        padding-bottom: 6px;
-      }
-      .info-item i {
-        color: #ff2222;
-        margin-right: 8px;
-        font-size: 16px;
-      }
-      .info-item span {
-        font-size: 14px;
-        color: #555;
-        font-weight: 400;
-      }
-
-      /* ------------------ Điểm số & Cấp độ ------------------ */
-      .points-actions {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 20px;
-        border-top: 1px solid #ddd;
-        padding-top: 10px;
-      }
-      .points-actions p {
+      .profile-info h2 {
         margin: 0;
-        font-size: 16px;
-        font-weight: bold;
-      }
-      #points {
-        color: var(--points-color);
-        text-transform: uppercase;
-      }
-      #level {
-        color: var(--membership-color);
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-      }
-      .membership-logo {
-        vertical-align: middle;
-        margin-right: 4px;
-        margin-bottom: 5px;
-        width: 50px;
-        height: 50px;
-      }
-      .points-actions .btn-group {
-        display: flex;
-        gap: 10px;
-      }
-      .points-actions .btn-group div {
-        background: #ff2222;
-        color: #fff;
-        padding: 5px 8px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        font-size: 14px;
-        font-weight: bold;
-      }
-      .points-actions .btn-group div:hover {
-        background: #e64a19;
+        font-size: 20px;
       }
 
-      /* ------------------ Lịch sử dịch vụ & Phần thưởng ------------------ */
-      .history {
-        background: var(--card-bg);
-        border-radius: 10px;
-        padding: 0;
-        margin: 10px 0;
+      /* Logo VIP chuyên nghiệp hơn */
+      .vip-badge {
+        background-color: #e67e22;
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 15px;
+        font-weight: bold;
+        margin-left: 8px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
       }
-      .history h2 {
+      .vip-badge i {
+        margin-right: 5px;
+      }
+
+      /* Hiệu ứng xoay cho cài đặt */
+      .profile-header i {
+        transition: transform 0.3s ease;
+      }
+      .profile-header i:hover {
+        transform: rotate(90deg);
+      }
+
+      /* Actions */
+      .actions {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 15px;
+      }
+      .actions button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-size: 16px;
+      }
+      .actions button:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+      }
+      .actions button i {
+        margin-right: 8px;
+      }
+
+      /* Wallet Section */
+      .wallet {
+        background: #fff;
+        padding: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-top: 3px solid #8e44ad;
+      }
+      .wallet .balance {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 700;
+        color: #8e44ad;
+      }
+      .wallet .balance .amount {
+        display: flex;
+        align-items: center;
+      }
+      .wallet .balance .amount i {
+        margin-left: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .wallet .balance .amount i:hover {
+        transform: rotate(360deg);
+      }
+      /* Đổi màu số liệu: Số dư với màu xanh lam, Điểm tín nhiệm với màu tím */
+      .green {
+        color: #00806e;
+      }
+      .red {
+        color: #00806e;
+      }
+
+      /* Deposit Information Section (ẩn mặc định) */
+      .deposit-info {
+        background: #fff;
+        padding: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-top: 3px solid #3498db;
         display: none;
       }
-      .menu {
-        background: #fafafa;
-        border-radius: 6px;
-        padding: 10px;
-        display: grid;
-        gap: 10px;
+      .deposit-info h3 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #3498db;
       }
-      .menu-item {
-        background: #fff;
-        padding: 12px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, background 0.3s ease;
+      .deposit-info .payment-option {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+      .deposit-info .payment-option:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      .deposit-info .payment-option a {
+        font-size: 16px;
+        color: #3498db;
+        text-decoration: none;
         cursor: pointer;
       }
-      .menu-item:hover {
-        transform: scale(1.02);
-        background: #f9f9f9;
+      .deposit-info .payment-option a:hover {
+        text-decoration: underline;
       }
-      .menu-item i {
+      .deposit-info .payment-details {
+        margin-top: 10px;
+        display: none;
+      }
+      .deposit-info .payment-details p {
+        font-size: 16px;
+        margin: 8px 0;
+      }
+      .deposit-info .payment-details button {
+        background-color: #8e44ad;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 10px;
+        transition: background-color 0.3s ease;
+      }
+      .deposit-info .payment-details button:hover {
+        background-color: #732d91;
+      }
+
+      /* Features Section */
+      .features {
+        background: #fff;
+        padding: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        border-top: 3px solid #f39c12;
+      }
+      .feature-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .feature-item:hover {
+        background-color: #ececec;
+        transform: translateY(-3px);
+      }
+      .feature-item i {
+        font-size: 22px;
+        color: #8e44ad;
         margin-right: 10px;
-        font-size: 18px;
-        color: #ff2222;
       }
 
-
-      .logo-top {
-        width: 300px;
-        height: 80px;
-        background: url("https://i.ibb.co/DgYWjtjM/logo-490c306a.png") no-repeat
-          center/contain;
-        background-size: cover;
-        z-index: 1001;
-        transition: transform 0.3s ease;
-        padding: 5px;
-        margin-bottom: 10px;
-        backdrop-filter: blur(5px);
+      /* Bottom Navigation */
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        border-top: 2px solid #ddd;
+      }
+      .nav-item {
+        text-align: center;
+        color: #8e44ad;
+        font-size: 14px;
+      }
+      .nav-item i {
+        font-size: 22px;
       }
 
-      /* ------------- Modal Styles ------------- */
+      .load-button {
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      .load-button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Modal Styles */
       .modal {
-        display: none; /* Ẩn modal theo mặc định */
+        display: none;
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -303,21 +315,17 @@
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
+        background-color: rgba(0, 0, 0, 0.4);
       }
       .modal-content {
         background-color: #fff;
         margin: 10% auto;
         padding: 20px;
-        border-radius: 8px;
+        border-radius: 10px;
         max-width: 500px;
         position: relative;
       }
-      .modal-content h3 {
-        margin-top: 0;
-      }
       .close {
-        color: #aaa;
         position: absolute;
         top: 10px;
         right: 20px;
@@ -325,375 +333,486 @@
         font-weight: bold;
         cursor: pointer;
       }
-      .close:hover,
-      .close:focus {
-        color: #000;
-      }
     </style>
   </head>
   <body>
-    <!-- Logo Top -->
-    <div class="logo-top"></div>
-    <div id="navbar-placeholder"></div>
-    <div class="container">
-      <!-- Profile Card -->
-      <div class="profile-card">
-        <div class="profile-flex">
-          <div class="avatar-container">
-            <div class="avatar-image-wrapper">
-              <img
-                src="https://i.ibb.co/T2KrQtb/photo-391-23-06-2024-18-17-07.jpg"
-                alt="Avatar"
-              />
-            </div>
-            <div class="vip-badge">VIP 1</div>
-            <div class="online-badge">Online</div>
-          </div>
-          <div class="account-details">
-            <h2 id="username">anhyeu123</h2>
-            <div class="info-item">
-              <i class="fa fa-phone"></i>
-              <span id="phone">0123456789</span>
-            </div>
-            <div class="info-item">
-              <i class="fa fa-calendar"></i>
-              <span id="created_at">2025-02-11</span>
-            </div>
-          </div>
+    <!-- Header with upgraded avatar -->
+    <div class="profile-header">
+      <div class="profile-info">
+        <div class="avatar-wrapper">
+          <img
+            src="https://i.ibb.co/D9pv4B0/photo-269-23-06-2024-17-51-29-Sao-ch-p.jpg"
+            alt="Avatar"
+          />
+          <span class="online-status"></span>
         </div>
-        <div class="points-actions">
-          <div class="points-info">
-            <p>
-              Số dư: <span id="points">1500</span>
-              <i
-                class="fa fa-sync"
-                id="loadDataPoints"
-                style="cursor: pointer; margin-left: 5px"
-              ></i>
-            </p>
-            <p></p>
-            <p>
-              Điểm tín nhiệm:
-              <span id="trust" style="color: #ff5733; font-weight: bold"
-                >100</span
-              >
-              <i
-                class="fa fa-sync"
-                id="loadDataTrust"
-                style="cursor: pointer; margin-left: 5px"
-              ></i>
-            </p>
-            <p>Cấp độ: <span id="level">VIP 1</span></p>
-          </div>
-          <div class="btn-group">
-            <div id="deposit">Nạp Tiền</div>
-            <div id="withdraw">Rút Tiền</div>
-          </div>
-        </div>
+        <h2>
+          Lehuykhanh
+          <span class="vip-badge"><i class="fas fa-crown"></i> VIP 1</span>
+        </h2>
       </div>
+      <i class="fas fa-cog"></i>
+    </div>
 
-      <!-- Lịch Sử Dịch Vụ & Phần thưởng -->
-      <div class="history">
-        <div class="menu">
-          <div class="menu-item">
-            <i class="fa fa-gift"></i>
-            <span>Phần thưởng đã nhận</span>
-          </div>
-          <div class="menu-item">
-            <i class="fa fa-concierge-bell"></i>
-            <span>Lịch sử dịch vụ</span>
-          </div>
-          <div class="menu-item">
-            <i class="fa fa-chart-line"></i>
-            <span>Lịch sử đánh giá</span>
-          </div>
-          <div class="menu-item">
-            <i class="fa fa-wallet"></i>
-            <span>Lịch sử nạp</span>
-          </div>
-          <div class="menu-item">
-            <i class="fa fa-money-bill"></i>
-            <span>Lịch sử rút</span>
-          </div>
+    <!-- Actions: Deposit and Withdraw buttons -->
+    <div class="actions">
+      <button id="depositBtn">
+        <i class="fas fa-plus-circle"></i> Nạp tiền
+      </button>
+      <button id="withdrawBtn">
+        <i class="fas fa-minus-circle"></i> Rút tiền
+      </button>
+    </div>
+
+    <!-- Wallet Section with icons for balance and trust points -->
+    <div class="wallet">
+      <div class="balance">
+        <div class="amount">
+          <span
+            ><i class="fas fa-wallet"></i> Số dư:
+            <strong class="green">1500</strong></span
+          >
+          <i class="fas fa-sync-alt" onclick="refreshBalance()"></i>
+        </div>
+        <div class="amount">
+          <span
+            ><i class="fas fa-star"></i> Điểm tín nhiệm:
+            <strong class="red">100</strong></span
+          >
+          <i class="fas fa-sync-alt" onclick="refreshTrustPoints()"></i>
         </div>
       </div>
     </div>
 
-
-    
-    <!-- Modal: Hiển thị chi tiết nội dung -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3 id="modal-title">Tiêu đề</h3>
-        <div id="modal-text">
-          <!-- Nội dung sẽ được cập nhật tại đây -->
+    <!-- Deposit Information Section (hidden by default) -->
+    <div class="deposit-info" id="depositContainer">
+      <h3>Chọn Hình Thức Thanh Toán</h3>
+      <!-- Option 1: Thanh toán qua Tài Khoản Việt -->
+      <div class="payment-option">
+        <a onclick="showPaymentForm('viet')">Thanh toán qua Tài Khoản Việt</a>
+        <div class="payment-details" id="vietDetails">
+          <p>
+            <strong>Tên tài khoản:</strong>
+            <span id="vietAccountName">Nguyễn Văn A</span>
+            <button onclick="copyToClipboard('vietAccountName')">Copy</button>
+          </p>
+          <p>
+            <strong>Số tài khoản:</strong>
+            <span id="vietAccountNumber">123456789</span>
+            <button onclick="copyToClipboard('vietAccountNumber')">Copy</button>
+          </p>
+          <p>
+            <strong>Ngân hàng:</strong>
+            <span id="vietBank">Vietcombank</span>
+            <button onclick="copyToClipboard('vietBank')">Copy</button>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <span id="vietEmail">example@gmail.com</span>
+            <button onclick="copyToClipboard('vietEmail')">Copy</button>
+          </p>
+          <p>
+            <strong>Số điện thoại:</strong>
+            <span id="vietPhone">0123456789</span>
+            <button onclick="copyToClipboard('vietPhone')">Copy</button>
+          </p>
         </div>
       </div>
 
+      <!-- Option 2: Thanh toán qua Ngân hàng Úc (NAB) -->
+      <div class="payment-option">
+        <a onclick="showPaymentForm('auc')"
+          >Thanh toán qua Ngân hàng Úc (NAB)</a
+        >
+        <div class="payment-details" id="aucDetails">
+          <p>
+            <strong>Tên chủ tài khoản:</strong>
+            <span id="aucAccountName">Lemlem Aderajew</span>
+            <button onclick="copyToClipboard('aucAccountName')">Copy</button>
+          </p>
+          <p>
+            <strong>Số tài khoản:</strong>
+            <span id="aucAccountNumber">862883062</span>
+            <button onclick="copyToClipboard('aucAccountNumber')">Copy</button>
+          </p>
+          <p>
+            <strong>Ngân hàng:</strong>
+            <span id="aucBank">National Australia Bank</span>
+            <button onclick="copyToClipboard('aucBank')">Copy</button>
+          </p>
+          <p>
+            <strong>BSB:</strong>
+            <span id="aucBsb">083520</span>
+            <button onclick="copyToClipboard('aucBsb')">Copy</button>
+          </p>
+          <p>
+            <strong>PayID:</strong>
+            <span id="aucPayID">0415860268</span>
+            <button onclick="copyToClipboard('aucPayID')">Copy</button>
+          </p>
+          <p><strong>Số tiền cần chuyển:</strong> 39 AUD</p>
+        </div>
+      </div>
 
-<script src="menu.js"></script>
+      <!-- Option 3: Xác nhận thanh toán (Visa) -->
+      <div class="payment-option">
+        <a onclick="showPaymentForm('visa')">Xác nhận thanh toán</a>
+        <div class="payment-details" id="visaDetails">
+          <p><strong>Số tiền thanh toán:</strong></p>
+          <input
+            type="number"
+            id="amountPaid"
+            placeholder="Nhập số tiền bạn đã thanh toán"
+            required
+          />
+          <p>
+            <strong>Cách thức thanh toán:</strong> Gửi lên hóa đơn để xác nhận
+          </p>
+          <label for="invoiceUpload">Gửi Hóa Đơn:</label>
+          <input
+            type="file"
+            id="invoiceUpload"
+            accept=".pdf, .jpg, .jpeg, .png"
+          />
+          <button
+            class="submit-btn"
+            id="visaSubmit"
+            onclick="confirmPayment('visa')"
+          >
+            Xác Nhận Thanh Toán
+          </button>
+        </div>
+      </div>
+    </div>
 
-<script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
-    });
-      // Giả lập đăng ký thành công (bao gồm cả điểm tín nhiệm)
-      const userData = {
-        username: "anhyeu123",
-        phone: "0123456789",
-        created_at: new Date().toISOString().split("T")[0],
-        points: 1500,
-        trust: 100, // điểm tín nhiệm
-        level: "VIP 1",
-      };
+    <div class="features">
+      <div class="feature-item" onclick="featureAction('Báo cáo cá nhân')">
+        <i class="fas fa-user"></i> Báo cáo cá nhân
+      </div>
+      <div class="feature-item" onclick="featureAction('Chi tiết tài khoản')">
+        <i class="fas fa-id-card"></i> Chi tiết tài khoản
+      </div>
+      <div class="feature-item" onclick="featureAction('Lịch sử đánh giá')">
+        <i class="fas fa-gamepad"></i> Lịch sử đánh giá
+      </div>
+      <div class="feature-item" onclick="featureAction('Trung tâm cá nhân')">
+        <i class="fas fa-user-circle"></i> Trung tâm cá nhân
+      </div>
+      <div class="feature-item" onclick="featureAction('Thông báo')">
+        <i class="fas fa-bell"></i> Thông báo
+      </div>
+      <div class="feature-item" onclick="featureAction('Chăm sóc khách hàng')">
+        <i class="fas fa-headset"></i> Chăm sóc khách hàng
+      </div>
+      <!-- Mục mới: Lịch sử dịch vụ -->
+      <div class="feature-item" onclick="featureAction('Lịch sử dịch vụ')">
+        <i class="fas fa-history"></i> Lịch sử dịch vụ
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <div class="nav-item"><i class="fas fa-home"></i><br />Trang chủ</div>
+      <div class="nav-item"><i class="fas fa-star"></i><br />Sảnh đánh giá</div>
+      <div class="nav-item">
+        <i class="fas fa-film"></i><br />Rạp chiếu phim
+      </div>
+      <div class="nav-item"><i class="fas fa-user"></i><br />Hồ sơ</div>
+    </div>
+
+    <!-- Modal for Withdraw -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="modalClose">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script>
+      // Giả lập dữ liệu người dùng
+      var userProfile = { points: 1500, trust: 100 };
+      var dailyWithdrawCount = 0;
+      var maxWithdrawPerDay = 9999999999;
+
+      // Hàm mở modal với tiêu đề và nội dung HTML
+      function openModal(title, htmlContent) {
+        var modal = document.getElementById("modal");
+        var modalBody = document.getElementById("modalBody");
+        modalBody.innerHTML = "<h3>" + title + "</h3>" + htmlContent;
+        modal.style.display = "block";
+      }
+
+      // Đóng modal khi nhấn nút đóng
       document
-        .getElementById("loadDataPoints")
+        .getElementById("modalClose")
         .addEventListener("click", function () {
-          const loadIcon = this;
-          loadIcon.classList.add("fa-spin");
-
-          setTimeout(function () {
-            loadIcon.classList.remove("fa-spin");
-            alert("Số dư đã được cập nhật!");
-          }, 1000);
+          document.getElementById("modal").style.display = "none";
         });
 
+      // Toggle deposit info container when Deposit button is clicked
       document
-        .getElementById("loadDataTrust")
+        .getElementById("depositBtn")
         .addEventListener("click", function () {
-          const loadIcon = this;
-          loadIcon.classList.add("fa-spin");
-
-          setTimeout(function () {
-            loadIcon.classList.remove("fa-spin");
-            alert("Điểm tín nhiệm đã được cập nhật!");
-          }, 1000);
-        });
-      // Giả lập số lần rút tiền trong ngày (ban đầu là 0)
-      let dailyWithdrawCount =
-        parseInt(localStorage.getItem("dailyWithdrawCount")) || 0;
-      const maxWithdrawPerDay = 9999999999;
-
-      localStorage.setItem("userProfile", JSON.stringify(userData));
-
-      document.addEventListener("DOMContentLoaded", function () {
-        let userProfile = JSON.parse(localStorage.getItem("userProfile"));
-
-        if (userProfile) {
-          document.getElementById("username").innerText = userProfile.username;
-          document.getElementById("phone").innerText = userProfile.phone;
-          document.getElementById("created_at").innerText =
-            userProfile.created_at;
-          document.getElementById("points").innerText = userProfile.points;
-          document.getElementById("trust").innerText = userProfile.trust;
-          document.getElementById("level").innerText =
-            userProfile.level.toUpperCase();
-        } else {
-          window.location.href = "register.html";
-        }
-
-        // Modal elements
-        const modal = document.getElementById("modal");
-        const modalTitle = document.getElementById("modal-title");
-        const modalText = document.getElementById("modal-text");
-        const closeBtn = document.querySelector(".close");
-
-        // Hàm mở modal với nội dung cụ thể
-        function openModal(title, htmlContent) {
-          modalTitle.innerText = title;
-          modalText.innerHTML = htmlContent;
-          modal.style.display = "block";
-        }
-
-        // Đóng modal khi click vào nút đóng
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
-
-        // Đóng modal khi click ra ngoài modal-content
-        window.addEventListener("click", function (e) {
-          if (e.target === modal) {
-            modal.style.display = "none";
+          var depositContainer = document.getElementById("depositContainer");
+          if (
+            depositContainer.style.display === "none" ||
+            depositContainer.style.display === ""
+          ) {
+            depositContainer.style.display = "block";
+          } else {
+            depositContainer.style.display = "none";
           }
         });
 
-        // Thêm hành động cho các mục menu-item (nội dung tạm thời)
-        document.querySelectorAll(".menu-item").forEach((item) => {
-          item.addEventListener("click", function () {
-            const actionName = this.querySelector("span").innerText.trim();
-            switch (actionName) {
-              case "Phần thưởng đã nhận":
-                openModal(
-                  "Phần thưởng đã nhận",
-                  `<p>Dưới đây là danh sách phần thưởng tạm thời:</p>
-                   <ul>
-                     <li>Phần thưởng 1: Giảm giá 10%</li>
-                     <li>Phần thưởng 2: Tặng voucher 50k</li>
-                     <li>Phần thưởng 3: Quà tặng bất ngờ</li>
-                   </ul>`
-                );
-                break;
-              case "Lịch sử dịch vụ":
-                openModal(
-                  "Lịch sử dịch vụ",
-                  `<p>Danh sách dịch vụ sử dụng (nội dung tạm thời):</p>
-                   <ul>
-                     <li>Dịch vụ 1: Làm tóc</li>
-                     <li>Dịch vụ 2: Trang điểm</li>
-                     <li>Dịch vụ 3: Massage</li>
-                   </ul>`
-                );
-                break;
-              case "Lịch sử đánh giá":
-                openModal(
-                  "Lịch sử đánh giá",
-                  `<p>Các đánh giá từ khách hàng (nội dung tạm thời):</p>
-                   <ul>
-                     <li>Đánh giá 1: Rất hài lòng!</li>
-                     <li>Đánh giá 2: Tốt, cần cải thiện chút vài điểm.</li>
-                     <li>Đánh giá 3: Xuất sắc!</li>
-                   </ul>`
-                );
-                break;
-              case "Lịch sử nạp":
-                openModal(
-                  "Lịch sử nạp",
-                  `<p>Chi tiết nạp tiền (nội dung tạm thời):</p>
-                   <ul>
-                     <li>Giao dịch 1: 500k - Ngày 01/02/2025</li>
-                     <li>Giao dịch 2: 1 triệu - Ngày 15/02/2025</li>
-                     <li>Giao dịch 3: 200k - Ngày 20/02/2025</li>
-                   </ul>`
-                );
-                break;
-              case "Lịch sử rút":
-                openModal(
-                  "Lịch sử rút",
-                  `<p>Chi tiết rút tiền (nội dung tạm thời):</p>
-                   <ul>
-                     <li>Giao dịch 1: 300k - Ngày 05/02/2025</li>
-                     <li>Giao dịch 2: 400k - Ngày 18/02/2025</li>
-                   </ul>`
-                );
-                break;
-              default:
-                openModal("Thông báo", "<p>Nội dung chưa được cập nhật.</p>");
-                break;
-            }
-          });
+      // Hide deposit info when Withdraw button is clicked (before opening modal)
+      document
+        .getElementById("withdrawBtn")
+        .addEventListener("click", function () {
+          document.getElementById("depositContainer").style.display = "none";
         });
 
-        // Hành động cho nút "Nạp Tiền"
-        document
-          .getElementById("deposit")
-          .addEventListener("click", function () {
-            const depositHtml = `<p>Nhập số tiền cần nạp:</p>
-                                <input type="number" id="depositAmount" placeholder="Nhập số tiền nạp" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
-                                <button id="depositNow" style="background: #ff2222; color: #fff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">Nạp Tiền Ngay</button>`;
-            openModal("Nạp Tiền", depositHtml);
+      // Show payment details for selected option
+      function showPaymentForm(option) {
+        var details = document.getElementsByClassName("payment-details");
+        for (var i = 0; i < details.length; i++) {
+          details[i].style.display = "none";
+        }
+        var selected = document.getElementById(option + "Details");
+        if (selected) {
+          selected.style.display = "block";
+        }
+      }
 
-            document
-              .getElementById("depositNow")
-              .addEventListener("click", function () {
-                const depositAmount = parseFloat(
-                  document.getElementById("depositAmount").value
-                );
-                if (isNaN(depositAmount) || depositAmount <= 0) {
-                  alert("Vui lòng nhập số tiền hợp lệ.");
-                  return;
-                }
-                // Giả lập xử lý nạp tiền
-                alert(`Yêu cầu nạp ${depositAmount} thành công!`);
-                modal.style.display = "none";
-                userProfile.points += depositAmount;
-                localStorage.setItem(
-                  "userProfile",
-                  JSON.stringify(userProfile)
-                );
-                document.getElementById("points").innerText =
-                  userProfile.points;
-              });
-          });
+      // Copy to clipboard function
+      function copyToClipboard(elementId) {
+        var text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(function () {
+          alert("Đã copy: " + text);
+        });
+      }
 
-        // Hành động cho nút "Rút Tiền"
-        document
-          .getElementById("withdraw")
-          .addEventListener("click", function () {
-            // Tạo nội dung modal mới cho rút tiền
-            const withdrawHtml = `
-            <p>
-              Số dư khả dụng: <span id="modalBalance">${userProfile.points}</span>
-              <button id="loadData" style="background: #007bff; color: #fff; border: none; border-radius: 4px; padding: 5px 8px; cursor: pointer; margin-left: 10px;">
-                <i id="loadIcon" class="fa fa-sync" style="margin-right: 5px;"></i>Load
-              </button>
-            </p>
-            <p style="color: #007bff; font-weight: bold;">Điểm tín nhiệm: <span id="modalTrust">${userProfile.trust}</span></p>
-            <input type="number" id="withdrawAmount" placeholder="Nhập số tiền rút" style="width: 100%; padding: 8px; margin: 10px 0;" />
-            <button id="withdrawNow" style="background: #ff2222; color: #fff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">Rút Tiền Ngay</button>
-            <p style="margin-top:10px; font-size: 13px; color: #555;">
-              Lưu ý:<br>
-              - Số lần rút tối đa: 9999999999 lần mỗi ngày.<br>
-              - Hạn mức mỗi lần: tối thiểu 10, tối đa 999999999.<br>
-              - Thời gian nhận tiền: Thường 5 phút, nhanh nhất 2 phút.
-            </p>`;
-            openModal("Rút Tiền", withdrawHtml);
-            document
-              .getElementById("loadData")
-              .addEventListener("click", function () {
-                const loadIcon = this.querySelector("i");
-                loadIcon.classList.add("fa-spin");
+      // Xác nhận thanh toán (Visa)
+      function confirmPayment(option) {
+        if (option === "visa") {
+          var amount = document.getElementById("amountPaid").value;
+          if (!amount) {
+            alert("Vui lòng nhập số tiền thanh toán.");
+            return;
+          }
+          alert("Xác nhận thanh toán " + amount + " thành công!");
+        }
+      }
 
-                setTimeout(function () {
-                  loadIcon.classList.remove("fa-spin");
-                  alert("Thông tin đã được cập nhật!");
-                }, 1000);
-              });
+      function refreshBalance() {
+        alert("Đang làm mới số dư...");
+      }
 
-            // Sự kiện cho nút "Rút Tiền Ngay"
-            document
-              .getElementById("withdrawNow")
-              .addEventListener("click", function () {
-                const amount = parseFloat(
-                  document.getElementById("withdrawAmount").value
-                );
-                if (isNaN(amount) || amount <= 0) {
-                  alert("Vui lòng nhập số tiền hợp lệ.");
-                  return;
-                }
-                // Kiểm tra hạn mức mỗi lần
-                if (amount < 10 || amount > 999999999) {
-                  alert("Số tiền rút phải từ 10 đến 999999999.");
-                  return;
-                }
-                if (amount > userProfile.points) {
-                  alert("Số tiền rút vượt quá số dư khả dụng.");
-                  return;
-                }
-                // Kiểm tra số lần rút trong ngày
-                if (dailyWithdrawCount >= maxWithdrawPerDay) {
-                  alert("Bạn đã đạt giới hạn rút tiền trong ngày.");
-                  return;
-                }
-                // Giả lập xử lý rút tiền
-                alert(
-                  `Yêu cầu rút ${amount} thành công! (Tiền sẽ được chuyển trong khoảng 2-5 phút)`
-                );
-                modal.style.display = "none";
-                userProfile.points -= amount;
-                dailyWithdrawCount++; // Tăng số lần rút
-                localStorage.setItem(
-                  "userProfile",
-                  JSON.stringify(userProfile)
-                );
-                localStorage.setItem("dailyWithdrawCount", dailyWithdrawCount);
-                document.getElementById("points").innerText =
-                  userProfile.points;
-              });
-          });
-      });
+      function refreshTrustPoints() {
+        alert("Đang làm mới điểm tín nhiệm...");
+      }
+
+      // Xử lý rút tiền qua modal khi nhấn vào nút "Rút tiền"
+      document
+        .getElementById("withdrawBtn")
+        .addEventListener("click", function () {
+          var withdrawHtml = `
+          <p>
+            Số dư khả dụng: <span id="modalBalance" style="color: #3498db;">${userProfile.points}</span>
+            <button id="loadData" style="background: #007bff; color: #fff; border: none; border-radius: 4px; padding: 5px 8px; cursor: pointer; margin-left: 10px;">
+              <i id="loadIcon" class="fa fa-sync" style="margin-right: 5px;"></i>Load
+            </button>
+          </p>
+          <p style="font-weight: bold;">
+            Điểm tín nhiệm: <span id="modalTrust" style="color: #9b59b6;">${userProfile.trust}</span>
+          </p>
+          <input type="number" id="withdrawAmount" placeholder="Nhập số tiền rút" style="width: 100%; padding: 8px; margin: 10px 0;" />
+          <button id="withdrawNow" style="background: #ff2222; color: #fff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">Rút Tiền Ngay</button>
+          <p style="margin-top:10px; font-size: 13px; color: #555;">
+            Lưu ý:<br>
+            - Số lần rút tối đa: 9999999999 lần mỗi ngày.<br>
+            - Hạn mức mỗi lần: tối thiểu 10, tối đa 999999999.<br>
+            - Thời gian nhận tiền: Thường 5 phút, nhanh nhất 2 phút.
+          </p>
+          <p style="margin-top:10px; font-size: 14px; color: #555;">
+            Vui lòng kiểm tra kỹ thông tin giao dịch. Nếu có thắc mắc, liên hệ bộ phận hỗ trợ để được tư vấn.
+          </p>
+        `;
+          openModal("Rút Tiền", withdrawHtml);
+
+          document
+            .getElementById("loadData")
+            .addEventListener("click", function () {
+              var loadIcon = this.querySelector("i");
+              loadIcon.classList.add("fa-spin");
+              setTimeout(function () {
+                loadIcon.classList.remove("fa-spin");
+                alert("Thông tin đã được cập nhật!");
+              }, 1000);
+            });
+
+          document
+            .getElementById("withdrawNow")
+            .addEventListener("click", function () {
+              var amount = parseFloat(
+                document.getElementById("withdrawAmount").value
+              );
+              if (isNaN(amount) || amount <= 0) {
+                alert("Vui lòng nhập số tiền hợp lệ.");
+                return;
+              }
+              if (amount < 10 || amount > 999999999) {
+                alert("Số tiền rút phải từ 10 đến 999999999.");
+                return;
+              }
+              if (amount > userProfile.points) {
+                alert("Số tiền rút vượt quá số dư khả dụng.");
+                return;
+              }
+              if (dailyWithdrawCount >= maxWithdrawPerDay) {
+                alert("Bạn đã đạt giới hạn rút tiền trong ngày.");
+                return;
+              }
+              alert(
+                `Yêu cầu rút ${amount} thành công! (Tiền sẽ được chuyển trong khoảng 2-5 phút)`
+              );
+              document.getElementById("modal").style.display = "none";
+              userProfile.points -= amount;
+              dailyWithdrawCount++;
+              localStorage.setItem("userProfile", JSON.stringify(userProfile));
+              localStorage.setItem("dailyWithdrawCount", dailyWithdrawCount);
+              // Nếu cần cập nhật giao diện Wallet, bạn có thể làm điều đó ở đây.
+            });
+        });
+
+      function featureAction(featureName) {
+        alert("Bạn đã chọn: " + featureName);
+
+        // Thay đổi màu chữ số dư và điểm tín nhiệm
+        var balanceElement = document.querySelector(
+          ".wallet .balance .amount strong.green"
+        );
+        var trustElement = document.querySelector(
+          ".wallet .balance .amount strong.red"
+        );
+
+        if (balanceElement && trustElement) {
+          // Nếu màu hiện tại là màu đã đổi (orange và purple), thì revert về mặc định
+          if (balanceElement.style.color === "orange") {
+            balanceElement.style.color = "#3498db"; // màu xanh lam (theo class .green)
+          } else {
+            balanceElement.style.color = "orange";
+          }
+
+          if (trustElement.style.color === "purple") {
+            trustElement.style.color = "#9b59b6"; // màu tím (theo class .red)
+          } else {
+            trustElement.style.color = "purple";
+          }
+        }
+      }
+      function featureAction(featureName) {
+        let expandedContent = "";
+        switch (featureName) {
+          case "Báo cáo cá nhân":
+            expandedContent = `
+          <p>Thông tin chi tiết về báo cáo cá nhân:</p>
+          <ul>
+            <li>Báo cáo hoạt động hàng tháng</li>
+            <li>Phân tích số liệu cá nhân</li>
+            <li>Báo cáo sự cố và hỗ trợ</li>
+          </ul>
+        `;
+            break;
+          case "Chi tiết tài khoản":
+            expandedContent = `
+          <p>Chi tiết tài khoản của bạn:</p>
+          <ul>
+            <li>Thông tin cá nhân</li>
+            <li>Email và số điện thoại</li>
+            <li>Đổi mật khẩu & cài đặt bảo mật</li>
+          </ul>
+        `;
+            break;
+          case "Lịch sử đánh giá":
+            expandedContent = `
+          <p>Lịch sử đánh giá dịch vụ:</p>
+          <ul>
+            <li>Đánh giá gần đây</li>
+            <li>Lịch sử đánh giá theo tháng</li>
+            <li>Phản hồi từ người dùng</li>
+          </ul>
+        `;
+            break;
+          case "Trung tâm cá nhân":
+            expandedContent = `
+          <p>Trung tâm cá nhân:</p>
+          <ul>
+            <li>Quản lý thông tin cá nhân</li>
+            <li>Danh sách dịch vụ đã sử dụng</li>
+            <li>Cài đặt thông báo & bảo mật</li>
+          </ul>
+        `;
+            break;
+          case "Thông báo":
+            expandedContent = `
+          <p>Thông báo từ hệ thống:</p>
+          <ul>
+            <li>Thông báo mới nhất</li>
+            <li>Lịch sử thông báo</li>
+            <li>Cài đặt nhận thông báo</li>
+          </ul>
+        `;
+            break;
+          case "Chăm sóc khách hàng":
+            expandedContent = `
+          <p>Hỗ trợ và chăm sóc khách hàng:</p>
+          <ul>
+            <li>Liên hệ hỗ trợ trực tuyến</li>
+            <li>Câu hỏi thường gặp (FAQ)</li>
+            <li>Phản hồi và giải đáp thắc mắc</li>
+          </ul>
+        `;
+            break;
+          case "Lịch sử dịch vụ":
+            expandedContent = `
+          <p>Danh sách các dịch vụ bạn đã sử dụng:</p>
+          <ul>
+            <li><span class="date">10/02/2025</span> - Nạp tiền: <strong>50.000 Won</strong></li>
+            <li><span class="date">09/02/2025</span> - Rút tiền: <strong>50.000 Won</strong></li>
+            <li><span class="date">08/02/2025</span> - Xác nhận thanh toán Visa</li>
+          </ul>
+        `;
+            break;
+          default:
+            expandedContent = `<p>Không có thông tin chi tiết.</p>`;
+        }
+
+        // Mở modal với tiêu đề là tên tính năng và nội dung mở rộng
+        openModal(featureName, expandedContent);
+
+        // Ví dụ toggle màu của số dư và điểm tín nhiệm khi mở modal
+        var balanceElement = document.querySelector(
+          ".wallet .balance .amount strong.green"
+        );
+        var trustElement = document.querySelector(
+          ".wallet .balance .amount strong.red"
+        );
+
+        if (balanceElement && trustElement) {
+          // Toggle màu: nếu đang chuyển sang màu mới thì revert lại mặc định
+          if (balanceElement.style.color === "orange") {
+            balanceElement.style.color = "#3498db"; // Màu xanh lam mặc định
+          } else {
+            balanceElement.style.color = "orange";
+          }
+
+          if (trustElement.style.color === "purple") {
+            trustElement.style.color = "#00806e"; // Màu tím mặc định
+          } else {
+            trustElement.style.color = "purple";
+          }
+        }
+      }
     </script>
   </body>
 </html>
