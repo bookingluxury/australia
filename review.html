@@ -2,8 +2,10 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
     <title>Sảnh Đánh Giá</title>
     <!-- Font Awesome cho icon (phiên bản 4.7) -->
     <link
@@ -120,7 +122,11 @@
         overflow: hidden;
         transition: all 0.3s ease;
       }
-
+      /* Icon cho sidebar */
+      .sidebar a i {
+        margin-right: 8px;
+        font-size: 1.2em;
+      }
       /* Hiệu ứng Underline di chuyển */
       .sidebar a::after {
         content: "";
@@ -134,7 +140,6 @@
         transform-origin: left;
         transition: transform 0.3s ease;
       }
-
       /* Hiệu ứng khi hover */
       .sidebar a:hover {
         background: linear-gradient(
@@ -145,11 +150,9 @@
         color: #fff;
         transform: scale(1.03);
       }
-
       .sidebar a:hover::after {
         transform: scaleX(1);
       }
-
       /* Mục đang active */
       .sidebar a.active {
         background: linear-gradient(
@@ -159,19 +162,21 @@
         );
         color: #fff;
       }
-
-      /* Main Content - giữ các mục đánh giá nằm ngang */
+      /* Main Content - Sử dụng CSS Grid để buộc hiển thị theo dạng 2 cột (với 3 card -> 2 trên, 1 dưới)
+         (Màn hình rộng thì hiển thị 3 cột, tức cả 1 hàng ngang) */
       .main-content {
-        flex: 1;
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         padding-bottom: 10px;
       }
-      .main-content::-webkit-scrollbar {
-        display: none;
+      @media (min-width: 768px) {
+        .main-content {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
-      /* Review Card với hiệu ứng nổi bật */
+      /* Review Card – giới hạn kích thước để không vượt quá ô grid */
       .review-card {
         background: var(--card-bg);
         padding: 15px;
@@ -180,9 +185,10 @@
         text-align: center;
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        flex: 0 0 auto;
         position: relative;
         overflow: hidden;
+        max-width: 250px;
+        width: 100%;
       }
       .review-card:hover {
         transform: scale(1.05) rotate(1deg);
@@ -330,22 +336,33 @@
         overflow-y: auto;
         margin-bottom: 15px;
       }
-      #historyTab table {
+      /* CSS cho bảng lịch sử sử dụng CSS counters để đánh số tự động */
+      .history-table {
+        counter-reset: rowNumber;
         width: 100%;
         border-collapse: collapse;
         font-size: 0.9rem;
       }
-      #historyTab th,
-      #historyTab td {
+      .history-table thead th {
+        background: #f1f1f1;
+        font-weight: 600;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+      .history-table tbody tr {
+        counter-increment: rowNumber;
+      }
+      .history-table tbody tr td {
         padding: 8px;
         text-align: center;
         border: 1px solid #ddd;
       }
-      #historyTab th {
-        background: #f1f1f1;
-        font-weight: 600;
+      /* Đánh số tự động cho cột đầu tiên (STT) */
+      .history-table tbody tr td:first-child::before {
+        content: counter(rowNumber);
+        margin-right: 5px;
       }
-      #historyTab tr:nth-child(even) {
+      .history-table tbody tr:nth-child(even) {
         background: #fbfbfb;
       }
       /* Timer, Options & Buttons */
@@ -447,6 +464,7 @@
         border-radius: 6px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         font-size: 0.9rem;
+        overflow-x: auto;
       }
       .history h3 {
         margin-bottom: 10px;
@@ -454,24 +472,6 @@
         text-align: center;
         color: var(--text-color);
       }
-      .history table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      .history th,
-      .history td {
-        padding: 8px;
-        text-align: center;
-        border: 1px solid #ddd;
-      }
-      .history th {
-        background: #f1f1f1;
-        font-weight: 600;
-      }
-      .history tr:nth-child(even) {
-        background: #fbfbfb;
-      }
-     
       /* Responsive */
       @media (max-width: 768px) {
         .container {
@@ -491,12 +491,20 @@
     <div class="container">
       <!-- Sidebar -->
       <div class="sidebar">
-        <a href="#" class="active" onclick="showReview('all')">Tất cả</a>
-        <a href="#" onclick="showReview('Đánh Giá 1')">Đánh Giá 1</a>
-        <a href="#" onclick="showReview('Đánh Giá 2')">Đánh Giá 2</a>
-        <a href="#" onclick="showReview('Đánh Giá 3')">Đánh Giá 3</a>
+        <a href="#" class="active" onclick="showReview('all')">
+          <i class="fa fa-th-large"></i> Tất cả
+        </a>
+        <a href="#" onclick="showReview('Đánh Giá 1')">
+          <i class="fa fa-star"></i> Đánh Giá 1
+        </a>
+        <a href="#" onclick="showReview('Đánh Giá 2')">
+          <i class="fa fa-heart"></i> Đánh Giá 2
+        </a>
+        <a href="#" onclick="showReview('Đánh Giá 3')">
+          <i class="fa fa-smile-o"></i> Đánh Giá 3
+        </a>
       </div>
-      <!-- Main Content (Review Cards - Nằm ngang) -->
+      <!-- Main Content (Review Cards) -->
       <div class="main-content" id="mainContent">
         <div
           class="review-card"
@@ -585,54 +593,68 @@
           </button>
           <button class="close-button" onclick="closeReview()">Quay lại</button>
         </div>
-        <!-- Tab: Lịch Sử Kỳ Trước -->
+        <!-- Tab: Lịch Sử Kỳ Trước (Modal) -->
         <div id="historyTab">
           <div class="history-inside">
             <h3>
               Lịch sử kỳ đánh giá của
               <span id="currentReviewType">Đánh Giá</span>
             </h3>
-            <table>
-              <tr>
-                <th>Số Kỳ</th>
-                <th>Kết Quả</th>
-              </tr>
-              <tr>
-                <td>202502113451</td>
-                <td>D</td>
-              </tr>
-              <tr>
-                <td>202502113450</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>202502113449</td>
-                <td>D</td>
-              </tr>
-              <tr>
-                <td>202502113448</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>202502113447</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>202502113446</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td>202502113445</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td>202502113444</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>202502113443</td>
-                <td>D</td>
-              </tr>
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Số Kỳ</th>
+                  <th>Kết Quả</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>202502113451</td>
+                  <td>D</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113450</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113449</td>
+                  <td>D</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113448</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113447</td>
+                  <td>B</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113446</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113445</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113444</td>
+                  <td>B</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>202502113443</td>
+                  <td>D</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <button class="close-button" onclick="closeReview()">Quay lại</button>
@@ -643,60 +665,74 @@
     <!-- History Section (trang chính) -->
     <div class="history">
       <h3>Lịch sử các kỳ đánh giá</h3>
-      <table>
-        <tr>
-          <th>Số Kỳ</th>
-          <th>Kết Quả</th>
-        </tr>
-        <tr>
-          <td>202502113451</td>
-          <td>D</td>
-        </tr>
-        <tr>
-          <td>202502113450</td>
-          <td>A</td>
-        </tr>
-        <tr>
-          <td>202502113449</td>
-          <td>D</td>
-        </tr>
-        <tr>
-          <td>202502113448</td>
-          <td>A</td>
-        </tr>
-        <tr>
-          <td>202502113447</td>
-          <td>B</td>
-        </tr>
-        <tr>
-          <td>202502113446</td>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>202502113445</td>
-          <td>A</td>
-        </tr>
-        <tr>
-          <td>202502113444</td>
-          <td>B</td>
-        </tr>
-        <tr>
-          <td>202502113443</td>
-          <td>D</td>
-        </tr>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Số Kỳ</th>
+            <th>Kết Quả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>202502113451</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113450</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113449</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113448</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113447</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113446</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113445</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113444</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>202502113443</td>
+            <td>D</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 
-<div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
 
-<script src="menu.js"></script>
+    <script src="menu.js"></script>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
 
-<script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
-    });
       // Lọc thẻ đánh giá theo Sidebar sử dụng data-review
       function showReview(review) {
         document.querySelectorAll(".review-card").forEach((card) => {
@@ -710,24 +746,20 @@
       let timer;
       // Mở modal đánh giá (Review Detail)
       function openReview(reviewId) {
-        // Ẩn main content
         document.getElementById("mainContent").style.display = "none";
-        // Hiển thị overlay modal
         document.getElementById("reviewOverlay").style.display = "flex";
-        // Cập nhật tiêu đề modal
         const reviewTitle = reviewId.replace("review", "Đánh Giá ");
         document.getElementById("reviewTitle").innerText = reviewTitle;
         document.getElementById("currentReviewType").innerText = reviewTitle;
-        // Hiển thị tab "Đánh Giá Trực Tiếp" mặc định
         showTab("current");
-        // Cập nhật số kỳ đánh giá (ví dụ cố định)
-        document.getElementById("livePeriod").innerText = "202503010001";
+        // Cập nhật mã kỳ hiện tại: nếu kỳ trước là 202502113451 thì kỳ này là 202502113452
+        document.getElementById("livePeriod").innerText = "202502113452";
         startCountdown(180);
       }
 
       // Đóng modal đánh giá
       function closeReview() {
-        document.getElementById("mainContent").style.display = "flex";
+        document.getElementById("mainContent").style.display = "grid";
         document.getElementById("reviewOverlay").style.display = "none";
         clearInterval(timer);
         document.getElementById("countdown").textContent = "00:03:00";
