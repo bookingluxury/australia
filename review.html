@@ -100,15 +100,21 @@
         flex-wrap: wrap;
         padding: 20px;
       }
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+      }
       /* Sidebar */
       .sidebar {
-        width: 220px;
         min-width: 200px;
         background: var(--card-bg);
         padding: 20px;
         box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        margin-right: 20px;
+        width: 35%;
+        margin-right: 10px;
       }
       .sidebar a {
         display: block;
@@ -163,11 +169,12 @@
         color: #fff;
       }
       /* Main Content - Sử dụng CSS Grid để buộc hiển thị theo dạng 2 cột (với 3 card -> 2 trên, 1 dưới)
-         (Màn hình rộng thì hiển thị 3 cột, tức cả 1 hàng ngang) */
+             (Màn hình rộng thì hiển thị 3 cột, tức cả 1 hàng ngang) */
       .main-content {
+        width: 65%;
         display: grid;
         grid-gap: 10px;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
         justify-items: center;
         padding-bottom: 10px;
       }
@@ -225,7 +232,7 @@
       }
       .review-card img {
         width: 120px;
-        height: 120px;
+        height: 170px;
         border-radius: 10px;
         object-fit: cover;
         border: 2px solid var(--secondary-color);
@@ -480,6 +487,54 @@
         .sidebar {
           width: 100%;
           margin-bottom: 20px;
+        }
+      }
+      /* Container bố trí Sidebar và Main-content */
+      .container {
+        display: flex;
+        padding: 20px;
+        /* Mặc định sẽ không wrap để các phần luôn nằm trong 1 hàng */
+        flex-wrap: nowrap;
+      }
+
+      /* Desktop layout (từ 768px trở lên): Sidebar có chiều rộng cố định, main-content chiếm phần còn lại */
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+        .sidebar {
+          width: 220px; /* Sidebar cố định 220px */
+          margin-right: 20px;
+        }
+        .main-content {
+          flex: 1; /* Chiếm phần còn lại */
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: repeat(3, minmax(150px, 1fr));
+          justify-items: center;
+          padding-bottom: 10px;
+        }
+      }
+
+      /* Mobile layout (dưới 768px): Sidebar chiếm 35% và main-content chiếm 65% */
+      @media (max-width: 767px) {
+        .container {
+          flex-direction: row;
+          /* Ép 2 phần nằm trên 1 hàng */
+          flex-wrap: nowrap;
+        }
+        .sidebar {
+          width: 35%;
+          margin-right: 10px;
+        }
+        .main-content {
+          width: 65%;
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: repeat(2, minmax(100px, 1fr));
+          justify-items: center;
+          padding-bottom: 10px;
         }
       }
     </style>
