@@ -4,6 +4,13 @@
     --accent: #007bff;
     --text-color: #333;
     --hover-bg: #ced4da;
+    --bg-color: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
   }
 
   .bottom-nav {
@@ -67,53 +74,51 @@
     color: var(--accent);
     font-weight: 700;
   }
+
+  /* Dark Mode */
+  body.dark-mode {
+    --nav-bg: #2c2c2c;
+    --accent: #1e90ff;
+    --text-color: #f0f0f0;
+    --hover-bg: #3d3d3d;
+    --bg-color: #121212;
+  }
+
+  .dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 30;
+  }
+
+  .dark-mode-toggle:hover {
+    background-color: #0056b3;
+  }
 </style>
 
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
 <div class="bottom-nav">
-  <a class="nav-item" href="index.html">
-    <i class="fa fa-home"></i>
-    <span>Trang Chủ</span>
-  </a>
-  <a class="nav-item" href="review.html">
-    <i class="fa fa-star"></i>
-    <span>Đánh Giá</span>
-  </a>
-  <a class="nav-item" href="video.html">
-    <i class="fa fa-film"></i>
-    <span>Video Nổi Bật</span>
-  </a>
-  <a class="nav-item" href="profile.html">
-    <i class="fa fa-user"></i>
-    <span>Hồ Sơ</span>
-  </a>
-  <a class="nav-item" href="services.html">
-    <i class="fa fa-briefcase"></i>
-    <span>Dịch Vụ</span>
-  </a>
-  <a class="nav-item" href="booking.html">
-    <i class="fa fa-calendar-check"></i>
-    <span>Đặt Lịch</span>
-  </a>
-  <a class="nav-item" href="photos.html">
-    <i class="fa fa-camera"></i>
-    <span>Thư Viện Ảnh</span>
-  </a>
-  <a class="nav-item" href="private-connection.html">
-    <i class="fa fa-lock"></i>
-    <span>Kết Nối Riêng Tư</span>
-  </a>
-  <a class="nav-item" href="add-credit.html">
-    <i class="fa fa-credit-card"></i>
-    <span>Thêm Tín Dụng</span>
-  </a>
-  <a class="nav-item" href="logout.html">
-    <i class="fa fa-sign-out"></i>
-    <span>Đăng Xuất</span>
-  </a>
+  <a class="nav-item" href="index.html"><i class="fa fa-home"></i><span>Trang Chủ</span></a>
+  <a class="nav-item" href="review.html"><i class="fa fa-star"></i><span>Đánh Giá</span></a>
+  <a class="nav-item" href="video.html"><i class="fa fa-film"></i><span>Video Nổi Bật</span></a>
+  <a class="nav-item" href="profile.html"><i class="fa fa-user"></i><span>Hồ Sơ</span></a>
+  <a class="nav-item" href="services.html"><i class="fa fa-briefcase"></i><span>Dịch Vụ</span></a>
+  <a class="nav-item" href="booking.html"><i class="fa fa-calendar-check"></i><span>Đặt Lịch</span></a>
+  <a class="nav-item" href="photos.html"><i class="fa fa-camera"></i><span>Thư Viện Ảnh</span></a>
+  <a class="nav-item" href="private-connection.html"><i class="fa fa-lock"></i><span>Kết Nối Riêng Tư</span></a>
+  <a class="nav-item" href="add-credit.html"><i class="fa fa-credit-card"></i><span>Thêm Tín Dụng</span></a>
+  <a class="nav-item" href="logout.html"><i class="fa fa-sign-out"></i><span>Đăng Xuất</span></a>
 </div>
 
 <script>
-  // Tự động đánh dấu active dựa vào URL
   function setActiveTab() {
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     const navItems = document.querySelectorAll(".nav-item");
@@ -127,10 +132,22 @@
     });
   }
 
-  // Thực thi khi trang load
-  window.addEventListener("load", setActiveTab);
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+    document.querySelector(".dark-mode-toggle").textContent = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+  }
 
-  // Lưu trạng thái khi click vào nav-item
+  window.addEventListener("load", () => {
+    const darkMode = localStorage.getItem("darkMode") === "true";
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      document.querySelector(".dark-mode-toggle").textContent = "☀️ Light Mode";
+    }
+    setActiveTab();
+  });
+
   document.querySelectorAll(".nav-item").forEach(item => {
     item.addEventListener("click", function () {
       document.querySelectorAll(".nav-item").forEach(nav => nav.classList.remove("active"));
