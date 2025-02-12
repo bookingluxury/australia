@@ -37,7 +37,6 @@
         padding: 0;
       }
       body {
-        font-family: "Roboto", sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
         line-height: 1.6;
@@ -81,6 +80,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         letter-spacing: 2px;
+        margin-bottom: 15px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       }
       @keyframes gradientAnimation {
@@ -94,36 +94,22 @@
           background-position: 0% 50%;
         }
       }
-      /* Layout Container */
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 20px;
-      }
-      @media (min-width: 768px) {
-        .container {
-          flex-direction: row;
-          align-items: flex-start;
-        }
-      }
       /* Sidebar */
       .sidebar {
-        min-width: 200px;
         background: var(--card-bg);
-        padding: 20px;
+        padding: 0px;
         box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        width: 35%;
         margin-right: 10px;
       }
       .sidebar a {
         display: block;
-        padding: 12px 15px;
+        padding: 10px 1px;
         margin-bottom: 10px;
         color: var(--text-color);
         background: var(--card-bg);
-        border-radius: 6px;
-        font-weight: 500;
+        border-radius: 0px;
+        font-weight: bold;
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -168,38 +154,26 @@
         );
         color: #fff;
       }
-      /* Main Content - Sử dụng CSS Grid để buộc hiển thị theo dạng 2 cột (với 3 card -> 2 trên, 1 dưới)
-             (Màn hình rộng thì hiển thị 3 cột, tức cả 1 hàng ngang) */
+      /* Main Content - Sử dụng CSS Grid */
       .main-content {
-        width: 65%;
+        width: 75%;
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 5px; /* Giảm khoảng cách giữa các review */
         grid-template-columns: repeat(2, minmax(100px, 1fr));
         justify-items: center;
         padding-bottom: 10px;
+        margin-top: 20px; /* Tạo khoảng cách với phần phía trên */
       }
       @media (min-width: 768px) {
         .main-content {
-          grid-template-columns: repeat(3, 1fr);
+          flex: 1;
+          display: grid;
+          grid-gap: 5px; /* Giảm khoảng cách giữa các review */
+          grid-template-columns: repeat(3, minmax(150px, 1fr));
+          justify-items: center;
+          padding-bottom: 10px;
+          margin-top: 20px; /* Tạo khoảng cách phía trên */
         }
-      }
-      /* Review Card – giới hạn kích thước để không vượt quá ô grid */
-      .review-card {
-        background: var(--card-bg);
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        max-width: 250px;
-        width: 100%;
-      }
-      .review-card:hover {
-        transform: scale(1.05) rotate(1deg);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       }
       /* Hiệu ứng Shine cho review card */
       .review-card::before {
@@ -247,6 +221,7 @@
         margin-top: 8px;
         font-size: 1.1rem;
         font-weight: 600;
+        text-align: center; /* Căn giữa tiêu đề */
         background: linear-gradient(90deg, #ff9a9e, #fc5c7d, #6a82fb);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -492,11 +467,9 @@
       /* Container bố trí Sidebar và Main-content */
       .container {
         display: flex;
-        padding: 20px;
         /* Mặc định sẽ không wrap để các phần luôn nằm trong 1 hàng */
         flex-wrap: nowrap;
       }
-
       /* Desktop layout (từ 768px trở lên): Sidebar có chiều rộng cố định, main-content chiếm phần còn lại */
       @media (min-width: 768px) {
         .container {
@@ -504,19 +477,19 @@
           align-items: flex-start;
         }
         .sidebar {
-          width: 220px; /* Sidebar cố định 220px */
+          width: 150px;
           margin-right: 20px;
         }
         .main-content {
-          flex: 1; /* Chiếm phần còn lại */
+          flex: 1;
           display: grid;
-          grid-gap: 10px;
+          grid-gap: 5px;
           grid-template-columns: repeat(3, minmax(150px, 1fr));
           justify-items: center;
           padding-bottom: 10px;
+          margin-top: 20px;
         }
       }
-
       /* Mobile layout (dưới 768px): Sidebar chiếm 35% và main-content chiếm 65% */
       @media (max-width: 767px) {
         .container {
@@ -529,12 +502,13 @@
           margin-right: 10px;
         }
         .main-content {
-          width: 65%;
+          width: 75%;
           display: grid;
-          grid-gap: 10px;
+          grid-gap: 5px;
           grid-template-columns: repeat(2, minmax(100px, 1fr));
           justify-items: center;
           padding-bottom: 10px;
+          margin-top: 20px;
         }
       }
     </style>
@@ -596,7 +570,6 @@
         </div>
       </div>
     </div>
-
     <!-- Review Detail Modal (Overlay) -->
     <div class="review-detail-overlay" id="reviewOverlay">
       <div class="review-detail" id="reviewDetail">
@@ -716,7 +689,6 @@
         </div>
       </div>
     </div>
-
     <!-- History Section (trang chính) -->
     <div class="history">
       <h3>Lịch sử các kỳ đánh giá</h3>
@@ -777,9 +749,7 @@
         </tbody>
       </table>
     </div>
-
     <div id="navbar-placeholder"></div>
-
     <script src="menu.js"></script>
     <script>
       fetch("navbar.html")
@@ -787,7 +757,6 @@
         .then((data) => {
           document.getElementById("navbar-placeholder").innerHTML = data;
         });
-
       // Lọc thẻ đánh giá theo Sidebar sử dụng data-review
       function showReview(review) {
         document.querySelectorAll(".review-card").forEach((card) => {
@@ -797,7 +766,6 @@
               : "none";
         });
       }
-
       let timer;
       // Mở modal đánh giá (Review Detail)
       function openReview(reviewId) {
@@ -811,7 +779,6 @@
         document.getElementById("livePeriod").innerText = "202502113452";
         startCountdown(180);
       }
-
       // Đóng modal đánh giá
       function closeReview() {
         document.getElementById("mainContent").style.display = "grid";
@@ -824,7 +791,6 @@
         document.getElementById("selectedOptionDisplay").textContent = "";
         document.getElementById("betAmount").value = "";
       }
-
       // Gửi đánh giá (giả lập)
       function submitReview() {
         const selected = document.querySelector("#currentTab .option.selected");
@@ -854,7 +820,6 @@
         );
         closeReview();
       }
-
       // Đếm ngược thời gian đánh giá
       function startCountdown(duration) {
         let time = duration;
@@ -873,7 +838,6 @@
           time--;
         }, 1000);
       }
-
       // Chuyển đổi giữa tab "Đánh Giá Trực Tiếp" và "Lịch Sử Kỳ Trước"
       function showTab(tab) {
         if (tab === "current") {
@@ -890,7 +854,6 @@
           document.getElementById("tabCurrent").classList.remove("active");
         }
       }
-
       // Xử lý chọn đáp án
       document.querySelectorAll("#currentTab .option").forEach((option) => {
         option.addEventListener("click", function () {
